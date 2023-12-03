@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager instance;
+
+    #region Singleton
+    private void Awake()
+    {
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+            Destroy(this);
+    }
+    #endregion
+
     #region Components
     [Header("# Components")]
     [SerializeField]
@@ -27,6 +43,9 @@ public class PlayerManager : MonoBehaviour
     private BoxCollider2D attackPoint2;
     [SerializeField]
     private BoxCollider2D guardPoint;
+
+    [SerializeField]
+    private Parameter parameter;
     #endregion
     [Space(10)]
 
@@ -155,10 +174,11 @@ public class PlayerManager : MonoBehaviour
     {
         if (currentAtkTime >= atkTime)
         {
-            if (Input.GetKeyDown(KeyCode.X) && !isMove && !isGuard)
+            if (Input.GetKeyDown(KeyCode.X) && !isMove && !isGuard && parameter.currentSp > 0)
             {
                 StartCoroutine(Attack());
                 currentAtkTime = 0f;
+                parameter.currentSp -= 20;
             }
             
         }
@@ -186,7 +206,6 @@ public class PlayerManager : MonoBehaviour
             yield return waitTime;
             currentComboTime = 0f;
             isCombo = false;
-
             attackPoint2.gameObject.SetActive(false);
         }
        

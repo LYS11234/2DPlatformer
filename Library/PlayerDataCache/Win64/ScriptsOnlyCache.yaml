@@ -1,6 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Attack
+    - Menu
+    - Monster
+    - Parameter
     - PlayerManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -43,15 +47,28 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   serializedClasses:
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
-  methodsToPreserve: []
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: QuitBtn
   sceneClasses:
     Assets/#0_Scenes/1_Villiage.unity:
     - Class: 1
@@ -85,14 +102,28 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 6640}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 7256}
+      Script: {instanceID: 3430}
     - Class: 114
-      Script: {instanceID: 7772}
+      Script: {instanceID: 4810}
+    - Class: 114
+      Script: {instanceID: 6270}
+    - Class: 114
+      Script: {instanceID: 6366}
+    - Class: 114
+      Script: {instanceID: 6646}
+    - Class: 114
+      Script: {instanceID: 7262}
+    - Class: 114
+      Script: {instanceID: 7778}
+    - Class: 114
+      Script: {instanceID: 30944}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -274,6 +305,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 159997bd3d378f9b375dce7a2a5ed54d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Monster
   - hash:
       serializedVersion: 2
       Hash: 848c5c3c98557fc2f2199206a7eaa69a
@@ -588,6 +625,12 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
+      Hash: ed8db75a74f8fae2729162f2d8f381f8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Parameter
+  - hash:
+      serializedVersion: 2
       Hash: 6298a10412e94e11ad85ac6148c9dda1
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -786,6 +829,12 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: 66209e74aa8eefecb38b66d3f1c5a730
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Attack
+  - hash:
+      serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
@@ -918,7 +967,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 2359f8197266c06fa03b466ac1bbad68
+      Hash: a9d8e9ee3410f215964ee7a89a7d85bc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1162,6 +1211,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 4df85f5eff0612ed80f044436268932a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Menu
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/1_Villiage.unity
