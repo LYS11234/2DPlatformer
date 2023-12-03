@@ -12,22 +12,26 @@ public class OldMan : AllienceNPC
     protected override void OnTriggerStay2D(Collider2D other)
     {
         base.OnTriggerStay2D(other);
-        if (other.transform.name == "Player")
-        {
+        
             if (Input.GetKeyDown(KeyCode.X))
             {
-                gui.image.gameObject.SetActive(false);
-                if (i < npcDialogue.Length)
-                {
-                    dialogueManager.PrintDialogue(npcName, npcDialogue[i]);
-                    i++;
-                }
-                else
-                {
-                    dialogueManager.CloseDialogue();
-                    i = 0;
-                }
+                StartCoroutine(DialogueCoroutine());
             }
+    }
+
+    private IEnumerator DialogueCoroutine()
+    {
+        gui.image.gameObject.SetActive(false);
+        if (i < npcDialogue.Length)
+        {
+            dialogueManager.PrintDialogue(npcName, npcDialogue[i]);
+            i++;
+            yield return null;
+        }
+        else
+        {
+            dialogueManager.CloseDialogue();
+            i = 0;
         }
     }
 

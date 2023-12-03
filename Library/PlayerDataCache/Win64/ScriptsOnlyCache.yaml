@@ -2,14 +2,16 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Attack
+    - ButtonGUI
+    - DialogueManager
     - Menu
-    - Monster
     - OldMan
     - Parameter
     - PlayerManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
+    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.SpriteSkinComposite
     - UnityEngine.U2D.Animation.SpriteSkinUpdateHelper
     Unity.2D.IK.Editor.dll:
@@ -19,6 +21,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -34,8 +37,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -63,6 +68,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Menu
+    methodName: InventoryBtn
   - assembly: Assembly-CSharp
     fullTypeName: Menu
     methodName: QuitBtn
@@ -99,27 +107,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2838}
-    - Class: 114
       Script: {instanceID: 3084}
     - Class: 114
       Script: {instanceID: 3430}
     - Class: 114
       Script: {instanceID: 3500}
     - Class: 114
-      Script: {instanceID: 4814}
+      Script: {instanceID: 4360}
     - Class: 114
-      Script: {instanceID: 5194}
+      Script: {instanceID: 4816}
     - Class: 114
-      Script: {instanceID: 6276}
+      Script: {instanceID: 5196}
     - Class: 114
-      Script: {instanceID: 6372}
+      Script: {instanceID: 6280}
     - Class: 114
-      Script: {instanceID: 6652}
+      Script: {instanceID: 6376}
     - Class: 114
-      Script: {instanceID: 7268}
+      Script: {instanceID: 6656}
     - Class: 114
-      Script: {instanceID: 7784}
+      Script: {instanceID: 7272}
+    - Class: 114
+      Script: {instanceID: 7788}
+    - Class: 114
+      Script: {instanceID: 8264}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -306,7 +316,7 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: 5071a4166c9eedac2b17de02984c0be8
+      Hash: 7839f2e34d6ef40c8a0b1dddef363358
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Monster
@@ -432,7 +442,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 837ae2d81884f4e511959a40f1ca649c
+      Hash: 4a6765fb53c5d7481e35dc2777b7a376
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: OldMan
@@ -510,7 +520,7 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 837ae2d81884f4e511959a40f1ca649c
+      Hash: 4a6765fb53c5d7481e35dc2777b7a376
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AllienceNPC
@@ -556,6 +566,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e93a65f25e605ef1950e6d3907351139
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueManager
   - hash:
       serializedVersion: 2
       Hash: b18151310f999106767addd7177d1a99
@@ -672,7 +688,7 @@ ScriptsOnlyBuild:
     className: ColorSwap_HeroKnight
   - hash:
       serializedVersion: 2
-      Hash: 4df85f5eff0612ed80f044436268932a
+      Hash: 28e98dad2c15d7ba36eb6afce6db58e2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Menu
@@ -688,6 +704,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime
     namespaceName: UnityEngine.U2D.Animation
     className: BufferManager
+  - hash:
+      serializedVersion: 2
+      Hash: 152d0add35b5b7a377b4aeba2fdb6e43
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Spider
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -984,7 +1006,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: d1bf2dcd6cb6624407fd55d3eef33015
+      Hash: 63ef580ea941e0302e1e4de848f6d688
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -996,7 +1018,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 837ae2d81884f4e511959a40f1ca649c
+      Hash: 8ab90e618460c11cfc44aa0bb368fe4d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: NPC
@@ -1090,6 +1112,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: d596e706dda26d7e8b5c99f91ff2caa7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonGUI
   - hash:
       serializedVersion: 2
       Hash: ff06596e682343f04b451cdb376b1850

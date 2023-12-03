@@ -6990,12 +6990,14 @@ MonoBehaviour:
   isAttack: 0
   atkSpeed: 0
   atkTime: 0.3
-  currentAtkTime: 0
+  currentAtkTime: 0.3
   comboTime: 0.35
   currentComboTime: 0
   canAttack: 1
   guardTime: 0.23
-  currentGuardTime: 0
+  currentGuardTime: 0.23
+  currentRollTime: 0.9
+  rollTime: 0.83
 --- !u!50 &1393797988
 Rigidbody2D:
   serializedVersion: 4
@@ -9653,7 +9655,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 503
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -94,6 +94,13 @@ public class PlayerManager : MonoBehaviour
     private float currentGuardTime;
     #endregion
     [Space(5)]
+    #region Roll
+    [Header("Roll")]
+    [SerializeField]
+    private float currentRollTime;
+    [SerializeField]
+    private float rollTime;
+    #endregion
     #region etc
     private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
     private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
@@ -123,7 +130,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetButton("Horizontal"))
         {
-            if (isGround && !isGuard)
+            if (isGround && !isGuard && !isAttack)
             {
                 if (Input.GetAxisRaw("Horizontal") < 0)
                 {
@@ -268,18 +275,24 @@ public class PlayerManager : MonoBehaviour
 
     private void TryRoll()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (currentRollTime >= rollTime)
         {
-            if (parameter.currentSp > 0)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(parameter.currentSp - 30 >= 0)
-                    parameter.currentSp -= 30;
-                else
-                    parameter.currentSp = 0;
-                isAttack = true;
-                StartCoroutine(Roll());
+                if (parameter.currentSp > 0)
+                {
+                    if (parameter.currentSp - 30 >= 0)
+                        parameter.currentSp -= 30;
+                    else
+                        parameter.currentSp = 0;
+                    isAttack = true;
+                    StartCoroutine(Roll());
+                    currentRollTime = 0f;   
+                }
             }
         }
+        else
+            currentRollTime += Time.deltaTime;
     }
 
     private IEnumerator Roll()
@@ -295,7 +308,7 @@ public class PlayerManager : MonoBehaviour
         Vector3 _moveHorizontal = transform.right * _direction;
         Vector3 _vel = 3f * _moveHorizontal;
         yield return frameTime;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 30; i++)
         {
             yield return frameTime;
             playerRigidbody.MovePosition(transform.position + _vel * Time.deltaTime);
