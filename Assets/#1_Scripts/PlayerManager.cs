@@ -68,6 +68,8 @@ public class PlayerManager : MonoBehaviour
     [Space(5)]
     #region Attack
     [Header("Attack")]
+
+    public bool isAttack;
     [SerializeField]
     private float atkSpeed;
     [SerializeField]
@@ -176,9 +178,11 @@ public class PlayerManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X) && !isMove && !isGuard && parameter.currentSp > 0)
             {
+                isAttack = true;
                 StartCoroutine(Attack());
                 currentAtkTime = 0f;
                 parameter.currentSp -= 20;
+                
             }
             
         }
@@ -208,7 +212,8 @@ public class PlayerManager : MonoBehaviour
             isCombo = false;
             attackPoint2.gameObject.SetActive(false);
         }
-       
+        isAttack = false;
+
     }
 
     private void ComboCheck()

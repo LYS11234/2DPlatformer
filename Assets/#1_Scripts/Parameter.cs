@@ -86,13 +86,23 @@ public class Parameter : MonoBehaviour
     
     private void SPRecoveryTime()
     {
-        if (currentSpRecovTime >= spRecovTime)
+        if (currentSp < sp && !PlayerManager.instance.isAttack)
+        {
+            if (currentSpRecovTime >= spRecovTime)
+            {
+                if (sp < currentSp + spRecovery)
+                    currentSp = sp;
+                else
+                    SPIncrease();
+                currentSpRecovTime = 0;
+            }
+            else
+                currentSpRecovTime += Time.deltaTime;
+        }
+        else if(PlayerManager.instance.isAttack)
         {
             currentSpRecovTime = 0;
-            SPIncrease();
         }
-        else
-            currentSpRecovTime += Time.deltaTime;
     }
     #endregion
     #region Level

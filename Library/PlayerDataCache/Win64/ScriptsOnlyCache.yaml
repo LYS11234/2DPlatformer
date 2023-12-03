@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - Attack
     - Menu
     - Monster
+    - OldMan
     - Parameter
     - PlayerManager
     Unity.2D.Animation.Editor.dll:
@@ -35,10 +36,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -102,25 +101,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 3428}
     - Class: 114
-      Script: {instanceID: 3430}
+      Script: {instanceID: 3498}
     - Class: 114
-      Script: {instanceID: 4810}
+      Script: {instanceID: 4812}
     - Class: 114
-      Script: {instanceID: 6270}
+      Script: {instanceID: 5192}
     - Class: 114
-      Script: {instanceID: 6366}
+      Script: {instanceID: 6274}
     - Class: 114
-      Script: {instanceID: 6646}
+      Script: {instanceID: 6370}
     - Class: 114
-      Script: {instanceID: 7262}
+      Script: {instanceID: 6650}
     - Class: 114
-      Script: {instanceID: 7778}
+      Script: {instanceID: 7266}
     - Class: 114
-      Script: {instanceID: 30944}
+      Script: {instanceID: 7782}
+    - Class: 114
+      Script: {instanceID: 9616}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -307,12 +308,6 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: 159997bd3d378f9b375dce7a2a5ed54d
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Monster
-  - hash:
-      serializedVersion: 2
       Hash: 848c5c3c98557fc2f2199206a7eaa69a
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -433,6 +428,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 837ae2d81884f4e511959a40f1ca649c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OldMan
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -503,6 +504,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnControllerColliderHitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 837ae2d81884f4e511959a40f1ca649c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AllienceNPC
   - hash:
       serializedVersion: 2
       Hash: 747284d692f6c45bae4955ed655ed04c
@@ -625,7 +632,7 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: ed8db75a74f8fae2729162f2d8f381f8
+      Hash: a619b66f4a5cad7d3362cf4728cefaf9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Parameter
@@ -659,6 +666,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ColorSwap_HeroKnight
+  - hash:
+      serializedVersion: 2
+      Hash: 4df85f5eff0612ed80f044436268932a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Menu
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -979,6 +992,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 837ae2d81884f4e511959a40f1ca649c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NPC
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1213,10 +1232,10 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4df85f5eff0612ed80f044436268932a
+      Hash: 5071a4166c9eedac2b17de02984c0be8
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: Menu
+    className: Monster
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/1_Villiage.unity

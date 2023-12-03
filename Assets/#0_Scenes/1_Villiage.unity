@@ -1438,7 +1438,7 @@ MonoBehaviour:
   currentLevel: 1
   spRecovTime: 1
   currentSpRecovTime: 0
-  spRecovery: 15
+  spRecovery: 50
 --- !u!1 &798552613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,10 +3710,11 @@ MonoBehaviour:
   parameter: {fileID: 706357829}
   moveSpeed: 3
   jumpForce: 3
+  isAttack: 0
   atkSpeed: 0
   atkTime: 0.3
   currentAtkTime: 0
-  comboTime: 0.5
+  comboTime: 0.35
   currentComboTime: 0
   guardTime: 0.23
   currentGuardTime: 0
