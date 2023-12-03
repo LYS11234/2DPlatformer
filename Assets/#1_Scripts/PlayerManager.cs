@@ -46,6 +46,9 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField]
     private Parameter parameter;
+
+    [SerializeField]
+    private ButtonGUI gui;
     #endregion
     [Space(10)]
 
@@ -81,6 +84,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float currentComboTime;
     private bool isCombo;
+    public bool canAttack = true;
     #endregion
     #region Guard
     private bool isGuard;
@@ -111,6 +115,7 @@ public class PlayerManager : MonoBehaviour
         TryAttack();
         ComboCheck();
         TryGuard();
+        TryRoll();
     }
 
     #region Player Movement
@@ -139,11 +144,6 @@ public class PlayerManager : MonoBehaviour
                 Vector3 _moveHorizontal = transform.right * Input.GetAxisRaw("Horizontal");
                 Vector3 _vel = moveSpeed * _moveHorizontal;
                 playerRigidbody.MovePosition(transform.position + _vel * Time.deltaTime);
-            }
-
-            else
-            {
-
             }
         }
         else
@@ -176,7 +176,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (currentAtkTime >= atkTime)
         {
-            if (Input.GetKeyDown(KeyCode.X) && !isMove && !isGuard && parameter.currentSp > 0)
+            if (Input.GetKeyDown(KeyCode.X) && !isMove && !isGuard && parameter.currentSp > 0 && canAttack)
             {
                 isAttack = true;
                 StartCoroutine(Attack());
@@ -265,6 +265,44 @@ public class PlayerManager : MonoBehaviour
         playerAnim.SetBool("IdleBlock", false);
         guardPoint.gameObject.SetActive(false);
     }
+
+    private void TryRoll()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if (parameter.currentSp > 0)
+            {
+                if(parameter.currentSp - 30 >= 0)
+                    parameter.currentSp -= 30;
+                else
+                    parameter.currentSp = 0;
+                isAttack = true;
+                StartCoroutine(Roll());
+            }
+        }
+    }
+
+    private IEnumerator Roll()
+    {
+        playerAnim.SetTrigger("Roll");
+        int _direction;
+        if (playerSpriteRenderer.flipX)
+            _direction = -1;
+        else
+        {
+            _direction = 1;
+        }
+        Vector3 _moveHorizontal = transform.right * _direction;
+        Vector3 _vel = 3f * _moveHorizontal;
+        yield return frameTime;
+        for (int i = 0; i < 5; i++)
+        {
+            yield return frameTime;
+            playerRigidbody.MovePosition(transform.position + _vel * Time.deltaTime);
+            yield return frameTime;
+        }
+        isAttack = false;
+    }
     #endregion
 
     #region Player State
@@ -283,5 +321,29 @@ public class PlayerManager : MonoBehaviour
             playerAnim.SetBool("Grounded", isGround);
         }
     }
+    #endregion
+
+    #region Extra
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "NPC")
+        {
+            gui.image.gameObject.SetActive(true);
+            gui.text.text = "Press X to Talk.";
+        }
+        else if(collision.tag == "Gate")
+        {
+            gui.image.gameObject.SetActive(true);
+            gui.text.text = "Press X to leave this map.";
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        gui.text.text = "";
+        gui.image.gameObject.SetActive(false);
+    }
+
     #endregion
 }

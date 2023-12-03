@@ -6,7 +6,10 @@ public class Monster : NPC
 {
     #region Components
     [Header("Components")]
-
+    [SerializeField]
+    protected SpriteRenderer sprite;
+    [SerializeField]
+    protected Rigidbody2D mobRd;
     #endregion
     [Space(10)]
     #region Variables

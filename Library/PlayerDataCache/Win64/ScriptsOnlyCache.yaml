@@ -10,7 +10,6 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
-    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.SpriteSkinComposite
     - UnityEngine.U2D.Animation.SpriteSkinUpdateHelper
     Unity.2D.IK.Editor.dll:
@@ -20,7 +19,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -101,27 +99,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 3428}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3430}
     - Class: 114
-      Script: {instanceID: 4812}
+      Script: {instanceID: 3500}
     - Class: 114
-      Script: {instanceID: 5192}
+      Script: {instanceID: 4814}
     - Class: 114
-      Script: {instanceID: 6274}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 6370}
+      Script: {instanceID: 6276}
     - Class: 114
-      Script: {instanceID: 6650}
+      Script: {instanceID: 6372}
     - Class: 114
-      Script: {instanceID: 7266}
+      Script: {instanceID: 6652}
     - Class: 114
-      Script: {instanceID: 7782}
+      Script: {instanceID: 7268}
     - Class: 114
-      Script: {instanceID: 9616}
+      Script: {instanceID: 7784}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -306,6 +304,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 5071a4166c9eedac2b17de02984c0be8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Monster
   - hash:
       serializedVersion: 2
       Hash: 848c5c3c98557fc2f2199206a7eaa69a
@@ -980,7 +984,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: a9d8e9ee3410f215964ee7a89a7d85bc
+      Hash: d1bf2dcd6cb6624407fd55d3eef33015
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1230,12 +1234,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 5071a4166c9eedac2b17de02984c0be8
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Monster
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/1_Villiage.unity

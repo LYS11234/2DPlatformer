@@ -63,12 +63,15 @@
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
     <Compile Include="Assets\#1_Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\#1_Scripts\NPC\Spider.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\NPC.cs" />
+    <Compile Include="Assets\#1_Scripts\UI\DialogueManager.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\Monster.cs" />
     <Compile Include="Assets\#1_Scripts\UI\Menu.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\#1_Scripts\UI\ButtonGUI.cs" />
     <Compile Include="Assets\#1_Scripts\Parameter.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\AllienceNPC.cs" />
     <Compile Include="Assets\#1_Scripts\Action\Attack.cs" />

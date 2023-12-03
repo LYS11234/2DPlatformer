@@ -8,6 +8,9 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private Image menu;
 
+    [SerializeField]
+    private Image inventory;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +23,10 @@ public class Menu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                menu.gameObject.SetActive(true);
+                if(!inventory.gameObject.active)
+                    menu.gameObject.SetActive(true);
+                else
+                    inventory.gameObject.SetActive(false);
             }
         }
         else
@@ -35,5 +41,11 @@ public class Menu : MonoBehaviour
     public void QuitBtn()
     {
         Application.Quit();
+    }
+
+    public void InventoryBtn()
+    {
+        inventory.gameObject.SetActive(true);
+        menu.gameObject.SetActive(false);
     }
 }
