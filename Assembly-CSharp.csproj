@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\#1_Scripts\NPC\OldMan.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\#1_Scripts\NPC\MoveSceneNPC.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
     <Compile Include="Assets\#1_Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\#1_Scripts\Parameter.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\AllienceNPC.cs" />
     <Compile Include="Assets\#1_Scripts\Action\Attack.cs" />
+    <Compile Include="Assets\#1_Scripts\UI\LoadingBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
