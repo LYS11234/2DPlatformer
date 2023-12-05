@@ -7,8 +7,6 @@ public class MoveSceneNPC : MonoBehaviour
 {
     [SerializeField]
     private string mapName;
-    [SerializeField]
-    private LoadingBar loadingBar;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -17,11 +15,17 @@ public class MoveSceneNPC : MonoBehaviour
             PlayerManager.instance.canAttack = false;
             if(Input.GetKeyDown(KeyCode.X))
             {
-                loadingBar.OpenLoadingBar();
+                Parameter.instance.gameObject.SetActive(false);
+                PlayerManager.instance.gameObject.SetActive(false);
                 SceneManager.LoadSceneAsync(mapName);
-                
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+            PlayerManager.instance.canAttack = true;
     }
 
 }
