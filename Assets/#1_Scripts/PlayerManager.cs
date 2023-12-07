@@ -350,6 +350,11 @@ public class PlayerManager : MonoBehaviour
             gui.image.gameObject.SetActive(true);
             gui.text.text = "Press X to leave this map.";
         }
+        else if(collision.tag == "Tool")
+        {
+            gui.image.gameObject.SetActive(true);
+            gui.text.text = "Press X to Use.";
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

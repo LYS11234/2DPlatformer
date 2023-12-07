@@ -322,6 +322,7 @@ MonoBehaviour:
   text: {fileID: 394685112}
   loadTime: 0.4
   currentLoadTime: 0
+  nextScene: 02_Forest
 --- !u!1 &1286818170
 GameObject:
   m_ObjectHideFlags: 0
