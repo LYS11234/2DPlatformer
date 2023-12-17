@@ -67,6 +67,7 @@ public class PlayerManager : MonoBehaviour
     #region Player State
     [Header("Player State")]
     private bool isGround;
+    public bool canMove = true;
     #endregion
     [Space(5)]
     #region Attack
@@ -130,7 +131,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetButton("Horizontal"))
         {
-            if (isGround && !isGuard && !isAttack)
+            if (isGround && !isGuard && !isAttack && canMove)
             {
                 if (Input.GetAxisRaw("Horizontal") < 0)
                 {
