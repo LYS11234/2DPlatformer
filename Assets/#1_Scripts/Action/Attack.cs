@@ -12,9 +12,11 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Trigger Enabled");
         Debug.Log($"Attack traget: {collision.transform.name}");
         if (collision.GetComponent<NPC>().npcType == "Monster")
         {
+            Debug.Log("Attack Enabled");
             if (collision != null)
                 collision.GetComponent<Monster>().Damage(damage);
             //this.transform.localPosition = new Vector3(this.transform.localPosition.x + 0.001f, 0.028f, 0);

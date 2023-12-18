@@ -5,15 +5,19 @@ ScriptsOnlyBuild:
     - BackgroundManager
     - ButtonGUI
     - CameraManager
+    - CoinManager
     - Database
     - DialogueManager
     - GameManager
+    - Inventory
     - LoadingBar
     - Menu
     - MoveSceneNPC
     - OldMan
     - Parameter
     - PlayerManager
+    - Slot
+    - Spider
     - WorldMapManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -126,27 +130,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 5270}
+      Script: {instanceID: 5130}
     - Class: 114
-      Script: {instanceID: 6386}
+      Script: {instanceID: 5272}
     - Class: 114
-      Script: {instanceID: 6484}
+      Script: {instanceID: 6388}
     - Class: 114
-      Script: {instanceID: 6774}
+      Script: {instanceID: 6486}
     - Class: 114
-      Script: {instanceID: 6998}
+      Script: {instanceID: 6776}
     - Class: 114
-      Script: {instanceID: 7080}
+      Script: {instanceID: 7000}
     - Class: 114
-      Script: {instanceID: 7404}
+      Script: {instanceID: 7082}
     - Class: 114
-      Script: {instanceID: 7650}
+      Script: {instanceID: 7406}
     - Class: 114
-      Script: {instanceID: 7714}
+      Script: {instanceID: 7652}
     - Class: 114
-      Script: {instanceID: 7942}
+      Script: {instanceID: 7716}
     - Class: 114
-      Script: {instanceID: 8432}
+      Script: {instanceID: 7944}
+    - Class: 114
+      Script: {instanceID: 8434}
+    - Class: 114
+      Script: {instanceID: 9838}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -176,7 +184,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
     - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -187,12 +205,18 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 6774}
+      Script: {instanceID: 5478}
     - Class: 114
-      Script: {instanceID: 7404}
+      Script: {instanceID: 6776}
     - Class: 114
-      Script: {instanceID: 9830}
+      Script: {instanceID: 7406}
+    - Class: 114
+      Script: {instanceID: 9176}
+    - Class: 114
+      Script: {instanceID: 27376}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -257,13 +281,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 6386}
+      Script: {instanceID: 6388}
     - Class: 114
-      Script: {instanceID: 6774}
+      Script: {instanceID: 6776}
     - Class: 114
-      Script: {instanceID: 7404}
+      Script: {instanceID: 7406}
     - Class: 114
-      Script: {instanceID: 8134}
+      Script: {instanceID: 8136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -427,7 +451,7 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: 7839f2e34d6ef40c8a0b1dddef363358
+      Hash: 3cd31846dcd297271f2b3d79a0c4a9f0
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Monster
@@ -661,7 +685,7 @@ ScriptsOnlyBuild:
     className: AdvancedRuleOverrideTile
   - hash:
       serializedVersion: 2
-      Hash: f66c7d2b53b2a776bc76ac6ec851fa3e
+      Hash: f04f21b127c6ceae2aabdaac498b9c58
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Database
@@ -793,6 +817,12 @@ ScriptsOnlyBuild:
     className: UnityOnCancelMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 11d738a1f8092e637309f606f2e59430
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Slot
+  - hash:
+      serializedVersion: 2
       Hash: d0517205fcfc45f1f388e707a723983b
     assemblyName: Unity.2D.Tilemap.Extras
     namespaceName: UnityEngine.Tilemaps
@@ -805,7 +835,7 @@ ScriptsOnlyBuild:
     className: ColorSwap_HeroKnight
   - hash:
       serializedVersion: 2
-      Hash: 28e98dad2c15d7ba36eb6afce6db58e2
+      Hash: 6946c35c36c29ff24ee78c47e5418b4f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Menu
@@ -823,7 +853,7 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
-      Hash: 152d0add35b5b7a377b4aeba2fdb6e43
+      Hash: e42da3cd173b48f1fa8f6ee432e92ced
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spider
@@ -1351,6 +1381,12 @@ ScriptsOnlyBuild:
     className: Variables
   - hash:
       serializedVersion: 2
+      Hash: 50bfd34c2562be2c7a624d4486e4b940
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BackgroundManager
+  - hash:
+      serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
@@ -1429,10 +1465,22 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 50bfd34c2562be2c7a624d4486e4b940
+      Hash: 436686a3b3a037ad6767320dd8ee902b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: BackgroundManager
+    className: Item
+  - hash:
+      serializedVersion: 2
+      Hash: 33d2321baa38c3030417b7fd669d005b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Inventory
+  - hash:
+      serializedVersion: 2
+      Hash: 37a2c497db641a1f4f93abbefc712518
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CoinManager
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/01_Villiage.unity

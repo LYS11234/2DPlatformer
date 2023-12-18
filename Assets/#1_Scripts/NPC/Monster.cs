@@ -10,6 +10,8 @@ public class Monster : NPC
     protected SpriteRenderer sprite;
     [SerializeField]
     protected Rigidbody2D mobRd;
+    [SerializeField]
+    protected CoinManager theCoin;
     #endregion
     [Space(10)]
     #region Variables
@@ -19,8 +21,23 @@ public class Monster : NPC
     protected bool isDead;
     [SerializeField]
     protected int exp;
+    [SerializeField]
+    protected int minGold;
+    [SerializeField]
+    protected int maxGold;
     #endregion
 
+    [SerializeField]
+    private GameObject coinObj;
+    [SerializeField]
+    private GameObject[] dropItem;
+    [SerializeField]
+    private int value;
+
+    private void Start()
+    {
+        RandomValue();
+    }
     public void Damage(float _damage)
     {
         if (!isDead)
@@ -38,7 +55,27 @@ public class Monster : NPC
     {
         isDead = true;
         Parameter.instance.currentExp += exp;
+        DropItem();
+        DropGold(this.transform);
         Destroy(this.gameObject);
     }
 
+    protected void RandomValue()
+    {
+        value = Random.Range(minGold-1, maxGold);
+    }
+
+    public void DropGold(Transform _transform)
+    {
+        GameObject coin = Instantiate(coinObj, _transform);
+        CoinManager coinValue = coin.GetComponent<CoinManager>();
+        coinValue.value = value;
+        coin.transform.SetParent(null);
+    }
+
+    protected void DropItem()
+    {
+        GameObject dropTem = Instantiate(dropItem[0], this.transform);
+        dropTem.transform.SetParent(null);
+    }
 }

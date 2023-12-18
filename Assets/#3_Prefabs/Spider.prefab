@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 7002004528769688444}
   - component: {fileID: 2275787803579219887}
   - component: {fileID: 2403956334241706840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,14 +139,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2403956334241706840}
   potraits: []
+  gui: {fileID: 0}
   npcName: Spider
   npcType: Monster
   npcDialogue: []
   sprite: {fileID: 3057727518297651025}
   mobRd: {fileID: 7002004528769688444}
+  theCoin: {fileID: 6243132364844336673, guid: 55f2808d45835c64283390861dd6a450, type: 3}
   hp: 30
   isDead: 0
   exp: 110
+  minGold: 5
+  maxGold: 10
+  coinObj: {fileID: 316143109754744126, guid: 55f2808d45835c64283390861dd6a450, type: 3}
+  dropItem:
+  - {fileID: 8762177307983771873, guid: 42af84c5fd3cb3d4dbcdd028c58ff68c, type: 3}
+  value: 0
   direction: 0
   moveCount: 0
   speed: 1

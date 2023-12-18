@@ -376,6 +376,7 @@
 "Assets/#1_Scripts/Action/Attack.cs"
 "Assets/#1_Scripts/BackgroundManager.cs"
 "Assets/#1_Scripts/CameraManager.cs"
+"Assets/#1_Scripts/CoinManager.cs"
 "Assets/#1_Scripts/Database.cs"
 "Assets/#1_Scripts/GameManager.cs"
 "Assets/#1_Scripts/NPC/AllienceNPC.cs"

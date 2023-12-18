@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 
-    public static bool inventoryActivated = false;
+    public bool inventoryActivated = false;
     [SerializeField]
-    private Text gold;
+    public Text gold;
     [SerializeField]
     private GameObject inven_Base;
     [SerializeField]
@@ -28,7 +28,10 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (inventoryActivated)
+        {
+            gold.text = Database.Instance.gold.ToString();
+        }
     }
 
     public void LoadToInven(int _arrayNum, string _itemName, int _itemNum)
