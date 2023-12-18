@@ -16,5 +16,7 @@ public class Database : MonoBehaviour
             Destroy(this.gameObject);
     }
 
+    public int gold;
     public string destination;
+    public int additionalAtk;
 }

@@ -2,17 +2,23 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Attack
+    - BackgroundManager
     - ButtonGUI
+    - CameraManager
+    - Database
     - DialogueManager
+    - GameManager
     - LoadingBar
     - Menu
     - MoveSceneNPC
     - OldMan
     - Parameter
     - PlayerManager
+    - WorldMapManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
+    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.SpriteSkinComposite
     - UnityEngine.U2D.Animation.SpriteSkinUpdateHelper
     Unity.2D.IK.Editor.dll:
@@ -33,15 +39,15 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GroupBrush
     - UnityEditor.Tilemaps.LineBrush
     - UnityEditor.Tilemaps.RandomBrush
+    Unity.PlasticSCM.Editor.dll:
+    - Unity.PlasticSCM.Editor.PlasticWindow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -114,25 +120,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3546}
     - Class: 114
-      Script: {instanceID: 4418}
+      Script: {instanceID: 4214}
     - Class: 114
-      Script: {instanceID: 4878}
+      Script: {instanceID: 4420}
     - Class: 114
-      Script: {instanceID: 5268}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 6384}
+      Script: {instanceID: 5270}
     - Class: 114
-      Script: {instanceID: 6482}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 6772}
+      Script: {instanceID: 6484}
     - Class: 114
-      Script: {instanceID: 7398}
+      Script: {instanceID: 6774}
     - Class: 114
-      Script: {instanceID: 7706}
+      Script: {instanceID: 6998}
     - Class: 114
-      Script: {instanceID: 7934}
+      Script: {instanceID: 7080}
     - Class: 114
-      Script: {instanceID: 8424}
+      Script: {instanceID: 7404}
+    - Class: 114
+      Script: {instanceID: 7650}
+    - Class: 114
+      Script: {instanceID: 7714}
+    - Class: 114
+      Script: {instanceID: 7942}
+    - Class: 114
+      Script: {instanceID: 8432}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -156,17 +170,43 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 4
       Script: {instanceID: 0}
-    - Class: 20
+    - Class: 21
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
-    - Class: 81
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 61
       Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1594}
+    - Class: 114
+      Script: {instanceID: 2854}
+    - Class: 114
+      Script: {instanceID: 3118}
+    - Class: 114
+      Script: {instanceID: 6774}
+    - Class: 114
+      Script: {instanceID: 7404}
+    - Class: 114
+      Script: {instanceID: 9830}
+    - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/#0_Scenes/03_Forest.unity:
     - Class: 1
@@ -217,13 +257,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 6384}
+      Script: {instanceID: 6386}
     - Class: 114
-      Script: {instanceID: 6772}
+      Script: {instanceID: 6774}
     - Class: 114
-      Script: {instanceID: 7398}
+      Script: {instanceID: 7404}
     - Class: 114
-      Script: {instanceID: 8126}
+      Script: {instanceID: 8134}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -621,6 +661,12 @@ ScriptsOnlyBuild:
     className: AdvancedRuleOverrideTile
   - hash:
       serializedVersion: 2
+      Hash: f66c7d2b53b2a776bc76ac6ec851fa3e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Database
+  - hash:
+      serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
@@ -993,10 +1039,22 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 39bdfb23fe7772c7fdc59e3782e810e0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WorldMapManager
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Sensor_Bandit
+  - hash:
+      serializedVersion: 2
+      Hash: e7e80c7ca6414ebd6b36c0bfcb6b2fbe
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CameraManager
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1065,7 +1123,13 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 2f25cee219c67d3fb62552b63a25e488
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 0f81b075c75cdc28b7b277687d8d31d0
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MoveSceneNPC
@@ -1101,7 +1165,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 63ef580ea941e0302e1e4de848f6d688
+      Hash: 49de7fe99cf977584b6ad3bcc67ee0c9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1363,6 +1427,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 50bfd34c2562be2c7a624d4486e4b940
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BackgroundManager
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/01_Villiage.unity
