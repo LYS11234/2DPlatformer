@@ -29,5 +29,6 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         dialogueText.text = "";
         panel.gameObject.SetActive(false);
+        PlayerManager.instance.canMove = true;
     }
 }

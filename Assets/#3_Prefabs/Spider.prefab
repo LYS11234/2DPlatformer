@@ -157,7 +157,7 @@ MonoBehaviour:
   value: 0
   direction: 0
   moveCount: 0
-  speed: 1
+  speed: 3
   moveTime: 0.5
   currentMoveTime: 0
 --- !u!212 &3057727518297651025

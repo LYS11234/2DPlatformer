@@ -5,23 +5,18 @@ using UnityEngine;
 public class OldMan : AllienceNPC
 {
     private int i;
-    private void Start()
+    private void Update()
     {
-        i = 0;
-    }
-    protected override void OnTriggerStay2D(Collider2D other)
-    {
-        base.OnTriggerStay2D(other);
-        
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                StartCoroutine(DialogueCoroutine());
-            }
+        if (Input.GetKeyDown(KeyCode.X) && canTalk)
+        {
+            PlayerManager.instance.canMove = false;
+            StartCoroutine(DialogueCoroutine());
+        }
     }
 
     private IEnumerator DialogueCoroutine()
     {
-        gui.image.gameObject.SetActive(false);
+        PlayerManager.instance.gui.image.gameObject.SetActive(false);
         if (i < npcDialogue.Length)
         {
             dialogueManager.PrintDialogue(npcName, npcDialogue[i]);

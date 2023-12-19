@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - GameManager
     - Inventory
     - LoadingBar
+    - MapFineder
     - Menu
     - MoveSceneNPC
     - OldMan
@@ -50,8 +51,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -128,33 +131,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4420}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 4674}
     - Class: 114
-      Script: {instanceID: 5130}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 5272}
+      Script: {instanceID: 5134}
     - Class: 114
-      Script: {instanceID: 6388}
+      Script: {instanceID: 5276}
     - Class: 114
-      Script: {instanceID: 6486}
+      Script: {instanceID: 6392}
     - Class: 114
-      Script: {instanceID: 6776}
+      Script: {instanceID: 6490}
     - Class: 114
-      Script: {instanceID: 7000}
+      Script: {instanceID: 6780}
     - Class: 114
-      Script: {instanceID: 7082}
+      Script: {instanceID: 7006}
     - Class: 114
-      Script: {instanceID: 7406}
+      Script: {instanceID: 7088}
     - Class: 114
-      Script: {instanceID: 7652}
+      Script: {instanceID: 7412}
     - Class: 114
-      Script: {instanceID: 7716}
+      Script: {instanceID: 7660}
     - Class: 114
-      Script: {instanceID: 7944}
+      Script: {instanceID: 7724}
     - Class: 114
-      Script: {instanceID: 8434}
+      Script: {instanceID: 7952}
     - Class: 114
-      Script: {instanceID: 9838}
+      Script: {instanceID: 8146}
+    - Class: 114
+      Script: {instanceID: 8444}
+    - Class: 114
+      Script: {instanceID: 9186}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -205,15 +212,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 5478}
+      Script: {instanceID: 4694}
     - Class: 114
-      Script: {instanceID: 6776}
+      Script: {instanceID: 5482}
     - Class: 114
-      Script: {instanceID: 7406}
+      Script: {instanceID: 6780}
     - Class: 114
-      Script: {instanceID: 9176}
+      Script: {instanceID: 7412}
     - Class: 114
-      Script: {instanceID: 27376}
+      Script: {instanceID: 7724}
+    - Class: 114
+      Script: {instanceID: 9186}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -221,6 +230,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -281,13 +294,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 6388}
+      Script: {instanceID: 6392}
     - Class: 114
-      Script: {instanceID: 6776}
+      Script: {instanceID: 6780}
     - Class: 114
-      Script: {instanceID: 7406}
+      Script: {instanceID: 7412}
     - Class: 114
-      Script: {instanceID: 8136}
+      Script: {instanceID: 8144}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -451,7 +464,7 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: 3cd31846dcd297271f2b3d79a0c4a9f0
+      Hash: 6a228345426eea0a0049cbf7fe2096d2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Monster
@@ -577,7 +590,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 4a6765fb53c5d7481e35dc2777b7a376
+      Hash: 9ba268ffb1b2836d1a7f9c44c23cb755
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: OldMan
@@ -655,7 +668,7 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4a6765fb53c5d7481e35dc2777b7a376
+      Hash: 9ba268ffb1b2836d1a7f9c44c23cb755
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AllienceNPC
@@ -751,10 +764,22 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
+      Hash: 33d2321baa38c3030417b7fd669d005b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Inventory
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: VariablesSaver
+  - hash:
+      serializedVersion: 2
+      Hash: 37a2c497db641a1f4f93abbefc712518
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CoinManager
   - hash:
       serializedVersion: 2
       Hash: 34096a327d779b7c96a3e390f3559143
@@ -853,7 +878,7 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
-      Hash: e42da3cd173b48f1fa8f6ee432e92ced
+      Hash: 78deb78f68a631d0c3c7b0db2527a805
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spider
@@ -1051,6 +1076,12 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
+      Hash: 9ba268ffb1b2836d1a7f9c44c23cb755
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Forge
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1069,7 +1100,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 39bdfb23fe7772c7fdc59e3782e810e0
+      Hash: e22a56b84aec905505ce0c41269de97c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: WorldMapManager
@@ -1135,6 +1166,12 @@ ScriptsOnlyBuild:
     className: IsometricRuleTile
   - hash:
       serializedVersion: 2
+      Hash: 436686a3b3a037ad6767320dd8ee902b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Item
+  - hash:
+      serializedVersion: 2
       Hash: d65cbde73d0e68c5a4dae2e92a16d9bf
     assemblyName: Unity.2D.SpriteShape.Runtime
     namespaceName: UnityEngine.U2D
@@ -1159,7 +1196,7 @@ ScriptsOnlyBuild:
     className: GameManager
   - hash:
       serializedVersion: 2
-      Hash: 0f81b075c75cdc28b7b277687d8d31d0
+      Hash: 2359d981192e268326f903c8383b0b82
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MoveSceneNPC
@@ -1207,7 +1244,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 8ab90e618460c11cfc44aa0bb368fe4d
+      Hash: 837ae2d81884f4e511959a40f1ca649c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: NPC
@@ -1241,6 +1278,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LoadingBar
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MapFineder
   - hash:
       serializedVersion: 2
       Hash: 34096a327d779b7c96a3e390f3559143
@@ -1463,24 +1506,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 436686a3b3a037ad6767320dd8ee902b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Item
-  - hash:
-      serializedVersion: 2
-      Hash: 33d2321baa38c3030417b7fd669d005b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Inventory
-  - hash:
-      serializedVersion: 2
-      Hash: 37a2c497db641a1f4f93abbefc712518
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CoinManager
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/01_Villiage.unity

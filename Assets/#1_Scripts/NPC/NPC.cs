@@ -11,8 +11,6 @@ public class NPC : MonoBehaviour
     protected Animator anim;
     [SerializeField]
     protected Sprite[] potraits;
-    [SerializeField]
-    protected ButtonGUI gui;
 
     #endregion
     [Space(10)]

@@ -12,6 +12,8 @@ public class BackgroundManager : MonoBehaviour
         theCamera = FindObjectOfType<Camera>();
         canvas.worldCamera = theCamera;
         PlayerManager.instance.gameObject.SetActive(true);
+        PlayerManager.instance.canMove = true;
+        PlayerManager.instance.canAttack = true;
         Parameter.instance.gameObject.SetActive(true);
     }
 }

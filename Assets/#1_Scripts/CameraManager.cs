@@ -16,7 +16,7 @@ public class CameraManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
         else
-            Destroy(this);
+            Destroy(this.gameObject);
     }
     #endregion
 

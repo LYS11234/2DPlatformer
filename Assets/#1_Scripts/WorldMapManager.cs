@@ -17,11 +17,16 @@ public class WorldMapManager : MonoBehaviour
     private Image forest3;
     [SerializeField]
     private Rigidbody2D mapPoint;
+    [SerializeField]
+    private Vector2 originPos;
 
     [SerializeField]
     private int mapNum = 0;
     [SerializeField]
     private string sceneName;
+    [SerializeField]
+    private int originMapNum = 0;
+
     private void Update()
     {
         if(m_WorldMap.active)
@@ -42,13 +47,25 @@ public class WorldMapManager : MonoBehaviour
                 mapNum++;
             CheckMap();
         }
-        if(Input.GetKeyDown(KeyCode.X) && Database.Instance.destination != sceneName)
+        else if(Input.GetKeyDown(KeyCode.X) && Database.Instance.destination != sceneName)
         {
             PlayerManager.instance.gameObject.SetActive(false);
             Parameter.instance.gameObject.SetActive(false);
-            sceneName = Database.Instance.destination;
+            Database.Instance.destination = sceneName;
+            originMapNum = mapNum;
+            originPos = mapPoint.position;
             m_WorldMap.SetActive(false);
             SceneManager.LoadSceneAsync("99_LoadingScene");
+        }
+        else if(Input.GetKeyDown(KeyCode.Z))
+        {
+            mapNum = originMapNum;
+            CheckMap();
+            //mapPoint.position = originPos;
+            //sceneName = Database.Instance.destination;
+            Debug.Log($"Pointer Pos: {mapPoint.position.x}, {mapPoint.position.y}");
+            m_WorldMap.SetActive(false);
+            PlayerManager.instance.canMove = true;
         }
     }
 
@@ -59,23 +76,25 @@ public class WorldMapManager : MonoBehaviour
         {
             case 0: 
                 _vec.Set(villiage.transform.position.x, villiage.transform.position.y);
-                Database.Instance.destination = villiage.gameObject.name;
+                Debug.Log("It Activated");
+                sceneName = villiage.gameObject.name;
                 break;
             case 1:
                 _vec.Set(forest1.transform.position.x, forest1.transform.position.y);
-                Database.Instance.destination = forest1.gameObject.name;
+                sceneName = forest1.gameObject.name;
                 break;
             case 2:
                 _vec.Set(forest2.transform.position.x, forest2.transform.position.y);
-                Database.Instance.destination = forest2.gameObject.name;
+                sceneName = forest2.gameObject.name;
                 break;
             default:
                 _vec.Set(forest3.transform.position.x, forest3.transform.position.y);
-                Database.Instance.destination = forest3.gameObject.name;
+                sceneName = forest3.gameObject.name;
                 break;
 
         }
         
-        mapPoint.position = _vec;
+        mapPoint.transform.position = _vec;
+        Debug.Log("Move Activated");
     }
 }

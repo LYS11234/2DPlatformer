@@ -4,33 +4,34 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MoveSceneNPC : MonoBehaviour
+public class MoveSceneNPC : AllienceNPC
 {
     [SerializeField]
     private string mapName;
     [SerializeField]
     private Image mapImage;
 
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Start()
     {
-        if(collision.tag == "Player")
+        mapImage = MapFineder.Instance.gameObject.GetComponent<Image>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X) && canTalk)
         {
-            PlayerManager.instance.canAttack = false;
-            if(Input.GetKeyDown(KeyCode.X))
-            {
-                PlayerManager.instance.canMove = false;
-                mapImage.gameObject.SetActive(true);
-            }
+            PlayerManager.instance.canMove = false;
+            mapImage.gameObject.SetActive(true);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.tag == "Player")
-        {
-            PlayerManager.instance.canAttack = true;
-            PlayerManager.instance.canMove = true;
-        }
+        base.OnTriggerEnter2D(other);
+    }
+
+    protected override void OnTriggerExit2D(Collider2D other)
+    {
+        base.OnTriggerExit2D(other);
     }
 }

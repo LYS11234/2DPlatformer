@@ -9,14 +9,13 @@ public class PlayerManager : MonoBehaviour
     #region Singleton
     private void Awake()
     {
-
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else
-            Destroy(this);
+            Destroy(this.gameObject);
     }
     #endregion
 
@@ -48,7 +47,7 @@ public class PlayerManager : MonoBehaviour
     private Parameter parameter;
 
     [SerializeField]
-    private ButtonGUI gui;
+    public ButtonGUI gui;
     #endregion
     [Space(10)]
 
@@ -163,7 +162,7 @@ public class PlayerManager : MonoBehaviour
 
     private void TryJump()
     {
-        if(Input.GetKeyDown(KeyCode.Z)&& isGround && !isGuard)
+        if(Input.GetKeyDown(KeyCode.Z)&& isGround && !isGuard && canMove)
         {
             isGround = false;
             Jump();
@@ -241,7 +240,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (currentGuardTime >= guardTime)
         {
-            if (Input.GetKeyDown(KeyCode.C) && !isMove)
+            if (Input.GetKeyDown(KeyCode.C) && !isMove && canAttack)
             {
                 Guard();
                 currentGuardTime = 0f;
@@ -355,6 +354,11 @@ public class PlayerManager : MonoBehaviour
         {
             gui.image.gameObject.SetActive(true);
             gui.text.text = "Press X to Use.";
+        }
+        else if(collision.tag == "Campfire")
+        {
+            gui.image.gameObject.SetActive(true);
+            gui.text.text = "Press X to Rest.";
         }
     }
 

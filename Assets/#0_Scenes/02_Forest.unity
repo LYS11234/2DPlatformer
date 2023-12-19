@@ -1856,6 +1856,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2639711400794198621
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3264991
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.67131317
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710420561346650400, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703479746107548109, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_Name
+      value: Campfire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1865,3 +1922,4 @@ SceneRoots:
   - {fileID: 1296891861}
   - {fileID: 1142355527}
   - {fileID: 1695812737}
+  - {fileID: 2639711400794198621}

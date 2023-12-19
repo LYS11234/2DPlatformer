@@ -90,6 +90,7 @@
     <Compile Include="Assets\#1_Scripts\UI\DialogueManager.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\Monster.cs" />
+    <Compile Include="Assets\#1_Scripts\NPC\Forge.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableIfAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableLucidEditorAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInPlayModeAttribute.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\#1_Scripts\Action\Attack.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideMonoScript.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\TabGroupAttribute.cs" />
+    <Compile Include="Assets\#1_Scripts\Finders\MapFineder.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowIfAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\UI\LoadingBar.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInEditModeAttribute.cs" />

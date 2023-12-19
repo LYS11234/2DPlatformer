@@ -40,13 +40,16 @@ public class Slot : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler, 
 
     public void AddItem(Item _item, int _count = 1)
     {
-        item = _item;
-        itemCount = _count;
-        itemImage.sprite = item.itemImage;
-        go_CountImage.SetActive(true);
-        text_Count.text = itemCount.ToString();
+        if (item.itemType != Item.ItemType.Potion)
+        {
+            item = _item;
+            itemCount = _count;
+            itemImage.sprite = item.itemImage;
+            go_CountImage.SetActive(true);
+            text_Count.text = itemCount.ToString();
 
-        SetColor(1);
+            SetColor(1);
+        }
     }
     public void SetSlotCount(int _count)
     {
