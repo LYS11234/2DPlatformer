@@ -62,4 +62,9 @@ public class Spider : Monster
             anim.SetBool("isMove", false);
         }
     }
+
+    protected override void DropItem(Transform _transform)
+    {
+        base.DropItem(_transform);
+    }
 }

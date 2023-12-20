@@ -11,7 +11,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private Text nameText;
     [SerializeField]
-    private Text dialogueText;
+    public Text dialogueText;
+    [SerializeField]
+    public Image upgradeAllow;
+    [SerializeField]
+    public Image upgradeDeny;
+    [SerializeField]
+    public Image pointer;
     #endregion
 
     public void PrintDialogue(string _name, string _dialogue)

@@ -19,4 +19,5 @@ public class Database : MonoBehaviour
     public int gold;
     public string destination;
     public int additionalAtk;
+    public int upgradeCost;
 }

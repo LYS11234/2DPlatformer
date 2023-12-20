@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Monster : NPC
@@ -12,6 +13,12 @@ public class Monster : NPC
     protected Rigidbody2D mobRd;
     [SerializeField]
     protected CoinManager theCoin;
+    [SerializeField]
+    protected MonsterHP mobHp;
+    [SerializeField]
+    private GameObject item_pouch;
+    [SerializeField]
+    private Item[] items;
     #endregion
     [Space(10)]
     #region Variables
@@ -27,10 +34,8 @@ public class Monster : NPC
     protected int maxGold;
     #endregion
 
-    [SerializeField]
-    private GameObject coinObj;
-    [SerializeField]
-    private GameObject[] dropItem;
+    
+
     [SerializeField]
     private int value;
 
@@ -55,8 +60,7 @@ public class Monster : NPC
     {
         isDead = true;
         Parameter.instance.currentExp += exp;
-        DropItem();
-        DropGold(this.transform);
+        DropItem(this.transform);
         Destroy(this.gameObject);
     }
 
@@ -65,17 +69,14 @@ public class Monster : NPC
         value = Random.Range(minGold-1, maxGold);
     }
 
-    public void DropGold(Transform _transform)
-    {
-        GameObject coin = Instantiate(coinObj, _transform);
-        CoinManager coinValue = coin.GetComponent<CoinManager>();
-        coinValue.value = value;
-        coin.transform.SetParent(null);
-    }
 
-    protected void DropItem()
+    protected virtual void DropItem(Transform _transform)
     {
-        GameObject dropTem = Instantiate(dropItem[0], this.transform);
-        dropTem.transform.SetParent(null);
+        GameObject pouch = Instantiate(item_pouch, _transform);
+        ItemPouch itemPouch = pouch.GetComponent<ItemPouch>();
+        itemPouch.items.AddRange(items);
+        CoinManager coinValue = pouch.GetComponent<CoinManager>();
+        coinValue.value = value;
+        pouch.transform.SetParent(null);
     }
 }
