@@ -20,9 +20,21 @@ public class MoveSceneNPC : AllienceNPC
     {
         if (Input.GetKeyDown(KeyCode.X) && canTalk)
         {
+            Rest();
             PlayerManager.instance.canMove = false;
             mapImage.gameObject.SetActive(true);
         }
+    }
+
+    private void Rest()
+    {
+        PotionManager.Instance.currentPotions = Database.Instance.potions;
+        Parameter.instance.currentHp = Parameter.instance.hp;
+        Parameter.instance.currentMp = Parameter.instance.mp;
+        Parameter.instance.currentSp = Parameter.instance.sp;
+        PotionManager.Instance.potion_Full_Img.gameObject.SetActive(true);
+        PotionManager.Instance.potion_None_Img.gameObject.SetActive(false);
+        PotionManager.Instance.potions.text = Database.Instance.potions.ToString();
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)

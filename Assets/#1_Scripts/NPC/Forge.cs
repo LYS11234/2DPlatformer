@@ -74,9 +74,13 @@ public class Forge : AllienceNPC
                 }
                 else
                 {
-                    dialogueManager.dialogueText.text = "골드가 부족합니다.";
-                    ChoiceCheck();
-                    CloseDialogue();
+                    if (dialogueManager.dialogueText.text != "골드가 부족합니다.")
+                    {
+                        dialogueManager.dialogueText.text = "골드가 부족합니다.";
+                        ChoiceCheck();
+                    }
+                    else
+                        CloseDialogue();
                 }
             }
             else if (j == 1)

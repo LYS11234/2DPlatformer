@@ -8,15 +8,20 @@ ScriptsOnlyBuild:
     - CoinManager
     - Database
     - DialogueManager
+    - Forge
     - GameManager
     - Inventory
+    - Item
+    - ItemPouch
     - LoadingBar
     - MapFineder
     - Menu
+    - MonsterHP
     - MoveSceneNPC
     - OldMan
     - Parameter
     - PlayerManager
+    - PotionManager
     - Slot
     - Spider
     - WorldMapManager
@@ -145,6 +150,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6780}
     - Class: 114
+      Script: {instanceID: 6794}
+    - Class: 114
       Script: {instanceID: 7006}
     - Class: 114
       Script: {instanceID: 7088}
@@ -161,7 +168,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8444}
     - Class: 114
-      Script: {instanceID: 9186}
+      Script: {instanceID: 9188}
+    - Class: 114
+      Script: {instanceID: 27948}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -193,8 +202,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 74
@@ -220,12 +227,16 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7412}
     - Class: 114
+      Script: {instanceID: 7552}
+    - Class: 114
       Script: {instanceID: 7724}
     - Class: 114
-      Script: {instanceID: 9186}
+      Script: {instanceID: 8868}
+    - Class: 114
+      Script: {instanceID: 9188}
+    - Class: 114
+      Script: {instanceID: 9676}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -464,7 +475,7 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: 6a228345426eea0a0049cbf7fe2096d2
+      Hash: ba932bd99171dfabd3ede6cabc55fda9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Monster
@@ -698,7 +709,7 @@ ScriptsOnlyBuild:
     className: AdvancedRuleOverrideTile
   - hash:
       serializedVersion: 2
-      Hash: f04f21b127c6ceae2aabdaac498b9c58
+      Hash: a776013eda89cd1d2f1e3b182953d601
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Database
@@ -722,7 +733,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: e93a65f25e605ef1950e6d3907351139
+      Hash: c135f1d9cc8d1cac319897a7e24a7a26
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: DialogueManager
@@ -878,7 +889,7 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
-      Hash: 78deb78f68a631d0c3c7b0db2527a805
+      Hash: 33aa760a1e1930c30e8af211de483d2c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spider
@@ -1076,7 +1087,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 9ba268ffb1b2836d1a7f9c44c23cb755
+      Hash: 5f8db192000cdd4d65d4a945865ab581
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Forge
@@ -1394,6 +1405,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 788edbd4d56a140f7d387ee80eb71565
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ItemPouch
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1472,6 +1489,12 @@ ScriptsOnlyBuild:
     className: SpriteSkinComposite
   - hash:
       serializedVersion: 2
+      Hash: 7249c25213854de2033efb43be6acbfd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MonsterHP
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1506,6 +1529,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 72016926a7d372c45df743abf973ecea
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PotionManager
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/01_Villiage.unity

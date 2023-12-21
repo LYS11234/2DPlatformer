@@ -20,4 +20,6 @@ public class Database : MonoBehaviour
     public string destination;
     public int additionalAtk;
     public int upgradeCost;
+    public int potions;
+    public float restoreHealth;
 }

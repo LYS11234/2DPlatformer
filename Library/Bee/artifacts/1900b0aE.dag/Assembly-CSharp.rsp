@@ -391,6 +391,7 @@
 "Assets/#1_Scripts/NPC/Spider.cs"
 "Assets/#1_Scripts/Parameter.cs"
 "Assets/#1_Scripts/PlayerManager.cs"
+"Assets/#1_Scripts/PotionManager.cs"
 "Assets/#1_Scripts/UI/ButtonGUI.cs"
 "Assets/#1_Scripts/UI/DialogueManager.cs"
 "Assets/#1_Scripts/UI/Inventory.cs"
