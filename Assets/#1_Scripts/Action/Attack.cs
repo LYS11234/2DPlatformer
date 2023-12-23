@@ -25,7 +25,7 @@ public class Attack : MonoBehaviour
                 }
                 else if (collision.GetComponent<NPC>().npcType == "Hostile NPC")
                 {
-                    collision.GetComponent<HostileNPC>()/*.Damage(damage + Database.Instance.additionalAtk)*/;
+                    collision.GetComponent<BanditManager>().Damage(damage + Database.Instance.additionalAtk);
                 }
             }
             //this.transform.localPosition = new Vector3(this.transform.localPosition.x + 0.001f, 0.028f, 0);

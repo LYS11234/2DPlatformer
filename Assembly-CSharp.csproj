@@ -88,6 +88,7 @@
     <Compile Include="Assets\#1_Scripts\Action\Guard.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\EnableIfAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BoxGroupAttribute.cs" />
+    <Compile Include="Assets\#1_Scripts\NPC\BanditManager.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\LabelTextAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\NPC.cs" />
     <Compile Include="Assets\#1_Scripts\UI\DialogueManager.cs" />
