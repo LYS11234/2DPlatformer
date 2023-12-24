@@ -330,6 +330,7 @@
 "Assets/#1_Scripts/GameManager.cs"
 "Assets/#1_Scripts/ItemPouch.cs"
 "Assets/#1_Scripts/NPC/AllienceNPC.cs"
+"Assets/#1_Scripts/NPC/BanditManager.cs"
 "Assets/#1_Scripts/NPC/Forge.cs"
 "Assets/#1_Scripts/NPC/HostileNPC.cs"
 "Assets/#1_Scripts/NPC/Monster.cs"

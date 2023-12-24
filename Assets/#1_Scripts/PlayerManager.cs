@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -61,11 +62,13 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float jumpForce;
     private bool isMove;
+    private Vector3 jumpDirectionR;
+    private Vector3 jumpDirectionL;
     #endregion
     [Space(5)]
     #region Player State
     [Header("Player State")]
-    private bool isGround;
+    public bool isGround;
     public bool canMove = true;
     #endregion
     [Space(5)]
@@ -104,12 +107,15 @@ public class PlayerManager : MonoBehaviour
     #region etc
     private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
     private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
-
     #endregion
     #endregion
     void Start()
     {
         playerAnim.SetBool("Grounded", true);
+        jumpDirectionL.Set(-1,2,0);
+        jumpDirectionR.Set(1,2,0);
+        jumpDirectionL = jumpDirectionL.normalized;
+        jumpDirectionR = jumpDirectionR.normalized;
     }
 
     // Update is called once per frame
@@ -162,7 +168,7 @@ public class PlayerManager : MonoBehaviour
 
     private void TryJump()
     {
-        if(Input.GetKeyDown(KeyCode.Z)&& isGround && !isGuard && canMove)
+        if(Input.GetKeyDown(KeyCode.Z)&& isGround && !isGuard && canMove && Parameter.instance.currentSp > 0)
         {
             isGround = false;
             Jump();
@@ -171,10 +177,26 @@ public class PlayerManager : MonoBehaviour
     
     private void Jump()
     {
-        playerRigidbody.velocity = playerTransform.up * jumpForce;
+        if(Input.GetAxisRaw("Horizontal") == 0)
+            playerRigidbody.velocity = playerTransform.up * jumpForce;
+        
+        else if(Input.GetAxisRaw("Horizontal") < 0)
+        {
+            playerRigidbody.velocity = jumpDirectionL * jumpForce;
+        }
+
+        else if(Input.GetAxisRaw("Horizontal") > 0)
+            playerRigidbody.velocity = jumpDirectionR * jumpForce;
+        if(parameter.currentSp >= 100)
+            parameter.currentSp -= 100;
+        else
+            parameter.currentSp = 0;
+        
         playerAnim.SetTrigger("Jump");
-        playerAnim.SetBool("Grounded", isGround);    
+        playerAnim.SetBool("Grounded", isGround);
     }
+
+
 
     #endregion
 

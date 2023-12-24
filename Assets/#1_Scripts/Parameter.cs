@@ -99,7 +99,7 @@ public class Parameter : MonoBehaviour
             else
                 currentSpRecovTime += Time.deltaTime;
         }
-        else if(PlayerManager.instance.isAttack)
+        else if(PlayerManager.instance.isAttack || !PlayerManager.instance.isGround)
         {
             currentSpRecovTime = 0;
         }

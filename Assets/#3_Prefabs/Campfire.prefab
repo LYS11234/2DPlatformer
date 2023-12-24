@@ -4951,15 +4951,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   potraits: []
-  gui: {fileID: 0}
   npcName: 
   npcType: 
   npcDialogue: []
   dialogueManager: {fileID: 0}
   canTalk: 0
+  gui: {fileID: 0}
   mapName: 
   mapImage: {fileID: 0}
-  btnGUI: {fileID: 0}
 --- !u!61 &9159585915565941
 BoxCollider2D:
   m_ObjectHideFlags: 0

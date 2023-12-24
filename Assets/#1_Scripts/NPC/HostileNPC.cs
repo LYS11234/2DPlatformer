@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class HostileNPC : NPC
 {
@@ -64,7 +66,7 @@ public class HostileNPC : NPC
 
     protected void RandomValue()
     {
-        value = Random.Range(minGold - 1, maxGold);
+        value = UnityEngine.Random.Range(minGold - 1, maxGold);
     }
 
 
@@ -72,9 +74,15 @@ public class HostileNPC : NPC
     {
         GameObject pouch = Instantiate(item_pouch, _transform);
         ItemPouch itemPouch = pouch.GetComponent<ItemPouch>();
-        itemPouch.items.AddRange(items);
+        Array.Resize(ref itemPouch.items, items.Length);
+        itemPouch.items = items;
         CoinManager coinValue = pouch.GetComponent<CoinManager>();
         coinValue.value = value;
         pouch.transform.SetParent(null);
+    }
+
+    protected virtual void FindPlayer()
+    {
+        Debug.DrawRay(mobRd.position, -this.transform.forward, new Color(0,1,0));
     }
 }

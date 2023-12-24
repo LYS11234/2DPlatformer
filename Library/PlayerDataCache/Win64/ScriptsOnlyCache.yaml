@@ -56,8 +56,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -128,47 +130,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 3548}
+      Script: {instanceID: 3552}
     - Class: 114
-      Script: {instanceID: 4216}
+      Script: {instanceID: 4220}
     - Class: 114
-      Script: {instanceID: 4422}
+      Script: {instanceID: 4426}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 4680}
     - Class: 114
-      Script: {instanceID: 4886}
+      Script: {instanceID: 4890}
     - Class: 114
-      Script: {instanceID: 5136}
+      Script: {instanceID: 5140}
     - Class: 114
-      Script: {instanceID: 5278}
+      Script: {instanceID: 5282}
     - Class: 114
-      Script: {instanceID: 6394}
+      Script: {instanceID: 6400}
     - Class: 114
-      Script: {instanceID: 6492}
+      Script: {instanceID: 6498}
     - Class: 114
-      Script: {instanceID: 6782}
+      Script: {instanceID: 6790}
     - Class: 114
-      Script: {instanceID: 6796}
+      Script: {instanceID: 6804}
     - Class: 114
-      Script: {instanceID: 7008}
+      Script: {instanceID: 7016}
     - Class: 114
-      Script: {instanceID: 7090}
+      Script: {instanceID: 7098}
     - Class: 114
-      Script: {instanceID: 7414}
+      Script: {instanceID: 7422}
     - Class: 114
-      Script: {instanceID: 7662}
+      Script: {instanceID: 7670}
     - Class: 114
-      Script: {instanceID: 7726}
+      Script: {instanceID: 7734}
     - Class: 114
-      Script: {instanceID: 7954}
+      Script: {instanceID: 7962}
     - Class: 114
-      Script: {instanceID: 8148}
+      Script: {instanceID: 8156}
     - Class: 114
-      Script: {instanceID: 8446}
+      Script: {instanceID: 8454}
     - Class: 114
-      Script: {instanceID: 9190}
+      Script: {instanceID: 9200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -196,6 +198,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 50
@@ -217,23 +221,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 4696}
+      Script: {instanceID: 4700}
     - Class: 114
-      Script: {instanceID: 5484}
+      Script: {instanceID: 5488}
     - Class: 114
-      Script: {instanceID: 6782}
+      Script: {instanceID: 6790}
     - Class: 114
-      Script: {instanceID: 7414}
+      Script: {instanceID: 7422}
     - Class: 114
-      Script: {instanceID: 7554}
+      Script: {instanceID: 7562}
     - Class: 114
-      Script: {instanceID: 7726}
+      Script: {instanceID: 7734}
     - Class: 114
-      Script: {instanceID: 8870}
+      Script: {instanceID: 8878}
     - Class: 114
-      Script: {instanceID: 9190}
+      Script: {instanceID: 9200}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9688}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -303,13 +307,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 6394}
+      Script: {instanceID: 6400}
     - Class: 114
-      Script: {instanceID: 6782}
+      Script: {instanceID: 6790}
     - Class: 114
-      Script: {instanceID: 7414}
+      Script: {instanceID: 7422}
     - Class: 114
-      Script: {instanceID: 8146}
+      Script: {instanceID: 8154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -582,6 +586,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Attacked
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
@@ -603,6 +613,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: a92e44737cc259722d0023c5cc13d524
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BanditManager
   - hash:
       serializedVersion: 2
       Hash: 9ba268ffb1b2836d1a7f9c44c23cb755
@@ -1019,6 +1035,12 @@ ScriptsOnlyBuild:
     className: Bandit
   - hash:
       serializedVersion: 2
+      Hash: ba932bd99171dfabd3ede6cabc55fda9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HostileNPC
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1065,6 +1087,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Attack
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Roll
   - hash:
       serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
@@ -1247,7 +1275,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 49de7fe99cf977584b6ad3bcc67ee0c9
+      Hash: 3709826900bd5ed66b4ee513c37af639
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1439,6 +1467,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseOverMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Guard
+  - hash:
+      serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1533,30 +1567,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 837ae2d81884f4e511959a40f1ca649c
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: HostileNPC
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Attacked
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Guard
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Roll
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/01_Villiage.unity
