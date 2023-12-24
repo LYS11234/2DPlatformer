@@ -6,8 +6,7 @@ public class BanditManager: HostileNPC
 {
     #region Components
     [Header("# Components")]
-    [SerializeField]
-    private BoxCollider2D banditCol;
+
 
     [SerializeField]
     private Transform banditTransform;
@@ -47,10 +46,8 @@ public class BanditManager: HostileNPC
     #region Find Player
     private bool findPlayer;
     #endregion
-    [Space(5)]
     #region etc
-    private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
-    private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
+    
     #endregion
     #endregion
 
@@ -59,4 +56,9 @@ public class BanditManager: HostileNPC
         FindPlayer();
     }
 
+    protected override void Dead()
+    {
+        anim.SetTrigger("Death");
+        base.Dead();
+    }
 }

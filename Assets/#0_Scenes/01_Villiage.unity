@@ -10473,7 +10473,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 255
+    m_Bits: 1911
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -12680,6 +12680,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1327963623 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5639996388618828517, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+  m_PrefabInstance: {fileID: 1707730183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1327963625 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4073007996686119048, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+  m_PrefabInstance: {fileID: 1707730183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1354609757
 GameObject:
   m_ObjectHideFlags: 0
@@ -16186,6 +16196,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5802678206477598383, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 1327963625}
+    - target: {fileID: 5802678206477598383, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1327963623}
     - target: {fileID: 5802678206477598383, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
       propertyPath: attackPoint
       value: 

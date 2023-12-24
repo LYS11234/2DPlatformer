@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef23c242ebe4b0245b32b7905aca1e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 5639996388618828517}
   potraits: []
   npcName: "\uC0B0\uC801 \uAC04\uBD80"
   npcType: Hostile NPC

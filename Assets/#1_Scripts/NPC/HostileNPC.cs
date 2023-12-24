@@ -12,6 +12,8 @@ public class HostileNPC : NPC
     [SerializeField]
     protected SpriteRenderer sprite;
     [SerializeField]
+    private BoxCollider2D col;
+    [SerializeField]
     protected Rigidbody2D mobRd;
     [SerializeField]
     protected CoinManager theCoin;
@@ -21,6 +23,8 @@ public class HostileNPC : NPC
     protected GameObject item_pouch;
     [SerializeField]
     protected Item[] items;
+    [SerializeField]
+    protected RaycastHit2D hit;
     #endregion
     [Space(10)]
     #region Variables
@@ -34,6 +38,10 @@ public class HostileNPC : NPC
     protected int minGold;
     [SerializeField]
     protected int maxGold;
+
+    Vector2 pos = new Vector2();
+    private WaitForSeconds waitTime = new WaitForSeconds(5f);
+    private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
     #endregion
 
     [SerializeField]
@@ -42,6 +50,7 @@ public class HostileNPC : NPC
     private void Start()
     {
         RandomValue();
+        pos.Set(this.transform.position.x, this.transform.position.y + 100);
     }
     public void Damage(float _damage)
     {
@@ -56,11 +65,24 @@ public class HostileNPC : NPC
         }
     }
 
-    protected void Dead()
+    protected virtual void Dead()
     {
         isDead = true;
         Parameter.instance.currentExp += exp;
+        StartCoroutine(DeadCoroutine());
+    }
+
+    private IEnumerator DeadCoroutine()
+    {   
+        mobRd.gravityScale = 0;
+
+        col.isTrigger = true;
         DropItem(this.transform);
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        
         Destroy(this.gameObject);
     }
 
@@ -73,6 +95,8 @@ public class HostileNPC : NPC
     protected virtual void DropItem(Transform _transform)
     {
         GameObject pouch = Instantiate(item_pouch, _transform);
+        Rigidbody2D pouchRig = pouch.GetComponent<Rigidbody2D>();
+        pouchRig.velocity = pouch.transform.up * 1.1f;
         ItemPouch itemPouch = pouch.GetComponent<ItemPouch>();
         Array.Resize(ref itemPouch.items, items.Length);
         itemPouch.items = items;
@@ -83,6 +107,7 @@ public class HostileNPC : NPC
 
     protected virtual void FindPlayer()
     {
-        Debug.DrawRay(mobRd.position, -this.transform.forward, new Color(0,1,0));
+        Debug.DrawRay(pos, new Vector3 (-pos.x, 0f,0f), new Color(0, 3, 0), 5);
+        Debug.Log($"Pos = {pos}");
     }
 }
