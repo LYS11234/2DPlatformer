@@ -18,7 +18,8 @@ public class Spider : Monster
 
     private void Update()
     {
-        RandomDirection();
+        if(canMove)
+            RandomDirection();
     }
 
     private void RandomDirection()
@@ -66,5 +67,12 @@ public class Spider : Monster
     protected override void DropItem(Transform _transform)
     {
         base.DropItem(_transform);
+    }
+
+    protected override void Dead()
+    {
+        anim.SetBool("isMove", false);
+        base.Dead();
+
     }
 }

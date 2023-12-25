@@ -56,10 +56,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -477,7 +475,7 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: ba932bd99171dfabd3ede6cabc55fda9
+      Hash: 19c0fde6b798b0f57b16b11bb0d558af
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Monster
@@ -615,7 +613,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: a92e44737cc259722d0023c5cc13d524
+      Hash: 40158d195827a389ed0ddbb16f335b1d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: BanditManager
@@ -909,7 +907,7 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
-      Hash: 33aa760a1e1930c30e8af211de483d2c
+      Hash: f72e4640e2465896fcddd12abfc25945
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spider
@@ -1035,7 +1033,7 @@ ScriptsOnlyBuild:
     className: Bandit
   - hash:
       serializedVersion: 2
-      Hash: ba932bd99171dfabd3ede6cabc55fda9
+      Hash: 19c0fde6b798b0f57b16b11bb0d558af
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: HostileNPC

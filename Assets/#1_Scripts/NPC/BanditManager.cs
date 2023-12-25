@@ -31,7 +31,6 @@ public class BanditManager: HostileNPC
     [Space(5)]
     #region State
     [Header("State")]
-    public bool canMove = true;
     #endregion
     [Space(5)]
     #region Attack

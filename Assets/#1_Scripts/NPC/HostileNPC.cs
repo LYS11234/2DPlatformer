@@ -46,6 +46,8 @@ public class HostileNPC : NPC
 
     [SerializeField]
     private int value;
+    [SerializeField]
+    protected bool canMove;
 
     private void Start()
     {
@@ -74,6 +76,7 @@ public class HostileNPC : NPC
 
     private IEnumerator DeadCoroutine()
     {   
+        canMove = false;
         mobRd.gravityScale = 0;
 
         col.isTrigger = true;
