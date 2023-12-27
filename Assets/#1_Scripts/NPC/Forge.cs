@@ -69,8 +69,7 @@ public class Forge : AllienceNPC
                 {
                     Database.Instance.gold -= Database.Instance.upgradeCost;
                     Database.Instance.additionalAtk += 1;
-                    float dump = (float)Database.Instance.upgradeCost * 1.8f;
-                    Database.Instance.upgradeCost = (int)dump;
+                    Database.Instance.upgradeCost  = (int)(Database.Instance.upgradeCost * 1.8f);
                 }
                 else
                 {

@@ -44,11 +44,11 @@ GameObject:
   - component: {fileID: 838338928696499883}
   m_Layer: 8
   m_Name: Attack
-  m_TagString: Untagged
+  m_TagString: VillianAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2122572331372669269
 Transform:
   m_ObjectHideFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   npcType: Hostile NPC
   npcDialogue: []
   sprite: {fileID: 5622470450109171601}
+  col: {fileID: 4073007996686119048}
   mobRd: {fileID: 1082182273447734965}
   theCoin: {fileID: 0}
   mobHp: {fileID: 0}
@@ -175,11 +176,10 @@ MonoBehaviour:
   minGold: 50
   maxGold: 100
   value: 0
-  banditCol: {fileID: 4073007996686119048}
+  canMove: 1
   banditTransform: {fileID: 1323172116836092389}
   attackPoint: {fileID: 838338928696499883}
   moveSpeed: 0
-  canMove: 1
   isAttack: 0
   atkTime: 0
   currentAtkTime: 0

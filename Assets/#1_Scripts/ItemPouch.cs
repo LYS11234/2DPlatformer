@@ -10,6 +10,8 @@ public class ItemPouch : MonoBehaviour
     private bool canPick;
     [SerializeField]
     private Inventory inven;
+    [SerializeField]
+    private CoinManager coinManager;
 
     private void Start()
     {
@@ -18,18 +20,21 @@ public class ItemPouch : MonoBehaviour
 
     private void Update()
     {
-        if (canPick && Input.GetKeyDown(KeyCode.V))
+        if (canPick && Input.GetKeyDown(KeyCode.V) && canPick)
         { 
             for (int i = 0; i < items.Length; i++)
             { 
                 inven.AcquireItem(items[i]);
-                Destroy(this.gameObject);
+                
             }
+            Database.Instance.gold += coinManager.value;
+            Destroy(this.gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log($"collider Found! {collision.gameObject.name}");
         if (collision.gameObject.name == "Player") 
         {
             canPick = true;

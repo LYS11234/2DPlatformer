@@ -7,12 +7,5 @@ public class CoinManager : MonoBehaviour
 {
     public int value;
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            Database.Instance.gold += value;
-            Destroy(this.gameObject);
-        }
-    }
+ 
 }

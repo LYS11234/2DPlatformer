@@ -15,9 +15,4 @@ public class MapFineder : MonoBehaviour
         else
             Destroy(this.gameObject);
     }
-    int a = 0;
-    private void Start()
-    {
-        a = 0;
-    }
 }

@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 5335813368646024982}
   m_Layer: 8
   m_Name: Spider
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,6 +173,9 @@ MonoBehaviour:
   maxGold: 10
   value: 0
   canMove: 1
+  atk: 30
+  currentAttackTime: 0
+  attackTime: 1
   direction: 1
   moveCount: 1
   speed: 4

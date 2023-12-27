@@ -70,6 +70,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Player State")]
     public bool isGround;
     public bool canMove = true;
+    public bool isDead;
     #endregion
     [Space(5)]
     #region Attack
@@ -90,7 +91,7 @@ public class PlayerManager : MonoBehaviour
     public bool canAttack = true;
     #endregion
     #region Guard
-    private bool isGuard;
+    public bool isGuard;
     [SerializeField]
     private float guardTime;
     [SerializeField]
@@ -103,6 +104,7 @@ public class PlayerManager : MonoBehaviour
     private float currentRollTime;
     [SerializeField]
     private float rollTime;
+    public bool isRoll;
     #endregion
     #region etc
     private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
@@ -112,8 +114,8 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         playerAnim.SetBool("Grounded", true);
-        jumpDirectionL.Set(-1,2,0);
-        jumpDirectionR.Set(1,2,0);
+        jumpDirectionL.Set(-1,4,0);
+        jumpDirectionR.Set(1,4,0);
         jumpDirectionL = jumpDirectionL.normalized;
         jumpDirectionR = jumpDirectionR.normalized;
     }
@@ -121,14 +123,18 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckGround();
-        CheckAirSpeed();
-        TryJump();
-        PlayerMove();      
-        TryAttack();
-        ComboCheck();
-        TryGuard();
-        TryRoll();
+        if (!isDead)
+        {
+            //CheckGround();
+            CheckAirSpeed();
+            TryJump();
+            PlayerMove();
+            TryAttack();
+            ComboCheck();
+            TryGuard();
+            TryRoll();
+            Dead();
+        }
     }
 
     #region Player Movement
@@ -264,6 +270,7 @@ public class PlayerManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C) && !isMove && canAttack)
             {
+                
                 Guard();
                 currentGuardTime = 0f;
             }
@@ -275,6 +282,7 @@ public class PlayerManager : MonoBehaviour
             currentGuardTime += Time.deltaTime;
         if (Input.GetKeyUp(KeyCode.C))
         {
+
             GuardCancel();
         }
     }
@@ -290,7 +298,8 @@ public class PlayerManager : MonoBehaviour
     private void GuardCancel()
     {
         isGuard = false;
-        
+        Guard guard = guardPoint.GetComponent<Guard>();
+        guard.currentParryTime = 0;
         playerAnim.SetBool("IdleBlock", false);
         guardPoint.gameObject.SetActive(false);
     }
@@ -320,6 +329,7 @@ public class PlayerManager : MonoBehaviour
     private IEnumerator Roll()
     {
         playerAnim.SetTrigger("Roll");
+        
         int _direction;
         if (playerSpriteRenderer.flipX)
             _direction = -1;
@@ -329,6 +339,7 @@ public class PlayerManager : MonoBehaviour
         }
         Vector3 _moveHorizontal = transform.right * _direction;
         Vector3 _vel = 3f * _moveHorizontal;
+        isRoll = true;
         yield return frameTime;
         for (int i = 0; i < 30; i++)
         {
@@ -336,6 +347,7 @@ public class PlayerManager : MonoBehaviour
             playerRigidbody.MovePosition(transform.position + _vel * Time.deltaTime);
             yield return frameTime;
         }
+        isRoll = false;
         isAttack = false;
     }
     #endregion
@@ -354,6 +366,16 @@ public class PlayerManager : MonoBehaviour
         {
             isGround = true;
             playerAnim.SetBool("Grounded", isGround);
+        }
+    }
+
+    private void Dead()
+    {
+        if(Parameter.instance.currentHp <= 0)
+        {
+            Parameter.instance.currentHp = 0;
+            playerAnim.SetTrigger("Death");
+            isDead = true;
         }
     }
     #endregion

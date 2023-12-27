@@ -16,8 +16,9 @@ public class Spider : Monster
     private float currentMoveTime;
     private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         if(canMove)
             RandomDirection();
     }
@@ -58,7 +59,7 @@ public class Spider : Monster
 
             anim.SetBool("isMove", true);
         }
-        else if (_direction == 0 || moveCount == 0)
+        if (_direction == 0 || moveCount == 0)
         {
             anim.SetBool("isMove", false);
         }
@@ -72,7 +73,14 @@ public class Spider : Monster
     protected override void Dead()
     {
         anim.SetBool("isMove", false);
+        sprite.flipY = true;
         base.Dead();
+
+    }
+
+    protected override void OnCollisionStay2D(Collision2D col)
+    {
+        base.OnCollisionStay2D(col);
 
     }
 }

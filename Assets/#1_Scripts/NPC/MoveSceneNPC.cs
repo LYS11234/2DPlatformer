@@ -11,7 +11,7 @@ public class MoveSceneNPC : AllienceNPC
     [SerializeField]
     private Image mapImage;
 
-    private void Start()
+    private new void Start()
     {
         mapImage = MapFineder.Instance.gameObject.GetComponent<Image>();
     }

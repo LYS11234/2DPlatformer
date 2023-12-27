@@ -9,6 +9,8 @@ TagManager:
   - Tool
   - Campfire
   - ItemPouch
+  - Monster
+  - VillianAttack
   layers:
   - Default
   - TransparentFX

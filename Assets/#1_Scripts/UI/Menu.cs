@@ -25,12 +25,14 @@ public class Menu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                PlayerManager.instance.canMove = false;
                 if (!inventory.gameObject.active)
                     menu.gameObject.SetActive(true);
                 else
                 {
                     inventory.gameObject.SetActive(false);
                     inven.inventoryActivated = false;
+                    PlayerManager.instance.canMove = true;
                 }
             }
         }
@@ -39,6 +41,8 @@ public class Menu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 menu.gameObject.SetActive(false);
+                PlayerManager.instance.canMove = true;
+                inven.slotNum = 0;
             }
         }
     }
