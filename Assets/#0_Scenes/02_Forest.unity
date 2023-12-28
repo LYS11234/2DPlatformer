@@ -718,7 +718,7 @@ Transform:
   m_GameObject: {fileID: 1142355525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.75, z: 0}
+  m_LocalPosition: {x: 0, y: -0.739, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7013,6 +7013,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   canTalk: 0
   gui: {fileID: 0}
+  pointer: {fileID: 0}
   mapName: 
   mapImage: {fileID: 0}
 --- !u!4 &6745269468308206044

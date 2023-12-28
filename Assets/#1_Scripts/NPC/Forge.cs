@@ -5,21 +5,19 @@ using UnityEngine.UI;
 
 public class Forge : AllienceNPC
 {
-    [SerializeField]
-    private Image upgradeAllow;
-    [SerializeField]
-    private Image upgradeDeny;
-    [SerializeField]
-    private Image pointer;
 
-    private int i;
-    private int j = 0;
+    [SerializeField]
+    protected Image upgradeAllow;
+    [SerializeField]
+    protected Image upgradeDeny;
+
+
     protected override void Start()
     {
         base.Start();
-        upgradeAllow = dialogueManager.upgradeAllow.GetComponent<Image>();
-        upgradeDeny = dialogueManager.upgradeDeny.GetComponent<Image>();
-        pointer = dialogueManager.pointer.GetComponent<Image>();
+        upgradeAllow = dialogueManager.upgradeAllow;
+        upgradeDeny = dialogueManager.upgradeDeny;
+        pointer = dialogueManager.pointer;
     }
 
     // Update is called once per frame
@@ -30,7 +28,7 @@ public class Forge : AllienceNPC
             PlayerManager.instance.canMove = false;
             StartCoroutine(DialogueCoroutine());
         }
-        if(i >= npcDialogue.Length && upgradeAllow.gameObject.active && Input.GetKeyDown(KeyCode.X))
+        if(i >= npcDialogue.Length -1 && upgradeAllow.gameObject.active)
         {
             StartCoroutine(UpgradeCoroutine());
         }
@@ -58,11 +56,19 @@ public class Forge : AllienceNPC
             pointer.gameObject.SetActive(true);
         }
     }
+    protected override void CloseDialogue()
+    {
+        base.CloseDialogue();
+        upgradeAllow.gameObject.SetActive(false);
+        upgradeDeny.gameObject.SetActive(false);
+    }
 
     private IEnumerator UpgradeCoroutine()
     {
+        yield return waitTime;
         if (Input.GetKeyDown(KeyCode.X))
         {
+            
             if (j == 0)
             {
                 if (Database.Instance.gold >= Database.Instance.upgradeCost)
@@ -70,6 +76,7 @@ public class Forge : AllienceNPC
                     Database.Instance.gold -= Database.Instance.upgradeCost;
                     Database.Instance.additionalAtk += 1;
                     Database.Instance.upgradeCost  = (int)(Database.Instance.upgradeCost * 1.8f);
+                    CloseDialogue();
                 }
                 else
                 {
@@ -104,14 +111,7 @@ public class Forge : AllienceNPC
         yield return null;
     }
 
-    private void CloseDialogue()
-    {
-        dialogueManager.CloseDialogue();
-        upgradeAllow.gameObject.SetActive(false);
-        upgradeDeny.gameObject.SetActive(false);
-        pointer.gameObject.SetActive(false);
-        i = 0;
-    }
+    
 
     private void ChoiceCheck()
     {

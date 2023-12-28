@@ -29,11 +29,11 @@ public class Slot : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler, 
         originPos = transform.position;
     }
 
-    private void SetColor(float _alpha)
+    public void SetColor(float _alpha, Image _image)
     {
-        Color color = itemImage.color;
+        Color color = _image.color;
         color.a = _alpha;
-        itemImage.color = color;
+        _image.color = color;
     }
 
     public void AddItem(Item _item, int _count = 1)
@@ -45,7 +45,7 @@ public class Slot : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler, 
             itemImage.sprite = item.itemImage;
             text_Count.text = itemCount.ToString();
 
-            SetColor(1);
+            SetColor(1, itemImage);
         }
     }
     public void SetSlotCount(int _count)
@@ -61,7 +61,7 @@ public class Slot : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler, 
         item = null;
         itemCount = 0;
         itemImage.sprite = null;
-        SetColor(0);
+        SetColor(0, itemImage);
 
         text_Count.text = "0";
     }

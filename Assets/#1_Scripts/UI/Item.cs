@@ -12,6 +12,8 @@ public class Item : ScriptableObject
     public Sprite itemImage;
     public GameObject itemPrefab;
     public ItemType itemType;
+    public int cost;
+
 
     public enum ItemType
     {

@@ -27,6 +27,9 @@ public class Inventory : MonoBehaviour
     private Text itemDescriptionItemType;
     [SerializeField]
     private Image Check;
+    [SerializeField]
+    private Text itemDescriptionCost;
+
 
     public Slot[] GetSlots() { return inven_Slots; }
     public int slotNum;
@@ -62,7 +65,6 @@ public class Inventory : MonoBehaviour
             {
                 if (inven_Slots[i].item != null)
                 {
-                    Debug.Log($"Slot {i + 1}th is filled!");
                     if (inven_Slots[i].item.itemName == _item.itemName)
                     {
                         inven_Slots[i].SetSlotCount(_count);
@@ -90,10 +92,24 @@ public class Inventory : MonoBehaviour
 
     private void ShowItemDescription(Item _item)
     {
-        itemDescriptionImage.sprite = _item.itemImage;
-        itemDescriptionName.text = _item.itemName;
-        itemDescriptionItemType.text = _item.itemType.ToString();
-        itemDescription.text = _item.itemDescription;
+        
+        if(_item == null)
+        {
+            inven_Slots[slotNum].SetColor(0, itemDescriptionImage);
+            itemDescriptionName.text = "";
+            itemDescriptionItemType.text = "";
+            itemDescription.text = "";
+            itemDescriptionCost.text = "";
+        }
+        else
+        {
+            itemDescriptionImage.sprite = _item.itemImage;
+            inven_Slots[slotNum].SetColor(1, itemDescriptionImage);
+            itemDescriptionName.text = _item.itemName;
+            itemDescriptionItemType.text = _item.itemType.ToString();
+            itemDescription.text = _item.itemDescription;
+            itemDescriptionCost.text = _item.cost.ToString();
+        }
     }
 
     private void CheckSlotChange()

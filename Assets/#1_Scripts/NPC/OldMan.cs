@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OldMan : AllienceNPC
 {
-    private int i;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X) && canTalk)
@@ -39,4 +38,6 @@ public class OldMan : AllienceNPC
     {
         base.OnTriggerExit2D(other);
     }
+
+    
 }

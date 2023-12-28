@@ -98,8 +98,6 @@ public class HostileNPC : NPC
     protected virtual void DropItem(Transform _transform)
     {
         GameObject pouch = Instantiate(item_pouch, _transform);
-        Rigidbody2D pouchRig = pouch.GetComponent<Rigidbody2D>();
-        pouchRig.velocity = pouch.transform.up * 1.1f;
         ItemPouch itemPouch = pouch.GetComponent<ItemPouch>();
         Array.Resize(ref itemPouch.items, items.Length);
         itemPouch.items = items;
