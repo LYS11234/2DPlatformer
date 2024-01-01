@@ -17,6 +17,8 @@ public class DialogueManager : MonoBehaviour
     public Image talk;
     public Image buy;
     public Image sell;
+    public GameObject buyBase;
+    public GameObject inven;
     #endregion
 
     public void PrintDialogue(string _name, string _dialogue)

@@ -1977,7 +1977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Inventory
+  m_Text: Shop
 --- !u!222 &194634317
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3443,7 +3443,63 @@ MonoBehaviour:
   additionalAtk: 0
   upgradeCost: 50
   potions: 5
-  restoreHealth: 0
+  restoreHealth: 40
+  level: 0
+  exp: 0
+  currentExp: 0
+  hp: 0
+  sp: 0
+  mp: 0
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemCount: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &380222164
 Transform:
   m_ObjectHideFlags: 0
@@ -6411,6 +6467,8 @@ MonoBehaviour:
   talk: {fileID: 878323285}
   buy: {fileID: 708967359}
   sell: {fileID: 1630427900}
+  buyBase: {fileID: 1986852290}
+  inven: {fileID: 951008560}
 --- !u!114 &706357831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6511,7 +6569,6 @@ MonoBehaviour:
   - {fileID: 1107061322}
   - {fileID: 1677066432}
   - {fileID: 1001583102}
-  items: []
   itemDescriptionImage: {fileID: 1218025346}
   itemDescriptionName: {fileID: 2019079084}
   itemDescription: {fileID: 53236897}
@@ -17898,27 +17955,37 @@ MonoBehaviour:
   npcType: NPC
   npcDialogue:
   - "\uC548\uB155\uD558\uC2ED\uB2C8\uAE4C?"
+  - "\uBB34\uC2A8 \uC77C\uC774\uC2E0\uAC00\uC694..?"
   dialogueManager: {fileID: 0}
-  canTalk: 0
   gui: {fileID: 0}
   pointer: {fileID: 0}
+  i: 0
   j: 0
+  canTalk: 0
   talk: {fileID: 0}
+  k: 0
   buy: {fileID: 0}
   sell: {fileID: 0}
   canSell: 0
   buyDialogue:
   - "\uBB50 \uC880 \uC0AC\uC2DC\uACA0\uC2B5\uB2C8\uAE4C..?"
+  - "\uC790, \uD55C \uBC88 \uBCF4\uC2DC\uC8E0.."
   talkDialogue:
   - "\uC800..\uB9D0\uC785\uB2C8\uAE4C..?"
-  - 
-  - 
-  - 
-  - 
+  - "\uC800\uB294 \uB5A0\uB3CC\uC774 \uC0C1\uC778\uC785\uB2C8\uB2E4.."
+  - "\uC774 \uB9C8\uC744\uC5D0 \uD76C\uADC0\uD55C \uC0C1\uD488\uC774 \uB9CE\uB2E4\uAE38\uB798
+    \uC654\uC2B5\uC8E0.."
+  - "\uB2E4\uD589\uD788\uB3C4 \uB2E4\uB978 \uC0C1\uC778\uB4E4\uBCF4\uB2E8 \uBA3C\uC800
+    \uC628 \uBAA8\uC591\uC785\uB2C8\uB2E4..."
+  - "\uC6EC\uB9CC\uD55C \uBB3C\uAC74\uC740 \uBAA8\uB450 \uB9E4\uC785\uD560\uD14C\uB2C8
+    \uB9CE\uC774 \uAC00\uC838\uC640\uC8FC\uC2ED\uC1FC..!"
   - "\uB354 \uD544\uC694\uD558\uC2E0\uAC8C \uC788\uC73C\uC2ED\uB2C8\uAE4C..?"
   sellDialogue:
   - "\uBB3C\uAC74\uC744 \uD314\uB7EC \uC624\uC2E0\uAC70\uAD70\uC694..."
   - "\uBCF4\uC5EC\uC8FC\uC2DC\uACA0\uC2B5\uB2C8\uAE4C..?"
+  chooseOne: 0
+  buyBase: {fileID: 0}
+  inven: {fileID: 0}
 --- !u!1001 &1641939458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20214,12 +20281,13 @@ MonoBehaviour:
   npcType: 
   npcDialogue: []
   dialogueManager: {fileID: 0}
-  canTalk: 0
   gui: {fileID: 0}
   pointer: {fileID: 0}
+  i: 0
   j: 0
   mapName: 99_LoadingScene
   mapImage: {fileID: 46382813}
+  canTalk: 0
 --- !u!1001 &1888718339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21202,10 +21270,11 @@ MonoBehaviour:
     \uB2E4\uCE58\uC9C0 \uC54A\uB3C4\uB85D \uC8FC\uBCC0 \uBAAC\uC2A4\uD130\uB098 \uC0AC\uB0E5\uD574\uC8FC\uAC8C..!"
   - "\uC790\uB124 \uC5C5\uC774\uC9C0 \uC54A\uC740\uAC00.."
   dialogueManager: {fileID: 706357830}
-  canTalk: 0
   gui: {fileID: 706357831}
   pointer: {fileID: 0}
+  i: 0
   j: 0
+  canTalk: 0
 --- !u!4 &1976468125
 Transform:
   m_ObjectHideFlags: 0
@@ -22453,12 +22522,13 @@ MonoBehaviour:
   - "\uBB34\uAE30\uB97C \uAC15\uD654\uD560 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."
   - "\uAC15\uD654\uD560\uAE4C?"
   dialogueManager: {fileID: 0}
-  canTalk: 0
   gui: {fileID: 0}
   pointer: {fileID: 0}
+  i: 0
   j: 0
   upgradeAllow: {fileID: 0}
   upgradeDeny: {fileID: 0}
+  canTalk: 0
 --- !u!224 &2111093596 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2404177478813310946, guid: 9424dae7350a787458438bbec40a6bbd, type: 3}

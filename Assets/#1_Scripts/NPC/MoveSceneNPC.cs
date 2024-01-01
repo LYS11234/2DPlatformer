@@ -10,6 +10,8 @@ public class MoveSceneNPC : AllienceNPC
     private string mapName;
     [SerializeField]
     private Image mapImage;
+    [SerializeField]
+    private bool canTalk;
 
     private new void Start()
     {
@@ -37,13 +39,21 @@ public class MoveSceneNPC : AllienceNPC
         PotionManager.Instance.potions.text = Database.Instance.potions.ToString();
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        base.OnTriggerEnter2D(other);
+        if (other.transform.name == "Player")
+        {
+            PlayerManager.instance.canAttack = false;
+            canTalk = true;
+        }
     }
 
-    protected override void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        base.OnTriggerExit2D(other);
+        if (other.transform.name == "Player")
+        {
+            PlayerManager.instance.canAttack = true;
+            canTalk = false;
+        }
     }
 }

@@ -58,6 +58,16 @@ public class Parameter : MonoBehaviour
     private int spRecovery;
     #endregion
 
+
+    private void Start()
+    {
+        Database.Instance.hp = hp;
+        Database.Instance.sp = sp;
+        Database.Instance.mp = mp;
+        Database.Instance.exp = exp;
+        Database.Instance.level = level;
+        Database.Instance.currentExp = currentExp;
+    }
     private void Update()
     {
         CheckParameters();
@@ -121,7 +131,9 @@ public class Parameter : MonoBehaviour
             while (currentExp >= exp)
             {
                 currentExp -= exp;
+                Database.Instance.currentExp = currentExp;
                 currentLevel++;
+                Database.Instance.level = currentLevel;
                 levelText.text = currentLevel.ToString();
                 hp += (int)((float)hp * 0.1f);
                 currentHp = hp;

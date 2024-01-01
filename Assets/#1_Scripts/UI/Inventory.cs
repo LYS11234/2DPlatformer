@@ -15,8 +15,7 @@ public class Inventory : MonoBehaviour
     private GameObject inven_Base;
     [SerializeField]
     private Slot[] inven_Slots;
-    [SerializeField]
-    private Item[] items;
+
     [SerializeField]
     private Image itemDescriptionImage;
     [SerializeField]
@@ -52,9 +51,9 @@ public class Inventory : MonoBehaviour
 
     public void LoadToInven(int _arrayNum, string _itemName, int _itemNum)
     {
-        for (int i = 0; i < items.Length; i++)
-            if (items[i].itemName == _itemName)
-                inven_Slots[_arrayNum].AddItem(items[i], _itemNum);
+        for (int i = 0; i < Database.Instance.items.Length; i++)
+            if (Database.Instance.items[i].itemName == _itemName)
+                inven_Slots[_arrayNum].AddItem(Database.Instance.items[i], _itemNum);
     }
 
     public void AcquireItem(Item _item, int _count = 1)
@@ -68,6 +67,7 @@ public class Inventory : MonoBehaviour
                     if (inven_Slots[i].item.itemName == _item.itemName)
                     {
                         inven_Slots[i].SetSlotCount(_count);
+                        Database.Instance.itemCount[i] += _count;
                         return;
                     }
                 }
@@ -80,6 +80,8 @@ public class Inventory : MonoBehaviour
             if (inven_Slots[i].item == null)
             {
                 inven_Slots[i].AddItem(_item, _count);
+                Database.Instance.items[i] = _item;
+                Database.Instance.itemCount[i] = _count;
                 return;
             }
         }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OldMan : AllienceNPC
 {
+    [SerializeField]
+    private bool canTalk;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X) && canTalk)
@@ -29,15 +31,23 @@ public class OldMan : AllienceNPC
         }
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        base.OnTriggerEnter2D(other);
+        if (other.transform.name == "Player")
+        {
+            PlayerManager.instance.canAttack = false;
+            canTalk = true;
+        }
     }
 
-    protected override void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        base.OnTriggerExit2D(other);
+        if (other.transform.name == "Player")
+        {
+            PlayerManager.instance.canAttack = true;
+            canTalk = false;
+        }
     }
 
-    
+
 }

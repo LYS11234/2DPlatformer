@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - Forge
     - GameManager
     - Guard
+    - Hatman
     - Inventory
     - Item
     - ItemPickUp
@@ -58,10 +59,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -170,15 +169,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7736}
     - Class: 114
-      Script: {instanceID: 7964}
+      Script: {instanceID: 7906}
     - Class: 114
-      Script: {instanceID: 8158}
+      Script: {instanceID: 7966}
     - Class: 114
-      Script: {instanceID: 8456}
+      Script: {instanceID: 8160}
     - Class: 114
-      Script: {instanceID: 9170}
+      Script: {instanceID: 8458}
     - Class: 114
-      Script: {instanceID: 9202}
+      Script: {instanceID: 9172}
+    - Class: 114
+      Script: {instanceID: 9204}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -243,11 +244,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7736}
     - Class: 114
-      Script: {instanceID: 8880}
+      Script: {instanceID: 8882}
     - Class: 114
-      Script: {instanceID: 9202}
+      Script: {instanceID: 9204}
     - Class: 114
-      Script: {instanceID: 9690}
+      Script: {instanceID: 9692}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -296,7 +297,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7736}
     - Class: 114
-      Script: {instanceID: 9202}
+      Script: {instanceID: 9204}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -349,7 +350,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7424}
     - Class: 114
-      Script: {instanceID: 8156}
+      Script: {instanceID: 8158}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -663,7 +664,7 @@ ScriptsOnlyBuild:
     className: BanditManager
   - hash:
       serializedVersion: 2
-      Hash: 9ba268ffb1b2836d1a7f9c44c23cb755
+      Hash: bbe5d75049b0850f6fbe422485d8265e
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: OldMan
@@ -741,7 +742,7 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 9ba268ffb1b2836d1a7f9c44c23cb755
+      Hash: bbe5d75049b0850f6fbe422485d8265e
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AllienceNPC
@@ -771,7 +772,7 @@ ScriptsOnlyBuild:
     className: AdvancedRuleOverrideTile
   - hash:
       serializedVersion: 2
-      Hash: a776013eda89cd1d2f1e3b182953d601
+      Hash: 1c662850cf09bbf99597d6be718940b7
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Database
@@ -795,7 +796,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c135f1d9cc8d1cac319897a7e24a7a26
+      Hash: 4295632464e24dbc7eb33191eef37f27
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: DialogueManager
@@ -837,7 +838,7 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: 7000601f42819c82bc122f01bccf3164
+      Hash: 9e7165d67e8f8951a99e604f224b8218
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Inventory
@@ -1161,7 +1162,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 5f8db192000cdd4d65d4a945865ab581
+      Hash: def7e0fd62942145d8af430e67fec798
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Forge
@@ -1251,7 +1252,7 @@ ScriptsOnlyBuild:
     className: IsometricRuleTile
   - hash:
       serializedVersion: 2
-      Hash: 436686a3b3a037ad6767320dd8ee902b
+      Hash: e2a20917904783989f57996b8b0a9a15
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Item
@@ -1281,7 +1282,7 @@ ScriptsOnlyBuild:
     className: GameManager
   - hash:
       serializedVersion: 2
-      Hash: 2359d981192e268326f903c8383b0b82
+      Hash: 90f8bf78ab866940b80532ad0e1398e5
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MoveSceneNPC
@@ -1305,6 +1306,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 582ca00b9a56ae24c5c083bca74af459
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Hatman
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1317,7 +1324,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 394b11ad5c3cda968b9345e3e31cbea3
+      Hash: f4d9758791979944f56e00c6df7347aa
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager

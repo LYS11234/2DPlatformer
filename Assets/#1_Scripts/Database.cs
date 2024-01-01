@@ -22,4 +22,12 @@ public class Database : MonoBehaviour
     public int upgradeCost;
     public int potions;
     public float restoreHealth;
+    public int level;
+    public int exp;
+    public int currentExp;
+    public int hp;
+    public int sp;
+    public int mp;
+    public Item[] items;
+    public int[] itemCount;
 }

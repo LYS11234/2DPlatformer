@@ -71,6 +71,7 @@ public class HostileNPC : NPC
     {
         isDead = true;
         Parameter.instance.currentExp += exp;
+        Database.Instance.currentExp = Parameter.instance.currentExp;
         StartCoroutine(DeadCoroutine());
     }
 

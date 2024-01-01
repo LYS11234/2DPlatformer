@@ -10,6 +10,8 @@ public class Forge : AllienceNPC
     protected Image upgradeAllow;
     [SerializeField]
     protected Image upgradeDeny;
+    [SerializeField]
+    private bool canTalk;
 
 
     protected override void Start()
@@ -45,7 +47,7 @@ public class Forge : AllienceNPC
         PlayerManager.instance.gui.image.gameObject.SetActive(false);
         if (i < npcDialogue.Length)
         {
-            dialogueManager.PrintDialogue("", npcDialogue[i]);
+            dialogueManager.PrintDialogue("Player", npcDialogue[i]);
             i++;
             yield return null;
         }
@@ -131,13 +133,21 @@ public class Forge : AllienceNPC
     }
 
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        base.OnTriggerEnter2D(other);
+        if (other.transform.name == "Player")
+        {
+            PlayerManager.instance.canAttack = false;
+            canTalk = true;
+        }
     }
 
-    protected override void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        base.OnTriggerExit2D(other);
+        if (other.transform.name == "Player")
+        {
+            PlayerManager.instance.canAttack = true;
+            canTalk = false;
+        }
     }
 }

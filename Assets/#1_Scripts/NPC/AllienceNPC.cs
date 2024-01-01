@@ -8,13 +8,13 @@ public class AllienceNPC : NPC
 {
     [SerializeField]
     protected DialogueManager dialogueManager;
-    [SerializeField]
-    protected bool canTalk;
+    
     [SerializeField]
     protected ButtonGUI gui;
     protected WaitForSeconds waitTime = new WaitForSeconds(0.1f);
     [SerializeField]
     protected Image pointer;
+    [SerializeField]    
     protected int i;
     [SerializeField]
     protected int j = 0;
@@ -29,23 +29,7 @@ public class AllienceNPC : NPC
         
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.transform.name == "Player")
-        { 
-            PlayerManager.instance.canAttack = false; 
-            canTalk = true;
-        }
-    }
-
-    protected virtual void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.transform.name == "Player")
-        { 
-            PlayerManager.instance.canAttack = true; 
-            canTalk = false;
-        }
-    }
+    
     protected virtual void CloseDialogue()
     {
         dialogueManager.CloseDialogue();
