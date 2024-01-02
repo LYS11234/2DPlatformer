@@ -48,6 +48,9 @@ public class PlayerManager : MonoBehaviour
     private Parameter parameter;
 
     [SerializeField]
+    private DieMessage dieMessage;
+
+    [SerializeField]
     public ButtonGUI gui;
     #endregion
     [Space(10)]
@@ -376,6 +379,7 @@ public class PlayerManager : MonoBehaviour
             Parameter.instance.currentHp = 0;
             playerAnim.SetTrigger("Death");
             isDead = true;
+            dieMessage.gameObject.SetActive(true);
         }
     }
     #endregion

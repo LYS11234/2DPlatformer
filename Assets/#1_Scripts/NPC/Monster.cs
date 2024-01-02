@@ -19,7 +19,7 @@ public class Monster : HostileNPC
 
     protected virtual void OnCollisionStay2D(Collision2D col)
     {
-        if (!PlayerManager.instance.isGuard && !PlayerManager.instance.isRoll)
+        if (!PlayerManager.instance.isGuard && !PlayerManager.instance.isRoll && !PlayerManager.instance.isDead)
         {
             if (currentAttackTime > attackTime)
             {

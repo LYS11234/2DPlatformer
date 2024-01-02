@@ -11,7 +11,7 @@ public class Slot : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler, 
     public Item item;
     public Image itemImage;
     [SerializeField]
-    private Text text_Count;
+    public Text text_Count;
 
     //[SerializeField]
     //private ItemEffectDatabase theItemEffectDatabase;

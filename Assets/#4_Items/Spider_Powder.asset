@@ -19,3 +19,4 @@ MonoBehaviour:
   itemPrefab: {fileID: 8545498398884194440, guid: c11cece52cbd11b45ae9b346055e3971, type: 3}
   itemType: 1
   cost: 10
+  itemNum: 10

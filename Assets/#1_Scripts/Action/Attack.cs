@@ -21,18 +21,20 @@ public class Attack : MonoBehaviour
             { 
                 if(collision.GetComponent<NPC>().npcType == "Monster")
                 {
-                    collision.GetComponent<Monster>().Damage(damage + Database.Instance.additionalAtk);
+                    collision.GetComponent<Monster>().Damage(damage + Database.Instance.nowPlayer.additionalAtk);
                 }
                 else if (collision.GetComponent<NPC>().npcType == "Hostile NPC")
                 {
-                    collision.GetComponent<BanditManager>().Damage(damage + Database.Instance.additionalAtk);
+                    collision.GetComponent<BanditManager>().Damage(damage + Database.Instance.nowPlayer.additionalAtk);
                 }
+
             }
+
             //this.transform.localPosition = new Vector3(this.transform.localPosition.x + 0.001f, 0.028f, 0);
             //this.transform.localPosition = new Vector3(this.transform.localPosition.x - 0.001f, 0.028f, 0);
         }
-        else
-            return;
+        //else
+        //    return;
     }
 
 }

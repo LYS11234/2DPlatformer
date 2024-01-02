@@ -73,11 +73,11 @@ public class Forge : AllienceNPC
             
             if (j == 0)
             {
-                if (Database.Instance.gold >= Database.Instance.upgradeCost)
+                if (Database.Instance.nowPlayer.gold >= Database.Instance.nowPlayer.upgradeCost)
                 {
-                    Database.Instance.gold -= Database.Instance.upgradeCost;
-                    Database.Instance.additionalAtk += 1;
-                    Database.Instance.upgradeCost  = (int)(Database.Instance.upgradeCost * 1.8f);
+                    Database.Instance.nowPlayer.gold -= Database.Instance.nowPlayer.upgradeCost;
+                    Database.Instance.nowPlayer.additionalAtk += 1;
+                    Database.Instance.nowPlayer.upgradeCost  = (int)(Database.Instance.nowPlayer.upgradeCost * 1.8f);
                     CloseDialogue();
                 }
                 else

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class WorldMapManager : MonoBehaviour
 {
-    [SerializeField] private GameObject m_WorldMap;
+    [SerializeField] public GameObject m_WorldMap;
     [SerializeField]
     private Image villiage;
     [SerializeField]
@@ -47,11 +47,11 @@ public class WorldMapManager : MonoBehaviour
                 mapNum++;
             CheckMap();
         }
-        else if(Input.GetKeyDown(KeyCode.X) && Database.Instance.destination != sceneName)
+        else if(Input.GetKeyDown(KeyCode.X) && Database.Instance.nowPlayer.destination != sceneName)
         {
             PlayerManager.instance.gameObject.SetActive(false);
             Parameter.instance.gameObject.SetActive(false);
-            Database.Instance.destination = sceneName;
+            Database.Instance.nowPlayer.destination = sceneName;
             originMapNum = mapNum;
             originPos = mapPoint.position;
             m_WorldMap.SetActive(false);

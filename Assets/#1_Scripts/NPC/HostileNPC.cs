@@ -71,7 +71,7 @@ public class HostileNPC : NPC
     {
         isDead = true;
         Parameter.instance.currentExp += exp;
-        Database.Instance.currentExp = Parameter.instance.currentExp;
+        Database.Instance.nowPlayer.currentExp = Parameter.instance.currentExp;
         StartCoroutine(DeadCoroutine());
     }
 
@@ -79,7 +79,6 @@ public class HostileNPC : NPC
     {   
         canMove = false;
         mobRd.gravityScale = 0;
-
         col.isTrigger = true;
         DropItem(this.transform);
         yield return waitTime;

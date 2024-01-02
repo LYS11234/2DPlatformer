@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - CoinManager
     - Database
     - DialogueManager
+    - DieMessage
     - Forge
     - GameManager
     - Guard
@@ -17,7 +18,6 @@ ScriptsOnlyBuild:
     - ItemPickUp
     - ItemPouch
     - LoadingBar
-    - MapFineder
     - Menu
     - MonsterHP
     - MoveSceneNPC
@@ -169,11 +169,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7736}
     - Class: 114
-      Script: {instanceID: 7906}
+      Script: {instanceID: 7794}
     - Class: 114
-      Script: {instanceID: 7966}
+      Script: {instanceID: 7908}
     - Class: 114
-      Script: {instanceID: 8160}
+      Script: {instanceID: 7968}
     - Class: 114
       Script: {instanceID: 8458}
     - Class: 114
@@ -350,7 +350,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7424}
     - Class: 114
-      Script: {instanceID: 8158}
+      Script: {instanceID: 8160}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -664,7 +664,7 @@ ScriptsOnlyBuild:
     className: BanditManager
   - hash:
       serializedVersion: 2
-      Hash: bbe5d75049b0850f6fbe422485d8265e
+      Hash: cccbd244926c68dd065a06310a3c539e
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: OldMan
@@ -742,7 +742,7 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: bbe5d75049b0850f6fbe422485d8265e
+      Hash: d800480bb02e5a25918e790a3608fe7c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AllienceNPC
@@ -772,7 +772,7 @@ ScriptsOnlyBuild:
     className: AdvancedRuleOverrideTile
   - hash:
       serializedVersion: 2
-      Hash: 1c662850cf09bbf99597d6be718940b7
+      Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Database
@@ -796,7 +796,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4295632464e24dbc7eb33191eef37f27
+      Hash: fe5cca27db022a8a3c60606ebc01ec6f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: DialogueManager
@@ -1162,7 +1162,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: def7e0fd62942145d8af430e67fec798
+      Hash: 1ff7750c6900471387e853846ccaa485
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Forge
@@ -1282,10 +1282,16 @@ ScriptsOnlyBuild:
     className: GameManager
   - hash:
       serializedVersion: 2
-      Hash: 90f8bf78ab866940b80532ad0e1398e5
+      Hash: 153ebaf5f8a8860e4fd4d421d009dcf1
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MoveSceneNPC
+  - hash:
+      serializedVersion: 2
+      Hash: 8e21b8bb63de10089195cd0ccd95781c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DieMessage
   - hash:
       serializedVersion: 2
       Hash: a80737d727a1b0096e93ca948844ce4b
@@ -1306,7 +1312,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 582ca00b9a56ae24c5c083bca74af459
+      Hash: 7a56cfb47bc9d318d375096be57ffa78
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Hatman
@@ -1324,7 +1330,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: f4d9758791979944f56e00c6df7347aa
+      Hash: 4237529d42e6b85a1d43e6f15d55f445
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1370,12 +1376,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LoadingBar
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: MapFineder
   - hash:
       serializedVersion: 2
       Hash: 34096a327d779b7c96a3e390f3559143

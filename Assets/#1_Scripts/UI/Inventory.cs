@@ -4,6 +4,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private GameObject inven_Base;
     [SerializeField]
-    private Slot[] inven_Slots;
+    public Slot[] inven_Slots;
 
     [SerializeField]
     private Image itemDescriptionImage;
@@ -28,6 +29,9 @@ public class Inventory : MonoBehaviour
     private Image Check;
     [SerializeField]
     private Text itemDescriptionCost;
+
+    [SerializeField]
+    private Item[] items;
 
 
     public Slot[] GetSlots() { return inven_Slots; }
@@ -43,7 +47,7 @@ public class Inventory : MonoBehaviour
         if (inventoryActivated)
         {
 
-            gold.text = Database.Instance.gold.ToString();
+            gold.text = Database.Instance.nowPlayer.gold.ToString();
             CheckSlotChange();
             ShowItemDescription(inven_Slots[slotNum].item);
         }
@@ -51,9 +55,9 @@ public class Inventory : MonoBehaviour
 
     public void LoadToInven(int _arrayNum, string _itemName, int _itemNum)
     {
-        for (int i = 0; i < Database.Instance.items.Length; i++)
-            if (Database.Instance.items[i].itemName == _itemName)
-                inven_Slots[_arrayNum].AddItem(Database.Instance.items[i], _itemNum);
+        for (int i = 0; i < items.Length; i++)
+            if (items[i].itemName == _itemName)
+                inven_Slots[_arrayNum].AddItem(items[i], _itemNum);
     }
 
     public void AcquireItem(Item _item, int _count = 1)
@@ -67,7 +71,8 @@ public class Inventory : MonoBehaviour
                     if (inven_Slots[i].item.itemName == _item.itemName)
                     {
                         inven_Slots[i].SetSlotCount(_count);
-                        Database.Instance.itemCount[i] += _count;
+                        Database.Instance.nowPlayer.itemCount[i] += _count;
+                        
                         return;
                     }
                 }
@@ -80,8 +85,9 @@ public class Inventory : MonoBehaviour
             if (inven_Slots[i].item == null)
             {
                 inven_Slots[i].AddItem(_item, _count);
-                Database.Instance.items[i] = _item;
-                Database.Instance.itemCount[i] = _count;
+                items[i] = _item;
+                Database.Instance.nowPlayer.itemCount[i] = _count;
+                Database.Instance.nowPlayer.items_name[i] = _item.itemName;
                 return;
             }
         }

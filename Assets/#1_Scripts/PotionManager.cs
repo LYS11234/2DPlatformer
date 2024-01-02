@@ -47,13 +47,13 @@ public class PotionManager : MonoBehaviour
         if(currentPotions > 0)
         {
             currentPotions--;
-            if (Parameter.instance.currentHp + Database.Instance.restoreHealth >= Parameter.instance.hp)
+            if (Parameter.instance.currentHp + Database.Instance.nowPlayer.restoreHealth >= Parameter.instance.hp)
             {
                 Parameter.instance.currentHp = Parameter.instance.hp;
                 
             }
             else
-                Parameter.instance.currentHp += (int)Database.Instance.restoreHealth;
+                Parameter.instance.currentHp += (int)Database.Instance.nowPlayer.restoreHealth;
             potions.text = currentPotions.ToString();
             if (currentPotions == 0)
             {

@@ -35,10 +35,16 @@ public class Menu : MonoBehaviour
                     PlayerManager.instance.canMove = true;
                 }
             }
+            else if(Input.GetKeyDown(KeyCode.Z))
+            {
+                inventory.gameObject.SetActive(false);
+                inven.inventoryActivated = false;
+                PlayerManager.instance.canMove = true;
+            }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Z))
             {
                 menu.gameObject.SetActive(false);
                 PlayerManager.instance.canMove = true;

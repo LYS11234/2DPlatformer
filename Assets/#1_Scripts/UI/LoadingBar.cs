@@ -23,7 +23,7 @@ public class LoadingBar : MonoBehaviour
     private void Start()
     {
         loadingBar.fillAmount = 0;
-        nextScene = Database.Instance.destination;
+        nextScene = Database.Instance.nowPlayer.destination;
         LoadingCheck();
     }
     private void Update()

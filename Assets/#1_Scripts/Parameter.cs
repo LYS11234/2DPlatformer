@@ -61,12 +61,12 @@ public class Parameter : MonoBehaviour
 
     private void Start()
     {
-        Database.Instance.hp = hp;
-        Database.Instance.sp = sp;
-        Database.Instance.mp = mp;
-        Database.Instance.exp = exp;
-        Database.Instance.level = level;
-        Database.Instance.currentExp = currentExp;
+        Database.Instance.nowPlayer.hp = hp;
+        Database.Instance.nowPlayer.sp = sp;
+        Database.Instance.nowPlayer.mp = mp;
+        Database.Instance.nowPlayer.exp = exp;
+        Database.Instance.nowPlayer.level = level;
+        Database.Instance.nowPlayer.currentExp = currentExp;
     }
     private void Update()
     {
@@ -122,6 +122,7 @@ public class Parameter : MonoBehaviour
         {
             LevelUp();
         }
+        Database.Instance.nowPlayer.currentExp = currentExp;
     }
 
     private void LevelUp()
@@ -131,9 +132,9 @@ public class Parameter : MonoBehaviour
             while (currentExp >= exp)
             {
                 currentExp -= exp;
-                Database.Instance.currentExp = currentExp;
                 currentLevel++;
-                Database.Instance.level = currentLevel;
+                
+                Database.Instance.nowPlayer.level = currentLevel;
                 levelText.text = currentLevel.ToString();
                 hp += (int)((float)hp * 0.1f);
                 currentHp = hp;
@@ -142,6 +143,10 @@ public class Parameter : MonoBehaviour
                 sp += (int)((float)sp * 0.1f);
                 currentSp = sp;
                 exp += (int)((float)exp * 0.2f);
+                Database.Instance.nowPlayer.exp = exp;
+                Database.Instance.nowPlayer.hp = hp;
+                Database.Instance.nowPlayer.mp = mp;
+                Database.Instance.nowPlayer.sp = sp;
             }
         }
     }

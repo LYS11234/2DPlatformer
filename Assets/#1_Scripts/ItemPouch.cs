@@ -27,7 +27,7 @@ public class ItemPouch : MonoBehaviour
                 inven.AcquireItem(items[i]);
                 
             }
-            Database.Instance.gold += coinManager.value;
+            Database.Instance.nowPlayer.gold += coinManager.value;
             Destroy(this.gameObject);
         }
     }

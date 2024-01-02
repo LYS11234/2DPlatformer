@@ -114,7 +114,7 @@
     <Compile Include="Assets\#1_Scripts\Action\Attack.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HideMonoScript.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\TabGroupAttribute.cs" />
-    <Compile Include="Assets\#1_Scripts\Finders\MapFineder.cs" />
+    <Compile Include="Assets\#1_Scripts\UI\DieMessage.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowIfAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\Action\Roll.cs" />
     <Compile Include="Assets\#1_Scripts\UI\LoadingBar.cs" />
