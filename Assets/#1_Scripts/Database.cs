@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEditor.Search;
 
 public class PlayerData
 {
@@ -28,11 +27,11 @@ public class Database : MonoBehaviour
     public PlayerData nowPlayer = new PlayerData();
 
     [SerializeField]
-    private Inventory theInven;
+    public Inventory theInven;
 
-    string path;
+    public string path;
 
-    string filename = "save";
+    public string filename = "save";
     private void Awake()
     {
         if (Instance == null)
@@ -44,10 +43,6 @@ public class Database : MonoBehaviour
             Destroy(this.gameObject);
 
         path = Application.persistentDataPath + "/";
-    }
-    private void Start()
-    {
-        Load();
     }
 
     public void Save()
@@ -62,9 +57,9 @@ public class Database : MonoBehaviour
     {
         string loaddata = File.ReadAllText(path + filename);
         nowPlayer = JsonUtility.FromJson<PlayerData>(loaddata);
-        for (int i = 0; i < nowPlayer.items_name.Length; i++)
-        {
-            theInven.LoadToInven(i, nowPlayer.items_name[i], nowPlayer.itemCount[i]);
-        }
+        //for (int i = 0; i < nowPlayer.items_name.Length; i++)
+        //{
+        //    theInven.LoadToInven(i, nowPlayer.items_name[i], nowPlayer.itemCount[i]);
+        //}
     }
 }

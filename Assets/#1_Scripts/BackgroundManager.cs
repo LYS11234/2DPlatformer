@@ -15,5 +15,6 @@ public class BackgroundManager : MonoBehaviour
         PlayerManager.instance.canMove = true;
         PlayerManager.instance.canAttack = true;
         Parameter.instance.gameObject.SetActive(true);
+        PlayerManager.instance.gameObject.transform.position = Vector3.zero;
     }
 }

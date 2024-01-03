@@ -4,7 +4,6 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public Text gold;
     [SerializeField]
-    private GameObject inven_Base;
+    public GameObject inven_Base;
     [SerializeField]
     public Slot[] inven_Slots;
 
@@ -38,7 +37,7 @@ public class Inventory : MonoBehaviour
     public int slotNum;
     void Start()
     {
-
+        Database.Instance.theInven = this;
     }
 
     // Update is called once per frame

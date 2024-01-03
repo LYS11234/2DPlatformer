@@ -61,6 +61,8 @@
     <Compile Include="Assets\#1_Scripts\Action\Attacked.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\GUIColorAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\OldMan.cs" />
+    <Compile Include="Assets\#1_Scripts\UI\Title.cs" />
+    <Compile Include="Assets\#1_Scripts\Boundary.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Enum.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Platformer - Village Props\Script\Elevator.cs" />
