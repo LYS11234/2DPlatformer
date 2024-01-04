@@ -7,6 +7,8 @@ public class BackgroundManager : MonoBehaviour
     private Camera theCamera;
     [SerializeField]
     private Canvas canvas;
+    [SerializeField]
+    private GameObject genPos;
     void Start()
     {
         theCamera = FindObjectOfType<Camera>();
@@ -15,6 +17,7 @@ public class BackgroundManager : MonoBehaviour
         PlayerManager.instance.canMove = true;
         PlayerManager.instance.canAttack = true;
         Parameter.instance.gameObject.SetActive(true);
-        PlayerManager.instance.gameObject.transform.position = Vector3.zero;
+        PlayerManager.instance.gameObject.transform.position = genPos.transform.position;
+
     }
 }

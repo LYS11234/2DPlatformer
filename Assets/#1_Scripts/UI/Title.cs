@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System;
 
 public class Title : MonoBehaviour
 {
@@ -10,8 +12,14 @@ public class Title : MonoBehaviour
     private void Start()
     {
         Parameter.instance.gameObject.SetActive(false);
-        if(!System.IO.Directory.Exists(Application.persistentDataPath + "/" + Database.Instance.filename))
+        PlayerManager.instance.gameObject.SetActive(false);
+        if (!File.Exists(Database.Instance.path + Database.Instance.filename))
+        {
+            Debug.Log(Database.Instance.path + Database.Instance.filename);
             LoadGameBtn.SetActive(false);
+        }
+        else
+            LoadGameBtn.SetActive(true);
     }
     public void NewGame()
     {

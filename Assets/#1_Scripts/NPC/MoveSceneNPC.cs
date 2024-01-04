@@ -15,6 +15,7 @@ public class MoveSceneNPC : AllienceNPC
 
     private new void Start()
     {
+        
         mapImage = Parameter.instance.gameObject.GetComponent<WorldMapManager>().m_WorldMap;
     }
 

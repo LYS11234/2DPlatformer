@@ -50,7 +50,7 @@ public class Database : MonoBehaviour
         string saveData = JsonUtility.ToJson(nowPlayer);
 
         File.WriteAllText(path+filename, saveData);
-        print(path);
+        print(path + filename);
     }
 
     public void Load() 
