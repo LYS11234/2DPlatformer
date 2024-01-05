@@ -79,7 +79,6 @@ public class Inventory : MonoBehaviour
                     {
                         inven_Slots[i].SetSlotCount(_count);
                         Database.Instance.nowPlayer.itemCount[i] += _count;
-                        
                         return;
                     }
                 }

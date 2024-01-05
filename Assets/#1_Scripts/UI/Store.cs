@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class Store : MonoBehaviour
 {
@@ -42,6 +41,7 @@ public class Store : MonoBehaviour
             store_Slots[i].AddItem(store_Slots[i].item, store_Slots[i].itemCount);
             if (store_Slots[i].item.cost > Database.Instance.nowPlayer.gold)
                 store_Slots[i].itemImage.color = Color.red;
+            Database.Instance.nowPlayer.store_ItemCount[i] = store_Slots[i].itemCount;
         }
     }
 
@@ -55,10 +55,10 @@ public class Store : MonoBehaviour
             ShowItemDescription(store_Slots[slotNum].item);
             Buy(slotNum);
         }
-        if(sellActivated)
-        {
+        //if(sellActivated)
+        //{
 
-        }
+        //}
     }
 
     public void storeItemUpdate()
@@ -78,8 +78,10 @@ public class Store : MonoBehaviour
                 if (store_Slots[_slotNum].itemCount > 0)
                 {
                     store_Slots[_slotNum].itemCount--;
+                    Database.Instance.nowPlayer.store_ItemCount[_slotNum] = store_Slots[_slotNum].itemCount;
                     Database.Instance.nowPlayer.gold -= store_Slots[_slotNum].item.cost;
                     inven.AcquireItem(store_Slots[_slotNum].item);
+                    Debug.Log(store_Slots[_slotNum].item);
                 }
                 store_Slots[_slotNum].text_Count.text = store_Slots[_slotNum].itemCount.ToString();
                 store_Slots[_slotNum].text_Count.color = Color.red;

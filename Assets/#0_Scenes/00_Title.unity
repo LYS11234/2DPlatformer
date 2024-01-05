@@ -2972,6 +2972,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6621948385403310497, guid: 9424dae7350a787458438bbec40a6bbd, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6939009395826039260, guid: 9424dae7350a787458438bbec40a6bbd, type: 3}
       propertyPath: m_Name
       value: Slot
@@ -4867,6 +4871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeActivated: 0
+  sellActivated: 0
   gold: {fileID: 749901509}
   store_Base: {fileID: 1986852290}
   store_Slots:
@@ -9615,6 +9620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theInven: {fileID: 0}
+  store: {fileID: 647693674}
   path: 
   filename: save
 --- !u!4 &936708481

@@ -20,6 +20,7 @@ public class PlayerData
     public string[] items_name = new string[48];
     public int[] itemCount = new int[48];
     public int clearedLevel;
+    public int[] store_ItemCount = new int[48];
 }
 public class Database : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class Database : MonoBehaviour
 
     [SerializeField]
     public Inventory theInven;
+    [SerializeField]
+    public Store store;
 
     public string path;
 
@@ -58,6 +61,11 @@ public class Database : MonoBehaviour
     {
         string loaddata = File.ReadAllText(path + filename);
         nowPlayer = JsonUtility.FromJson<PlayerData>(loaddata);
-
+        for (int i = 0; i < store.store_Slots.Length; i++)
+        {
+            store.store_Slots[i].itemCount = nowPlayer.store_ItemCount[i];
+            if (store.store_Slots[i].item != null)
+                store.store_Slots[i].text_Count.text = store.store_Slots[i].itemCount.ToString();
+        }
     }
 }
