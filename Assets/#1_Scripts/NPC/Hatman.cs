@@ -104,6 +104,7 @@ public class Hatman : AllienceNPC
         pointer.gameObject.SetActive(false);
         inventory.inventoryActivated = false;
         store.storeActivated = false;
+        store.sellActivated = false;
         buyBase.SetActive(false);
         chooseTalk = false;
         chooseOne = false;
@@ -124,6 +125,8 @@ public class Hatman : AllienceNPC
         else
         {
             inven.SetActive(true);
+            store.sellActivated = true;
+            inventory.inventoryActivated = true;
             i = 0;
         }
     }

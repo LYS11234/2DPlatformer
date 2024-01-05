@@ -32,15 +32,18 @@ public class Store : MonoBehaviour
     [SerializeField]
     private Inventory inven;
 
-    
+    private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
     public int slotNum;
+    public int slotNum_Sell;
     void Start()
     {
-        for (int i = 0; i < store_Slots.Length; i++) 
+        for (int i = 0; i < store_Slots.Length; i++)
         {
             store_Slots[i].AddItem(store_Slots[i].item, store_Slots[i].itemCount);
             if (store_Slots[i].item.cost > Database.Instance.nowPlayer.gold)
                 store_Slots[i].itemImage.color = Color.red;
+            else
+                store_Slots[i].itemImage.color = Color.white;
             Database.Instance.nowPlayer.store_ItemCount[i] = store_Slots[i].itemCount;
         }
     }
@@ -49,23 +52,71 @@ public class Store : MonoBehaviour
     {
         if (storeActivated)
         {
-            
+            storeItemUpdate();
             gold.text = Database.Instance.nowPlayer.gold.ToString();
-            CheckSlotChange();
+            CheckStoreSlotChange();
             ShowItemDescription(store_Slots[slotNum].item);
             Buy(slotNum);
         }
-        //if(sellActivated)
-        //{
-
-        //}
+        if (sellActivated)
+        {
+            inven.gold.text = Database.Instance.nowPlayer.gold.ToString();
+            CheckInvenSlotChange();
+            inven.ShowItemDescription(inven.inven_Slots[slotNum_Sell].item);
+            Sell(inven.slotNum);
+        }
     }
 
     public void storeItemUpdate()
     {
-        switch(Database.Instance.nowPlayer.clearedLevel)
+        for (int i = 0; i < store_Slots.Length; i++)
         {
+            if (store_Slots[i].item != null)
+            {
+                if (store_Slots[i].item.cost > Database.Instance.nowPlayer.gold)
+                    store_Slots[i].itemImage.color = Color.red;
+                else
+                    store_Slots[i].itemImage.color = Color.white;
+            }
+        }
+        //switch(Database.Instance.nowPlayer.clearedLevel)
+        //{
 
+        //}
+    }
+    public void CheckInvenSlotChange()
+    {
+        if (sellActivated)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                if (slotNum_Sell != 0)
+                    slotNum_Sell--;
+                else
+                {
+                    slotNum_Sell = 47;
+                    while (inven.inven_Slots[slotNum_Sell].item == null)
+                        slotNum_Sell--;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                if (inven.inven_Slots[slotNum_Sell + 1].item != null)
+                    slotNum_Sell++;
+                else
+                    slotNum_Sell = 0;
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if (slotNum_Sell > 7 && inven.inven_Slots[slotNum - 8].item != null)
+                    slotNum_Sell -= 8;
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (slotNum <= 39 && inven.inven_Slots[slotNum_Sell + 8].item != null)
+                    slotNum_Sell += 8;
+            }
+            CheckSlot();
         }
     }
 
@@ -73,22 +124,57 @@ public class Store : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.X))
         {
-            if (store_Slots[_slotNum].item.cost <= Database.Instance.nowPlayer.gold)
-            {
-                if (store_Slots[_slotNum].itemCount > 0)
-                {
-                    store_Slots[_slotNum].itemCount--;
-                    Database.Instance.nowPlayer.store_ItemCount[_slotNum] = store_Slots[_slotNum].itemCount;
-                    Database.Instance.nowPlayer.gold -= store_Slots[_slotNum].item.cost;
-                    inven.AcquireItem(store_Slots[_slotNum].item);
-                    Debug.Log(store_Slots[_slotNum].item);
-                }
-                store_Slots[_slotNum].text_Count.text = store_Slots[_slotNum].itemCount.ToString();
-                store_Slots[_slotNum].text_Count.color = Color.red;
-            }
+            StartCoroutine(BuyCoroutine(_slotNum));
         }
     }
 
+    private IEnumerator BuyCoroutine(int _slotNum)
+    {
+        yield return waitTime;
+        if (store_Slots[_slotNum].item.cost <= Database.Instance.nowPlayer.gold)
+        {
+            if (store_Slots[_slotNum].itemCount > 0)
+            {
+                store_Slots[_slotNum].itemCount--;
+                Database.Instance.nowPlayer.store_ItemCount[_slotNum] = store_Slots[_slotNum].itemCount;
+                Database.Instance.nowPlayer.gold -= store_Slots[_slotNum].item.cost;
+                inven.AcquireItem(store_Slots[_slotNum].item);
+                Debug.Log(store_Slots[_slotNum].item);
+            }
+            store_Slots[_slotNum].text_Count.text = store_Slots[_slotNum].itemCount.ToString();
+            store_Slots[_slotNum].text_Count.color = Color.red;
+        }
+    }
+
+    private void Sell(int _slotNum)
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            StartCoroutine(SellCoroutine(_slotNum));
+        }
+    }
+
+    private IEnumerator SellCoroutine(int _slotNum)
+    {
+        yield return waitTime;
+
+       if(inven.inven_Slots[_slotNum].itemCount > 0)
+        {
+            inven.inven_Slots[_slotNum].itemCount--;
+            Database.Instance.nowPlayer.gold += inven.inven_Slots[_slotNum].item.value;
+            inven.gold.text = Database.Instance.nowPlayer.gold.ToString();
+            if (inven.inven_Slots[_slotNum].itemCount == 0)
+            {
+                inven.inven_Slots[_slotNum].item = null;
+                inven.inven_Slots[_slotNum].text_Count.text = "";
+                inven.inven_Slots[_slotNum].itemImage.sprite = null;
+                inven.inven_Slots[_slotNum].itemImage.color = new Color(255, 255, 255, 0);
+            }
+            else
+                inven.inven_Slots[_slotNum].text_Count.text = inven.inven_Slots[_slotNum].itemCount.ToString();
+            
+        }
+    }
     private void ShowItemDescription(Item _item)
     {
 
@@ -115,7 +201,7 @@ public class Store : MonoBehaviour
         }
     }
 
-    private void CheckSlotChange()
+    private void CheckStoreSlotChange()
     {
         if (storeActivated)
         {

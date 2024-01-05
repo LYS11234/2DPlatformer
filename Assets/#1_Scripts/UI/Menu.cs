@@ -48,6 +48,7 @@ public class Menu : MonoBehaviour
             {
                 menu.gameObject.SetActive(false);
                 PlayerManager.instance.canMove = true;
+                inven.inventoryActivated = false;
                 inven.slotNum = 0;
             }
         }

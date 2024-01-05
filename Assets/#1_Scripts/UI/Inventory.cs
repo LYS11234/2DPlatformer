@@ -104,7 +104,7 @@ public class Inventory : MonoBehaviour
         
     }
 
-    private void ShowItemDescription(Item _item)
+    public void ShowItemDescription(Item _item)
     {
         
         if(_item == null)
@@ -126,7 +126,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void CheckSlotChange()
+    public void CheckSlotChange()
     {
         if (inventoryActivated)
         {
