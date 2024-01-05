@@ -138,6 +138,7 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ButtonAttribute.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Platformer - Village Props\Script\Chest.cs" />
     <Compile Include="Assets\#1_Scripts\ItemPickUp.cs" />
+    <Compile Include="Assets\#1_Scripts\UI\Store.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\FoldoutGroupAttribute.cs" />
   </ItemGroup>
   <ItemGroup>

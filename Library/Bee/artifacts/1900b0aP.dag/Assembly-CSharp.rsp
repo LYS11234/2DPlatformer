@@ -352,6 +352,7 @@
 "Assets/#1_Scripts/UI/LoadingBar.cs"
 "Assets/#1_Scripts/UI/Menu.cs"
 "Assets/#1_Scripts/UI/Slot.cs"
+"Assets/#1_Scripts/UI/Store.cs"
 "Assets/#1_Scripts/UI/Title.cs"
 "Assets/#1_Scripts/WorldMapManager.cs"
 "Assets/Bandits - Pixel Art/Demo/Bandit.cs"

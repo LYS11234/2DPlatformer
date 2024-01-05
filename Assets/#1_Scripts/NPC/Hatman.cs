@@ -28,6 +28,10 @@ public class Hatman : AllienceNPC
     private GameObject buyBase;
     [SerializeField]
     private GameObject inven;
+    [SerializeField]
+    private Store store;
+    [SerializeField]
+    private Inventory inventory;
 
     [SerializeField]
     private bool chooseTalk;
@@ -40,6 +44,8 @@ public class Hatman : AllienceNPC
         pointer = dialogueManager.pointer;
         buyBase = dialogueManager.buyBase;
         inven = dialogueManager.inven;
+        inventory = FindObjectOfType<Inventory>();
+        store = FindObjectOfType<Store>();
     }
 
     private void Update()
@@ -58,11 +64,11 @@ public class Hatman : AllienceNPC
         {
             StartCoroutine(DialogueCoroutine(talkDialogue));
         }
-        else if (canTalk && Input.GetKeyDown(KeyCode.X) && j == 1)
+        else if (canTalk && Input.GetKeyDown(KeyCode.X) && j == 1 && !store.storeActivated)
         {
             StartCoroutine(BuyCoroutine());
         }
-        else if (canTalk && Input.GetKeyDown(KeyCode.X) && j == 2)
+        else if (canTalk && Input.GetKeyDown(KeyCode.X) && j == 2 && !inventory.inventoryActivated)
         {
             StartCoroutine(SellCoroutine());
         }
@@ -96,6 +102,8 @@ public class Hatman : AllienceNPC
         buy.gameObject.SetActive(false);
         sell.gameObject.SetActive(false);
         pointer.gameObject.SetActive(false);
+        inventory.inventoryActivated = false;
+        store.storeActivated = false;
         buyBase.SetActive(false);
         chooseTalk = false;
         chooseOne = false;
@@ -153,6 +161,7 @@ public class Hatman : AllienceNPC
         else
         {
             buyBase.SetActive(true);
+            store.storeActivated = true;
             i = 0;
         }
     }

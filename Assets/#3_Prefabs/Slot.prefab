@@ -107,8 +107,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7952780721795624237}
   - {fileID: 2579132719870268178}
+  - {fileID: 7952780721795624237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -131,7 +131,6 @@ MonoBehaviour:
   item: {fileID: 0}
   itemImage: {fileID: 73838060373306530}
   text_Count: {fileID: 9095885719472554929}
-  go_CountImage: {fileID: 0}
   itemCount: 0
 --- !u!222 &1957993964542442475
 CanvasRenderer:

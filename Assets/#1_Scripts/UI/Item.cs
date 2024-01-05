@@ -13,6 +13,7 @@ public class Item : ScriptableObject
     public GameObject itemPrefab;
     public ItemType itemType;
     public int cost;
+    public int value;
 
 
     public enum ItemType

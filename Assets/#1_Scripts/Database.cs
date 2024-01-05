@@ -19,6 +19,7 @@ public class PlayerData
     public int mp;
     public string[] items_name = new string[48];
     public int[] itemCount = new int[48];
+    public int clearedLevel;
 }
 public class Database : MonoBehaviour
 {
@@ -57,9 +58,6 @@ public class Database : MonoBehaviour
     {
         string loaddata = File.ReadAllText(path + filename);
         nowPlayer = JsonUtility.FromJson<PlayerData>(loaddata);
-        //for (int i = 0; i < nowPlayer.items_name.Length; i++)
-        //{
-        //    theInven.LoadToInven(i, nowPlayer.items_name[i], nowPlayer.itemCount[i]);
-        //}
+
     }
 }

@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
     private Text itemDescriptionCost;
 
     [SerializeField]
-    private Item[] items;
+    public Item[] items;
 
 
     public Slot[] GetSlots() { return inven_Slots; }
@@ -38,6 +38,12 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         Database.Instance.theInven = this;
+        for (int i = 0; i < Database.Instance.nowPlayer.items_name.Length; i++)
+        {
+            Debug.Log(Database.Instance.nowPlayer.items_name[i]);
+            Database.Instance.theInven.LoadToInven(i, Database.Instance.nowPlayer.items_name[i], Database.Instance.nowPlayer.itemCount[i]);
+        }
+
     }
 
     // Update is called once per frame
@@ -55,8 +61,10 @@ public class Inventory : MonoBehaviour
     public void LoadToInven(int _arrayNum, string _itemName, int _itemNum)
     {
         for (int i = 0; i < items.Length; i++)
+        {
             if (items[i].itemName == _itemName)
                 inven_Slots[_arrayNum].AddItem(items[i], _itemNum);
+        }
     }
 
     public void AcquireItem(Item _item, int _count = 1)
@@ -115,7 +123,7 @@ public class Inventory : MonoBehaviour
             itemDescriptionName.text = _item.itemName;
             itemDescriptionItemType.text = _item.itemType.ToString();
             itemDescription.text = _item.itemDescription;
-            itemDescriptionCost.text = _item.cost.ToString();
+            itemDescriptionCost.text = _item.value.ToString();
         }
     }
 
