@@ -707,6 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theInven: {fileID: 0}
+  store: {fileID: 0}
   path: 
   filename: save
 --- !u!4 &380222164
@@ -2965,6 +2966,8 @@ MonoBehaviour:
   chooseOne: 0
   buyBase: {fileID: 0}
   inven: {fileID: 0}
+  store: {fileID: 0}
+  inventory: {fileID: 0}
   chooseTalk: 0
 --- !u!1 &1676144277
 GameObject:
@@ -3631,15 +3634,18 @@ MonoBehaviour:
     \uC544\uBB34\uB3C4 \uC5C6\uB2E4\uB124."
   - "\uD589\uC5EC\uB098 \uC0B0\uC801\uB4E4\uC744 \uCC3E\uC544\uAC08 \uC0DD\uAC01\uC744
     \uAFC8\uC5D0\uC11C\uB3C4 \uD558\uC9C0 \uB9D0\uAC8C!"
-  - "\uCC28\uB77C\uB9AC \uBAA9\uCC45\uC744 \uC9D3\uB294 \uB3D9\uC548 \uC778\uBD80\uB4E4\uC774
-    \uB2E4\uCE58\uC9C0 \uC54A\uB3C4\uB85D \uC8FC\uBCC0 \uBAAC\uC2A4\uD130\uB098 \uC0AC\uB0E5\uD574\uC8FC\uAC8C..!"
-  - "\uC790\uB124 \uC5C5\uC774\uC9C0 \uC54A\uC740\uAC00.."
+  - "\uD53C\uACE4\uD560\uD150\uB370 \uB4E4\uC5B4\uAC00 \uC26C\uC2DC\uAC8C\uB098..."
   dialogueManager: {fileID: 0}
   gui: {fileID: 0}
   pointer: {fileID: 0}
   i: 0
   j: 0
   canTalk: 0
+  oldManDialogue1:
+  - "\uD558\uC544..."
+  - "\uBAA9\uCC45\uC744 \uACE0\uCE58\uB294 \uB3D9\uC548 \uBAAC\uC2A4\uD130\uAC00
+    \uB2EC\uB824\uB4DC\uBA74 \uC5B4\uCA4C\uB098..."
+  step: 0
 --- !u!4 &1976468125
 Transform:
   m_ObjectHideFlags: 0

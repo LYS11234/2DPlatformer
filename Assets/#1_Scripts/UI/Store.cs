@@ -77,6 +77,8 @@ public class Store : MonoBehaviour
                     store_Slots[i].itemImage.color = Color.red;
                 else
                     store_Slots[i].itemImage.color = Color.white;
+                if (store_Slots[i].itemCount == 0)
+                    store_Slots[i].text_Count.color = Color.red;
             }
         }
         //switch(Database.Instance.nowPlayer.clearedLevel)
@@ -142,7 +144,7 @@ public class Store : MonoBehaviour
                 Debug.Log(store_Slots[_slotNum].item);
             }
             store_Slots[_slotNum].text_Count.text = store_Slots[_slotNum].itemCount.ToString();
-            store_Slots[_slotNum].text_Count.color = Color.red;
+
         }
     }
 

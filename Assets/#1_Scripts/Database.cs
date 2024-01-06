@@ -21,6 +21,7 @@ public class PlayerData
     public int[] itemCount = new int[48];
     public int clearedLevel;
     public int[] store_ItemCount = new int[48];
+    public int oldmanStep;
 }
 public class Database : MonoBehaviour
 {
