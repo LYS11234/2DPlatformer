@@ -67,5 +67,10 @@ public class Database : MonoBehaviour
             if (store.store_Slots[i].item != null)
                 store.store_Slots[i].text_Count.text = store.store_Slots[i].itemCount.ToString();
         }
+        for (int i = 0; i < Database.Instance.nowPlayer.items_name.Length; i++)
+        {
+            Debug.Log(Database.Instance.nowPlayer.items_name[i]);
+            Database.Instance.theInven.LoadToInven(i, Database.Instance.nowPlayer.items_name[i], Database.Instance.nowPlayer.itemCount[i]);
+        }
     }
 }

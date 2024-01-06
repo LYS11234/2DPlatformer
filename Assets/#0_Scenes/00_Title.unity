@@ -4980,6 +4980,7 @@ MonoBehaviour:
   - {fileID: 0}
   inven: {fileID: 706357833}
   slotNum: 0
+  slotNum_Sell: 0
 --- !u!1001 &653495732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6247,8 +6248,8 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 16c50ac9fbaf65e4083023529a96d77a, type: 2}
   - {fileID: 11400000, guid: 2a32c6dffabd0f84c8ea42d20998662c, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 47b563032998eae46bdb2e981e013723, type: 2}
+  - {fileID: 11400000, guid: 4d26c0833cdeade40b856299a48b41cf, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

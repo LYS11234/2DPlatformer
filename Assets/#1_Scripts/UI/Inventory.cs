@@ -38,11 +38,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         Database.Instance.theInven = this;
-        for (int i = 0; i < Database.Instance.nowPlayer.items_name.Length; i++)
-        {
-            Debug.Log(Database.Instance.nowPlayer.items_name[i]);
-            Database.Instance.theInven.LoadToInven(i, Database.Instance.nowPlayer.items_name[i], Database.Instance.nowPlayer.itemCount[i]);
-        }
+        
 
     }
 
@@ -62,8 +58,16 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            if (items[i].itemName == _itemName)
-                inven_Slots[_arrayNum].AddItem(items[i], _itemNum);
+            if (_itemName != "")
+            {
+                if (items[i].itemName == _itemName)
+                {
+                    inven_Slots[_arrayNum].AddItem(items[i], _itemNum);
+                    return;
+                }
+            }
+            else
+                return;
         }
     }
 

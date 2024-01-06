@@ -161,14 +161,33 @@ public class Store : MonoBehaviour
        if(inven.inven_Slots[_slotNum].itemCount > 0)
         {
             inven.inven_Slots[_slotNum].itemCount--;
+            Database.Instance.nowPlayer.itemCount[_slotNum] = inven.inven_Slots[_slotNum].itemCount;
             Database.Instance.nowPlayer.gold += inven.inven_Slots[_slotNum].item.value;
             inven.gold.text = Database.Instance.nowPlayer.gold.ToString();
             if (inven.inven_Slots[_slotNum].itemCount == 0)
             {
-                inven.inven_Slots[_slotNum].item = null;
-                inven.inven_Slots[_slotNum].text_Count.text = "";
-                inven.inven_Slots[_slotNum].itemImage.sprite = null;
-                inven.inven_Slots[_slotNum].itemImage.color = new Color(255, 255, 255, 0);
+                Database.Instance.nowPlayer.items_name[_slotNum] = "";
+                for (int i = _slotNum; i < inven.inven_Slots.Length - 1; i++)
+                {
+                    if (inven.inven_Slots[i + 1].item != null)
+                    {
+                        Database.Instance.nowPlayer.items_name[i] = Database.Instance.nowPlayer.items_name[i + 1];
+                        Database.Instance.nowPlayer.itemCount[i] = Database.Instance.nowPlayer.itemCount[i + 1];
+                        inven.inven_Slots[i].item = inven.inven_Slots[i + 1].item;
+                        inven.inven_Slots[i].text_Count.text = inven.inven_Slots[i + 1].text_Count.text;
+                        inven.inven_Slots[i].itemImage.sprite = inven.inven_Slots[i + 1].itemImage.sprite;
+                    }
+                    else
+                    {
+                        Database.Instance.nowPlayer.items_name[i] = "";
+                        Database.Instance.nowPlayer.itemCount[i] = 0;
+                        inven.inven_Slots[i].item = null;
+                        inven.inven_Slots[i].text_Count.text = "";
+                        inven.inven_Slots[i].itemImage.sprite = null;
+                        inven.inven_Slots[i].itemImage.color = new Color(255, 255, 255, 0);
+                    }
+                }
+                
             }
             else
                 inven.inven_Slots[_slotNum].text_Count.text = inven.inven_Slots[_slotNum].itemCount.ToString();
