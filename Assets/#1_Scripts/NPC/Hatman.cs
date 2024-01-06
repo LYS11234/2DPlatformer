@@ -126,7 +126,7 @@ public class Hatman : AllienceNPC
         {
             inven.SetActive(true);
             store.sellActivated = true;
-            inventory.inventoryActivated = true;
+            //inventory.inventoryActivated = true;
             i = 0;
         }
     }

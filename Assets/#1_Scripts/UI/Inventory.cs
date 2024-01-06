@@ -166,7 +166,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void CheckSlot()
+    public void CheckSlot()
     {
         Vector2 _vec = new Vector2();
         _vec.Set(inven_Slots[slotNum].transform.position.x, inven_Slots[slotNum].transform .position.y);

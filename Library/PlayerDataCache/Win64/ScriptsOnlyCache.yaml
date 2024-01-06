@@ -34,7 +34,6 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
-    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.SpriteSkinComposite
     - UnityEngine.U2D.Animation.SpriteSkinUpdateHelper
     Unity.2D.IK.Editor.dll:
@@ -44,7 +43,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -743,7 +741,7 @@ ScriptsOnlyBuild:
     className: BanditManager
   - hash:
       serializedVersion: 2
-      Hash: cccbd244926c68dd065a06310a3c539e
+      Hash: aa306e2ac744077d9ea58840aee9d20a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: OldMan
@@ -851,7 +849,7 @@ ScriptsOnlyBuild:
     className: AdvancedRuleOverrideTile
   - hash:
       serializedVersion: 2
-      Hash: f6ab417f45bb14c740258650fc0f0ffe
+      Hash: 2ed5f7b8fa1255f89b25a5303b98c87c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Database
@@ -1313,7 +1311,7 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: 210719ca75122134d1035028cb0170e2
+      Hash: d7108d6d8438eff2117762633bf8f2c6
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Store

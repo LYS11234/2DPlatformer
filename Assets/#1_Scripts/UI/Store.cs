@@ -62,7 +62,7 @@ public class Store : MonoBehaviour
         {
             inven.gold.text = Database.Instance.nowPlayer.gold.ToString();
             CheckInvenSlotChange();
-            inven.ShowItemDescription(inven.inven_Slots[slotNum_Sell].item);
+            inven.ShowItemDescription(inven.inven_Slots[inven.slotNum].item);
             Sell(inven.slotNum);
         }
     }
@@ -92,33 +92,33 @@ public class Store : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (slotNum_Sell != 0)
-                    slotNum_Sell--;
+                if (inven.slotNum != 0)
+                    inven.slotNum--;
                 else
                 {
-                    slotNum_Sell = 47;
-                    while (inven.inven_Slots[slotNum_Sell].item == null)
-                        slotNum_Sell--;
+                    inven.slotNum = 47;
+                    while (inven.inven_Slots[inven.slotNum].item == null)
+                        inven.slotNum--;
                 }
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (inven.inven_Slots[slotNum_Sell + 1].item != null)
-                    slotNum_Sell++;
+                if (inven.inven_Slots[inven.slotNum + 1].item != null)
+                    inven.slotNum++;
                 else
-                    slotNum_Sell = 0;
+                    inven.slotNum = 0;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                if (slotNum_Sell > 7 && inven.inven_Slots[slotNum - 8].item != null)
-                    slotNum_Sell -= 8;
+                if (inven.slotNum > 7 && inven.inven_Slots[slotNum - 8].item != null)
+                    inven.slotNum -= 8;
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (slotNum <= 39 && inven.inven_Slots[slotNum_Sell + 8].item != null)
-                    slotNum_Sell += 8;
+                if (slotNum <= 39 && inven.inven_Slots[inven.slotNum + 8].item != null)
+                    inven.slotNum += 8;
             }
-            CheckSlot();
+            inven.CheckSlot();
         }
     }
 
