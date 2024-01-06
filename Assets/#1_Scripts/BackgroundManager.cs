@@ -9,6 +9,8 @@ public class BackgroundManager : MonoBehaviour
     private Canvas canvas;
     [SerializeField]
     private GameObject genPos;
+    [SerializeField]
+    private BoxCollider2D bound;
     void Start()
     {
         theCamera = FindObjectOfType<Camera>();
@@ -18,6 +20,6 @@ public class BackgroundManager : MonoBehaviour
         PlayerManager.instance.canAttack = true;
         Parameter.instance.gameObject.SetActive(true);
         PlayerManager.instance.gameObject.transform.position = genPos.transform.position;
-
+        CameraManager.instance.SetBound(bound);
     }
 }
