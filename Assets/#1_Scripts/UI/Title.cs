@@ -15,7 +15,6 @@ public class Title : MonoBehaviour
         PlayerManager.instance.gameObject.SetActive(false);
         if (!File.Exists(Database.Instance.path + Database.Instance.filename))
         {
-            Debug.Log(Database.Instance.path + Database.Instance.filename);
             LoadGameBtn.SetActive(false);
         }
         else

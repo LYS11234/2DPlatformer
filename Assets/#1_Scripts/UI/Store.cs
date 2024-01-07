@@ -39,13 +39,19 @@ public class Store : MonoBehaviour
     {
         for (int i = 0; i < store_Slots.Length; i++)
         {
-            store_Slots[i].AddItem(store_Slots[i].item, store_Slots[i].itemCount);
-            if (store_Slots[i].item.cost > Database.Instance.nowPlayer.gold)
-                store_Slots[i].itemImage.color = Color.red;
+            if (store_Slots[i].item != null)
+            {
+                store_Slots[i].AddItem(store_Slots[i].item, store_Slots[i].itemCount);
+                if (store_Slots[i].item.cost > Database.Instance.nowPlayer.gold)
+                    store_Slots[i].itemImage.color = Color.red;
+                else
+                    store_Slots[i].itemImage.color = Color.white;
+                Database.Instance.nowPlayer.store_ItemCount[i] = store_Slots[i].itemCount;
+            }
             else
-                store_Slots[i].itemImage.color = Color.white;
-            Database.Instance.nowPlayer.store_ItemCount[i] = store_Slots[i].itemCount;
+                return;
         }
+
     }
 
     void Update()
