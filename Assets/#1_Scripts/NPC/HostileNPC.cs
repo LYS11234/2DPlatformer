@@ -38,9 +38,20 @@ public class HostileNPC : NPC
     protected int minGold;
     [SerializeField]
     protected int maxGold;
+    [SerializeField]
+    protected int direction;
+    [SerializeField]
+    protected int moveCount;
+    [SerializeField]
+    protected float speed;
+    [SerializeField]
+    protected float moveTime;
+    [SerializeField]
+    protected float currentMoveTime;
+    protected WaitForSeconds waitTime = new WaitForSeconds(0.1f);
 
     Vector2 pos = new Vector2();
-    private WaitForSeconds waitTime = new WaitForSeconds(5f);
+    private WaitForSeconds waitTime2 = new WaitForSeconds(5f);
     private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
     #endregion
 
@@ -49,8 +60,12 @@ public class HostileNPC : NPC
     [SerializeField]
     protected bool canMove;
 
+    [SerializeField]
+    protected int layerMask;
+
     private void Start()
     {
+        layerMask = 1 << LayerMask.NameToLayer("Player");
         RandomValue();
         pos.Set(this.transform.position.x, this.transform.position.y + 100);
     }
@@ -81,10 +96,10 @@ public class HostileNPC : NPC
         mobRd.gravityScale = 0;
         col.isTrigger = true;
         DropItem(this.transform);
-        yield return waitTime;
-        yield return waitTime;
-        yield return waitTime;
-        yield return waitTime;
+        yield return waitTime2;
+        yield return waitTime2;
+        yield return waitTime2;
+        yield return waitTime2;
         
         Destroy(this.gameObject);
     }
@@ -108,7 +123,39 @@ public class HostileNPC : NPC
 
     protected virtual void FindPlayer()
     {
-        Debug.DrawRay(pos, new Vector3 (-pos.x, 0f,0f), new Color(0, 3, 0), 5);
-        Debug.Log($"Pos = {pos}");
+        //Debug.DrawRay(pos, new Vector3 (-pos.x, 0f,0f), new Color(0, 3, 0), 10);
+        //Debug.Log($"Pos = {pos}");
+        Physics2D.Raycast(this.transform.position, this.transform.TransformDirection(Vector2.right), 0.1f, layerMask);
+        if(Physics2D.Raycast(this.transform.position, this.transform.TransformDirection(Vector2.right), 0.5f, layerMask))
+            Debug.Log($"Finded Player");
+    }
+
+    protected virtual void Move(int _direction)
+    {
+        StartCoroutine(MoveCoroutine(_direction));
+    }
+
+    protected virtual private IEnumerator MoveCoroutine(int _direction)
+    {
+        if (_direction != 0)
+        {
+            if (_direction < 0)
+                sprite.flipX = true;
+            else if (_direction > 0)
+                sprite.flipX = false;
+
+            Vector3 _vel = transform.right * speed * _direction;
+            for (int i = 0; i < moveCount; i++)
+            {
+                mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
+                yield return waitTime;
+            }
+
+            anim.SetBool("isMove", true);
+        }
+        if (_direction == 0 || moveCount == 0)
+        {
+            anim.SetBool("isMove", false);
+        }
     }
 }

@@ -27,13 +27,13 @@ public class MoveSceneNPC : AllienceNPC
             PlayerManager.instance.canMove = false;
             mapImage.gameObject.SetActive(true);
         }
-        if(mapImage.gameObject.active && Input.GetKeyDown(KeyCode.Z))
-        {
-            mapImage.gameObject.SetActive(false);
-            PlayerManager.instance.gameObject.SetActive(false);
-            Parameter.instance.gameObject.SetActive(false);
-            SceneManager.LoadSceneAsync("99_LoadingScene");
-        }
+        //if(mapImage.gameObject.active && Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    mapImage.gameObject.SetActive(false);
+        //    PlayerManager.instance.gameObject.SetActive(false);
+        //    Parameter.instance.gameObject.SetActive(false);
+        //    SceneManager.LoadSceneAsync("99_LoadingScene");
+        //}
     }
 
     private void Rest()

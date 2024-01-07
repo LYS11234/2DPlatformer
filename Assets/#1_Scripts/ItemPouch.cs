@@ -34,7 +34,6 @@ public class ItemPouch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"collider Found! {collision.gameObject.name}");
         if (collision.gameObject.name == "Player") 
         {
             canPick = true;

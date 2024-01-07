@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Attack
     - BackgroundManager
-    - Boundary
     - ButtonGUI
     - CameraManager
     - CoinManager
@@ -239,8 +238,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3556}
     - Class: 114
       Script: {instanceID: 4224}
-    - Class: 114
-      Script: {instanceID: 5198}
     - Class: 114
       Script: {instanceID: 6796}
     - Class: 114
@@ -1617,7 +1614,7 @@ ScriptsOnlyBuild:
     className: Variables
   - hash:
       serializedVersion: 2
-      Hash: 2a2e578c46438d038d8d8ed7b3495dff
+      Hash: f24d32f56779b48c4212b33ba14dbbc1
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: BackgroundManager

@@ -63,9 +63,12 @@ public class WorldMapManager : MonoBehaviour
             CheckMap();
             //mapPoint.position = originPos;
             //sceneName = Database.Instance.destination;
-            Debug.Log($"Pointer Pos: {mapPoint.position.x}, {mapPoint.position.y}");
+
             m_WorldMap.SetActive(false);
             PlayerManager.instance.canMove = true;
+            PlayerManager.instance.gameObject.SetActive(false);
+            Parameter.instance.gameObject.SetActive(false);
+            SceneManager.LoadSceneAsync("99_LoadingScene");
         }
     }
 
@@ -76,7 +79,6 @@ public class WorldMapManager : MonoBehaviour
         {
             case 0: 
                 _vec.Set(villiage.transform.position.x, villiage.transform.position.y);
-                Debug.Log("It Activated");
                 sceneName = villiage.gameObject.name;
                 break;
             case 1:
@@ -95,6 +97,5 @@ public class WorldMapManager : MonoBehaviour
         }
         
         mapPoint.transform.position = _vec;
-        Debug.Log("Move Activated");
     }
 }

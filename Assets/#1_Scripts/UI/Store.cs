@@ -63,6 +63,8 @@ public class Store : MonoBehaviour
             CheckStoreSlotChange();
             ShowItemDescription(store_Slots[slotNum].item);
             Buy(slotNum);
+            if(Input.GetKeyDown(KeyCode.Z))
+                storeActivated = false;
         }
         if (sellActivated)
         {
@@ -70,6 +72,8 @@ public class Store : MonoBehaviour
             CheckInvenSlotChange();
             inven.ShowItemDescription(inven.inven_Slots[inven.slotNum].item);
             Sell(inven.slotNum);
+            if (Input.GetKeyDown(KeyCode.Z))
+                sellActivated = false;
         }
     }
 
@@ -177,6 +181,7 @@ public class Store : MonoBehaviour
                 Database.Instance.nowPlayer.items_name[_slotNum] = "";
                 for (int i = _slotNum; i < inven.inven_Slots.Length - 1; i++)
                 {
+                    
                     if (inven.inven_Slots[i + 1].item != null)
                     {
                         Database.Instance.nowPlayer.items_name[i] = Database.Instance.nowPlayer.items_name[i + 1];
@@ -184,6 +189,7 @@ public class Store : MonoBehaviour
                         inven.inven_Slots[i].item = inven.inven_Slots[i + 1].item;
                         inven.inven_Slots[i].text_Count.text = inven.inven_Slots[i + 1].text_Count.text;
                         inven.inven_Slots[i].itemImage.sprite = inven.inven_Slots[i + 1].itemImage.sprite;
+                        inven.inven_Slots[i].itemCount = inven.inven_Slots[i + 1].itemCount;
                     }
                     else
                     {
@@ -193,6 +199,7 @@ public class Store : MonoBehaviour
                         inven.inven_Slots[i].text_Count.text = "";
                         inven.inven_Slots[i].itemImage.sprite = null;
                         inven.inven_Slots[i].itemImage.color = new Color(255, 255, 255, 0);
+                        break;
                     }
                 }
                 

@@ -54,7 +54,6 @@ public class Hatman : AllienceNPC
         {
             PlayerManager.instance.canMove = false;
             StartCoroutine(DialogueCoroutine(npcDialogue));
-            Debug.Log($"Dialogue Length = {npcDialogue.Length}");
         }
         else if (canTalk && chooseOne)
         {
@@ -220,6 +219,8 @@ public class Hatman : AllienceNPC
             
             ChoiceCheck();
         }
+        if(Input.GetKeyDown(KeyCode.Z))
+            CloseDialogue();
     }
 
     private void BuyProduct()

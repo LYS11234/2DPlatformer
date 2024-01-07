@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class Spider : Monster
 {
-    [SerializeField]
-    private int direction;
-    [SerializeField]
-    private int moveCount;
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float moveTime;
-    [SerializeField]
-    private float currentMoveTime;
-    private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
+    
 
     protected override void Update()
     {
         base.Update();
-        if(canMove)
+
+        if (canMove)
+        {
             RandomDirection();
+            FindPlayer();
+        }
     }
 
     private void RandomDirection()
@@ -36,34 +30,15 @@ public class Spider : Monster
             currentMoveTime += Time.deltaTime;
     }
 
-    private void Move(int _direction)
+    protected override void Move(int _direction)
     {
-        StartCoroutine(MoveCoroutine(_direction));
+        base.Move(_direction);
     }
 
-    private IEnumerator MoveCoroutine(int _direction)
-    {
-        if (_direction != 0)
-        {
-            if (_direction < 0)
-                sprite.flipX = true;
-            else if (_direction > 0)
-                sprite.flipX = false;
-
-            Vector3 _vel = transform.right * speed * _direction;
-            for (int i = 0; i < moveCount; i++)
-            {
-                mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
-                yield return waitTime;
-            }
-
-            anim.SetBool("isMove", true);
-        }
-        if (_direction == 0 || moveCount == 0)
-        {
-            anim.SetBool("isMove", false);
-        }
-    }
+    //protected override private IEnumerator MoveCoroutine(int _direction)
+    //{
+    //    base.MoveCoroutine(_direction);
+    //}
 
     protected override void DropItem(Transform _transform)
     {
@@ -82,5 +57,10 @@ public class Spider : Monster
     {
         base.OnCollisionStay2D(col);
 
+    }
+
+    protected override void FindPlayer()
+    {
+        base.FindPlayer();
     }
 }

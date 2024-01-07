@@ -12,11 +12,8 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger Enabled");
-        Debug.Log($"Attack traget: {collision.transform.name}");
         if (collision.GetComponent<NPC>().npcType == "Monster" || collision.GetComponent<NPC>().npcType == "Hostile NPC")
         {
-            Debug.Log("Attack Enabled");
             if (collision != null)
             { 
                 if(collision.GetComponent<NPC>().npcType == "Monster")

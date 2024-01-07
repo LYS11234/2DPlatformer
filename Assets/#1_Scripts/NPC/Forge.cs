@@ -34,6 +34,10 @@ public class Forge : AllienceNPC
         {
             StartCoroutine(UpgradeCoroutine());
         }
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            CloseDialogue();
+        }
     }
 
     protected override void OnTriggerStay2D(Collider2D other)
