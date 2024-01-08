@@ -61,12 +61,7 @@ public class Parameter : MonoBehaviour
 
     private void Start()
     {
-        Database.Instance.nowPlayer.hp = hp;
-        Database.Instance.nowPlayer.sp = sp;
-        Database.Instance.nowPlayer.mp = mp;
-        Database.Instance.nowPlayer.exp = exp;
-        Database.Instance.nowPlayer.level = level;
-        Database.Instance.nowPlayer.currentExp = currentExp;
+        
     }
     private void Update()
     {

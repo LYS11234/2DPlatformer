@@ -80,10 +80,5 @@ public class MoveSceneNPC : AllienceNPC
             PlayerManager.instance.canAttack = true;
             canTalk = false;
         }
-        if (other.transform.tag == "Monster")
-        {
-            PlayerManager.instance.canAttack = false;
-            canTalk = true;
-        }
     }
 }

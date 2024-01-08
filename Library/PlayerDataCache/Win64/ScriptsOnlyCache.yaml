@@ -594,7 +594,7 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: 8d410b999c35b95d7a49d9ee05522b8d
+      Hash: af9a36f34825d8f86c3c835fb8e2247d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Monster
@@ -732,7 +732,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 40158d195827a389ed0ddbb16f335b1d
+      Hash: f2dd04d8ec2c95599f8bbe7cc914f9ab
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: BanditManager
@@ -1032,7 +1032,7 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
-      Hash: 700111d2659d4c3ed09c9fe0e4e1b09f
+      Hash: af9a36f34825d8f86c3c835fb8e2247d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spider
@@ -1158,7 +1158,7 @@ ScriptsOnlyBuild:
     className: Bandit
   - hash:
       serializedVersion: 2
-      Hash: 19c0fde6b798b0f57b16b11bb0d558af
+      Hash: 797eae70fca898288c254f24ec69cf19
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: HostileNPC

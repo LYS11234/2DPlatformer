@@ -12,11 +12,11 @@ public class PlayerData
     public int potions = 5;
     public float restoreHealth = 20;
     public int level = 1;
-    public int exp;
+    public int exp = 100;
     public int currentExp = 0;
-    public int hp;
-    public int sp;
-    public int mp;
+    public int hp = 100;
+    public int sp = 1000;
+    public int mp = 100;
     public string[] items_name = new string[48];
     public int[] itemCount = new int[48];
     public int clearedLevel;
@@ -73,5 +73,15 @@ public class Database : MonoBehaviour
             Debug.Log(Database.Instance.nowPlayer.items_name[i]);
             Database.Instance.theInven.LoadToInven(i, Database.Instance.nowPlayer.items_name[i], Database.Instance.nowPlayer.itemCount[i]);
         }
+        Parameter.instance.hp = Database.Instance.nowPlayer.hp;
+        Parameter.instance.currentHp = Parameter.instance.hp;
+        Parameter.instance.sp = Database.Instance.nowPlayer.sp;
+        Parameter.instance.currentSp = Parameter.instance.sp;
+        Parameter.instance.mp = Database.Instance.nowPlayer.mp;
+        Parameter.instance.currentMp = Parameter.instance.mp;
+        Parameter.instance.exp = Database.Instance.nowPlayer.exp;
+        Parameter.instance.currentLevel = Database.Instance.nowPlayer.level;
+        Parameter.instance.currentExp = Database.Instance.nowPlayer.currentExp;
+        Parameter.instance.levelText.text = Parameter.instance.currentLevel.ToString();
     }
 }
