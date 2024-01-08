@@ -16,23 +16,12 @@ public class Spider : Monster
         }
     }
 
-    private void RandomDirection()
-    {
-        if (currentMoveTime >= moveTime)
-        {
-            direction = Random.Range(-1, 2);
-            moveCount = Random.Range(0, 6);
-            Move(direction);
-            currentMoveTime = 0;
-        }
-        else
-            currentMoveTime += Time.deltaTime;
-    }
+    
 
-    protected override void Move(int _direction)
-    {
-        base.Move(_direction);
-    }
+    //protected override IEnumerator Move(int _direction)
+    //{
+    //    base.Move(_direction);
+    //}
 
     //protected override private IEnumerator MoveCoroutine(int _direction)
     //{

@@ -31,7 +31,7 @@ public class HostileNPC : NPC
     [SerializeField]
     protected float hp;
     [SerializeField]
-    protected bool isDead;
+    public bool isDead;
     [SerializeField]
     protected int exp;
     [SerializeField]
@@ -48,6 +48,8 @@ public class HostileNPC : NPC
     protected float speed;
     [SerializeField]
     protected float moveTime;
+    [SerializeField]
+    int currentDir;
     [SerializeField]
     protected float currentMoveTime;
     protected WaitForSeconds waitTime = new WaitForSeconds(0.1f);
@@ -134,31 +136,31 @@ public class HostileNPC : NPC
         }
         else
         {
-            if (currentMoveCount == moveCount)
-                StartCoroutine(ChangeDirectionCoroutine());
+            if (currentMoveCount >= moveCount)
+                ChangeDirection();
         }
-        Move(direction);
+        StartCoroutine(Move(direction));
     }
 
-    protected IEnumerator ChangeDirectionCoroutine()
+    protected void ChangeDirection()
     {
         anim.SetBool("isMove", false);
-        int currentDir = direction;
-        direction = 0;
-        yield return waitTime;
-        yield return waitTime;
-        yield return waitTime;
-        yield return waitTime;
-        direction = -(currentDir);
+        currentDir = direction;
+        //direction = 0;
+        if (currentMoveTime < moveTime)
+        {
+            currentMoveTime += Time.deltaTime;
+        }
+        else
+        { 
+            currentMoveTime = 0;
+            direction = -(currentDir);
+        }
     }
 
-    protected virtual void Move(int _direction)
+    protected virtual IEnumerator Move(int _direction)
     {
-        StartCoroutine(MoveCoroutine(_direction));
-    }
-
-    protected virtual private IEnumerator MoveCoroutine(int _direction)
-    {
+        //StartCoroutine(MoveCoroutine(_direction));
         if (_direction != 0)
         {
             if (_direction < 0)
@@ -173,7 +175,7 @@ public class HostileNPC : NPC
             }
 
             Vector3 _vel = transform.right * speed * _direction;
-            for (currentMoveCount = 0; currentMoveCount < moveCount; currentMoveCount++)
+            for (currentMoveCount = 0; currentMoveCount <= moveCount; currentMoveCount++)
             {
                 mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
                 yield return waitTime;
@@ -181,9 +183,31 @@ public class HostileNPC : NPC
 
             anim.SetBool("isMove", true);
         }
-        if (_direction == 0 || moveCount == 0)
-        {
-            
-        }
     }
+
+    //protected virtual private IEnumerator MoveCoroutine(int _direction)
+    //{
+    //    if (_direction != 0)
+    //    {
+    //        if (_direction < 0)
+    //        {
+    //            sprite.flipX = true;
+    //            dir = this.transform.TransformDirection(Vector2.left);
+    //        }
+    //        else if (_direction > 0)
+    //        {
+    //            sprite.flipX = false;
+    //            dir = this.transform.TransformDirection(Vector2.right);
+    //        }
+
+    //        Vector3 _vel = transform.right * speed * _direction;
+    //        for (currentMoveCount = 0; currentMoveCount <= moveCount; currentMoveCount++)
+    //        {
+    //            mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
+    //            yield return waitTime;
+    //        }
+
+    //        anim.SetBool("isMove", true);
+    //    }
+    //}
 }

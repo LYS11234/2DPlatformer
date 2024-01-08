@@ -56,6 +56,21 @@ public class MoveSceneNPC : AllienceNPC
             PlayerManager.instance.canAttack = false;
             canTalk = true;
         }
+
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.transform.tag == "Monster" && !other.GetComponent<HostileNPC>().isDead)
+        {
+            PlayerManager.instance.canAttack = true;
+            canTalk = false;
+        }
+        else if(other.transform.tag == "Monster" && other.GetComponent<HostileNPC>().isDead)
+        {
+            PlayerManager.instance.canAttack = false;
+            canTalk = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -64,6 +79,11 @@ public class MoveSceneNPC : AllienceNPC
         {
             PlayerManager.instance.canAttack = true;
             canTalk = false;
+        }
+        if (other.transform.tag == "Monster")
+        {
+            PlayerManager.instance.canAttack = false;
+            canTalk = true;
         }
     }
 }

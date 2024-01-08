@@ -171,16 +171,19 @@ MonoBehaviour:
   exp: 110
   minGold: 5
   maxGold: 10
+  direction: 1
+  moveCount: 4
+  currentMoveCount: 0
+  speed: 0.7
+  moveTime: 2
+  currentDir: 0
+  currentMoveTime: 0
   value: 0
   canMove: 1
+  layerMask: 0
   atk: 30
   currentAttackTime: 0
   attackTime: 1
-  direction: 1
-  moveCount: 1
-  speed: 4
-  moveTime: 1
-  currentMoveTime: 0
 --- !u!212 &3057727518297651025
 SpriteRenderer:
   m_ObjectHideFlags: 0
