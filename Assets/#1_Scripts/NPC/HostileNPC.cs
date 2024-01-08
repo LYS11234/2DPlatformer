@@ -43,6 +43,8 @@ public class HostileNPC : NPC
     [SerializeField]
     protected int moveCount;
     [SerializeField]
+    protected float currentMoveCount;
+    [SerializeField]
     protected float speed;
     [SerializeField]
     protected float moveTime;
@@ -51,6 +53,7 @@ public class HostileNPC : NPC
     protected WaitForSeconds waitTime = new WaitForSeconds(0.1f);
 
     Vector2 pos = new Vector2();
+    Vector2 dir = new Vector2();
     private WaitForSeconds waitTime2 = new WaitForSeconds(5f);
     private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
     #endregion
@@ -125,9 +128,28 @@ public class HostileNPC : NPC
     {
         //Debug.DrawRay(pos, new Vector3 (-pos.x, 0f,0f), new Color(0, 3, 0), 10);
         //Debug.Log($"Pos = {pos}");
-        Physics2D.Raycast(this.transform.position, this.transform.TransformDirection(Vector2.right), 0.1f, layerMask);
-        if(Physics2D.Raycast(this.transform.position, this.transform.TransformDirection(Vector2.right), 0.5f, layerMask))
-            Debug.Log($"Finded Player");
+        if(Physics2D.Raycast(this.transform.position, dir, 0.3f, layerMask))
+        {
+            direction = (int)(PlayerManager.instance.gameObject.transform.position.x / Math.Abs(PlayerManager.instance.gameObject.transform.position.x));
+        }
+        else
+        {
+            if (currentMoveCount == moveCount)
+                StartCoroutine(ChangeDirectionCoroutine());
+        }
+        Move(direction);
+    }
+
+    protected IEnumerator ChangeDirectionCoroutine()
+    {
+        anim.SetBool("isMove", false);
+        int currentDir = direction;
+        direction = 0;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        direction = -(currentDir);
     }
 
     protected virtual void Move(int _direction)
@@ -140,12 +162,18 @@ public class HostileNPC : NPC
         if (_direction != 0)
         {
             if (_direction < 0)
+            {
                 sprite.flipX = true;
+                dir = this.transform.TransformDirection(Vector2.left);
+            }
             else if (_direction > 0)
+            {
                 sprite.flipX = false;
+                dir = this.transform.TransformDirection(Vector2.right);
+            }
 
             Vector3 _vel = transform.right * speed * _direction;
-            for (int i = 0; i < moveCount; i++)
+            for (currentMoveCount = 0; currentMoveCount < moveCount; currentMoveCount++)
             {
                 mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
                 yield return waitTime;
@@ -155,7 +183,7 @@ public class HostileNPC : NPC
         }
         if (_direction == 0 || moveCount == 0)
         {
-            anim.SetBool("isMove", false);
+            
         }
     }
 }

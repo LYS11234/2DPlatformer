@@ -12,7 +12,6 @@ public class Spider : Monster
 
         if (canMove)
         {
-            RandomDirection();
             FindPlayer();
         }
     }
