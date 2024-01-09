@@ -10,7 +10,7 @@ public class Spider : Monster
     {
         base.Update();
 
-        if (canMove)
+        if (!isDead)
         {
             FindPlayer();
         }

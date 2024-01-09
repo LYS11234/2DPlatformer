@@ -32,6 +32,7 @@ public class HostileNPC : NPC
     protected float hp;
     [SerializeField]
     public bool isDead;
+    public bool findPlayer;
     [SerializeField]
     protected int exp;
     [SerializeField]
@@ -132,14 +133,20 @@ public class HostileNPC : NPC
         //Debug.Log($"Pos = {pos}");
         if(Physics2D.Raycast(this.transform.position, dir, 0.3f, layerMask))
         {
+            findPlayer = true;
             direction = (int)(PlayerManager.instance.gameObject.transform.position.x / Math.Abs(PlayerManager.instance.gameObject.transform.position.x));
         }
         else
         {
+            findPlayer = false;
             if (currentMoveCount >= moveCount)
+            {
+                canMove = false;
                 ChangeDirection();
+            }
         }
-        StartCoroutine(Move(direction));
+        if(canMove)
+            StartCoroutine(Move(direction));
     }
 
     protected void ChangeDirection()
@@ -154,15 +161,18 @@ public class HostileNPC : NPC
         else
         { 
             currentMoveTime = 0;
+            currentMoveCount = 0;
             direction = -(currentDir);
+            canMove = true;
         }
     }
 
     protected virtual IEnumerator Move(int _direction)
     {
         //StartCoroutine(MoveCoroutine(_direction));
-        if (_direction != 0)
+        if (canMove)
         {
+            anim.SetBool("isMove", true);
             if (_direction < 0)
             {
                 sprite.flipX = true;
@@ -175,13 +185,13 @@ public class HostileNPC : NPC
             }
 
             Vector3 _vel = transform.right * speed * _direction;
-            for (currentMoveCount = 0; currentMoveCount <= moveCount; currentMoveCount++)
-            {
-                mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
-                yield return waitTime;
-            }
+            
+            currentMoveCount++;
+            mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
+            yield return waitTime;
+            
 
-            anim.SetBool("isMove", true);
+            
         }
     }
 

@@ -420,6 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 632411863}
   genPos: {fileID: 1702113587}
+  bound: {fileID: 0}
 --- !u!224 &632411865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -873,6 +874,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1414635334
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.33168215
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5379204
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323172116836092389, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648040679560372125, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
+      propertyPath: m_Name
+      value: HeavyBandit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5488e8d1bd9d8a44b90de4610f0fe35, type: 3}
 --- !u!1 &1415482488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,3 +1380,4 @@ SceneRoots:
   - {fileID: 579601438}
   - {fileID: 333241151}
   - {fileID: 1702113588}
+  - {fileID: 1414635334}

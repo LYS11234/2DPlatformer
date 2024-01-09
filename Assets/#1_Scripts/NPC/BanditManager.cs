@@ -43,7 +43,7 @@ public class BanditManager: HostileNPC
     public bool canAttack = true;
     #endregion
     #region Find Player
-    private bool findPlayer;
+
     #endregion
     #region etc
     
@@ -52,7 +52,30 @@ public class BanditManager: HostileNPC
 
     private void Update()
     {
-        FindPlayer();
+        if(!isDead)
+            FindPlayer();
+    }
+
+    protected override void FindPlayer()
+    {
+        base.FindPlayer();
+        if(findPlayer)
+        {
+            if(Mathf.Abs(PlayerManager.instance.gameObject.transform.position.x - this.gameObject.transform.position.x)<= 0.4f)
+            {
+                if(PlayerManager.instance.gameObject.transform.position.x - this.gameObject.transform.position.x < 0 && direction < 0)
+                {
+                    canMove = false;
+                    anim.SetBool("isMove", false);
+                    anim.SetTrigger("Attack");
+                }
+            }
+        }
+    }
+
+    protected override IEnumerator Move(int _direction)
+    {
+        return base.Move(_direction);
     }
 
     protected override void Dead()
