@@ -74,6 +74,7 @@
     <Compile Include="Assets\#1_Scripts\NPC\Spider.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\TitleHeaderAttribute.cs" />
     <Compile Include="Assets\Cainos\Common\Script\Utils\SecondOrderDynamics.cs" />
+    <Compile Include="Assets\#1_Scripts\NPC\NpcAttack.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowInInspectorAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\BackgroundManager.cs" />
@@ -88,7 +89,6 @@
     <Compile Include="Assets\#1_Scripts\GameManager.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HorizontalGroupAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\MonsterHP.cs" />
-    <Compile Include="Assets\#1_Scripts\Action\Guard.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\EnableIfAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BoxGroupAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\BanditManager.cs" />

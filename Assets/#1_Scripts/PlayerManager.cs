@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private BoxCollider2D attackPoint2;
     [SerializeField]
-    private BoxCollider2D guardPoint;
+    private GameObject guardPoint;
 
     [SerializeField]
     private Parameter parameter;
@@ -99,6 +99,12 @@ public class PlayerManager : MonoBehaviour
     private float guardTime;
     [SerializeField]
     private float currentGuardTime;
+    [SerializeField]
+    public bool isParry;
+    [SerializeField]
+    public float currentParryTime;
+    [SerializeField]
+    private float parryTime;
     #endregion
     [Space(5)]
     #region Roll
@@ -152,14 +158,12 @@ public class PlayerManager : MonoBehaviour
                     playerSpriteRenderer.flipX = true;
                     attackPoint.transform.localPosition = new Vector3(-0.249f, 0.028f, 0);
                     attackPoint2.transform.localPosition = new Vector3(-0.249f, 0.028f, 0);
-                    guardPoint.transform.localPosition = new Vector3(-0.138f, 0, 0);
                 }
                 else
                 {
                     playerSpriteRenderer.flipX = false;
                     attackPoint.transform.localPosition = new Vector3(0.248f, 0.028f, 0);
                     attackPoint2.transform.localPosition = new Vector3(0.248f, 0.028f, 0);
-                    guardPoint.transform.localPosition = new Vector3(0.137f, 0, 0);
                 }
                 isMove = true;
                 playerAnim.SetInteger("AnimState", 1);
@@ -273,16 +277,23 @@ public class PlayerManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C) && !isMove && canAttack)
             {
-                
+                currentParryTime = 0f;
                 Guard();
                 currentGuardTime = 0f;
             }
-
             
         }
-        
+
+
         else
             currentGuardTime += Time.deltaTime;
+        if(currentParryTime >= parryTime)
+            isParry = false;
+        else
+        {
+            currentParryTime += Time.deltaTime;
+            isParry = true;
+        }
         if (Input.GetKeyUp(KeyCode.C))
         {
 
@@ -292,19 +303,20 @@ public class PlayerManager : MonoBehaviour
 
     private void Guard()
     {
+        if (currentGuardTime <= guardTime)
+            isParry = true;
+        else
+            isParry = false;
         isGuard = true;
         playerAnim.SetTrigger("Block");
-        guardPoint.gameObject.SetActive(true);
         playerAnim.SetBool("IdleBlock", true);
     }
 
     private void GuardCancel()
     {
         isGuard = false;
-        Guard guard = guardPoint.GetComponent<Guard>();
-        guard.currentParryTime = 0;
+
         playerAnim.SetBool("IdleBlock", false);
-        guardPoint.gameObject.SetActive(false);
     }
 
     private void TryRoll()

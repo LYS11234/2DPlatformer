@@ -11443,8 +11443,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1061467244}
-  - component: {fileID: 1061467246}
-  - component: {fileID: 1061467245}
   m_Layer: 6
   m_Name: GuardPoint
   m_TagString: Untagged
@@ -11467,65 +11465,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1393797986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1061467245
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061467243}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 1911
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1061467246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061467243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3083683b35ba554996927f6914bb077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentParryTime: 0
-  ParryTime: 0.3
 --- !u!224 &1104477239 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2404177478813310946, guid: 9424dae7350a787458438bbec40a6bbd, type: 3}
@@ -14603,7 +14542,7 @@ MonoBehaviour:
   playerAnim: {fileID: 1393797984}
   attackPoint: {fileID: 1620282383}
   attackPoint2: {fileID: 1434841652}
-  guardPoint: {fileID: 1061467245}
+  guardPoint: {fileID: 1061467243}
   parameter: {fileID: 706357829}
   dieMessage: {fileID: 498685172}
   gui: {fileID: 706357831}
@@ -14622,6 +14561,9 @@ MonoBehaviour:
   isGuard: 0
   guardTime: 0.23
   currentGuardTime: 0.23
+  isParry: 0
+  currentParryTime: 0
+  parryTime: 0.3
   currentRollTime: 0.9
   rollTime: 0.83
   isRoll: 0

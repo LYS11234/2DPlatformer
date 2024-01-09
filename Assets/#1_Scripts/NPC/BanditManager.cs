@@ -67,9 +67,31 @@ public class BanditManager: HostileNPC
                 {
                     canMove = false;
                     anim.SetBool("isMove", false);
-                    anim.SetTrigger("Attack");
+                    StartCoroutine(AttackCoroutine());
                 }
             }
+        }
+        if(currentAtkTime < atkTime)
+        {
+            currentAtkTime += Time.deltaTime;
+        }
+    }
+
+    private IEnumerator AttackCoroutine()
+    {
+        if (currentAtkTime >= atkTime)
+        {
+            currentAtkTime = 0;
+            anim.SetTrigger("Attack");
+            yield return waitTime;
+            yield return waitTime;
+            yield return waitTime;
+            yield return waitTime;
+            yield return waitTime;
+
+            attackPoint.gameObject.SetActive(true);
+            yield return waitTime;
+            attackPoint.gameObject.SetActive(false);
         }
     }
 
