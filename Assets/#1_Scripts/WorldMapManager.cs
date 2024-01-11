@@ -86,12 +86,31 @@ public class WorldMapManager : MonoBehaviour
                 sceneName = forest1.gameObject.name;
                 break;
             case 2:
-                _vec.Set(forest2.transform.position.x, forest2.transform.position.y);
-                sceneName = forest2.gameObject.name;
+                if (forest2.gameObject.active)
+                {
+                    _vec.Set(forest2.transform.position.x, forest2.transform.position.y);
+                    sceneName = forest2.gameObject.name;
+                }
+                else
+                {
+                    _vec.Set(forest1.transform.position.x, forest1.transform.position.y);
+                    sceneName = forest1.gameObject.name;
+                    mapNum = 1;
+                }
                 break;
             default:
-                _vec.Set(forest3.transform.position.x, forest3.transform.position.y);
-                sceneName = forest3.gameObject.name;
+                if (forest3.gameObject.active)
+                {
+                    _vec.Set(forest3.transform.position.x, forest3.transform.position.y);
+                    sceneName = forest3.gameObject.name;
+                }
+                else
+                {
+                    _vec.Set(forest2.transform.position.x, forest2.transform.position.y);
+                    sceneName = forest2.gameObject.name;
+                    mapNum = 2;
+                }
+                
                 break;
 
         }

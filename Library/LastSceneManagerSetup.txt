@@ -1,5 +1,9 @@
 sceneSetups:
-- path: Assets/#0_Scenes/00_Title.unity
+- path: Assets/#0_Scenes/04_BanditCave.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
+- path: Assets/#0_Scenes/01_Villiage.unity
+  isLoaded: 1
+  isActive: 0
   isSubScene: 0
