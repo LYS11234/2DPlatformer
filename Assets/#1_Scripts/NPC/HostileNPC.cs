@@ -104,8 +104,8 @@ public class HostileNPC : NPC
         DropItem(this.transform);
         yield return waitTime2;
         yield return waitTime2;
-        yield return waitTime2;
-        yield return waitTime2;
+        //yield return waitTime2;
+        //yield return waitTime2;
         
         Destroy(this.gameObject);
     }

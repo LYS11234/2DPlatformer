@@ -23,37 +23,41 @@ public class PlayerManager : MonoBehaviour
     #region Components
     [Header("# Components")]
     [SerializeField]
-    private SpriteRenderer playerSpriteRenderer;
+    public SpriteRenderer playerSpriteRenderer;
 
     [SerializeField]
-    private BoxCollider2D playerCol;
+    public BoxCollider2D playerCol;
 
     [SerializeField]
-    private Rigidbody2D playerRigidbody;
+    public Rigidbody2D playerRigidbody;
 
     [SerializeField]
-    private Transform playerTransform;
+    public Transform playerTransform;
 
     [SerializeField]
-    private Animator playerAnim;
+    public Animator playerAnim;
 
     [SerializeField]
-    private BoxCollider2D attackPoint;
+    public BoxCollider2D attackPoint;
     [SerializeField]
-    private BoxCollider2D attackPoint2;
+    public BoxCollider2D attackPoint2;
     [SerializeField]
-    private GameObject guardPoint;
+    public GameObject guardPoint;
 
     [SerializeField]
-    private Parameter parameter;
+    public Parameter parameter;
 
     [SerializeField]
-    private DieMessage dieMessage;
+    public DieMessage dieMessage;
 
     [SerializeField]
     public ButtonGUI gui;
+
+    public Camera camera;
     #endregion
     [Space(10)]
+
+    
 
     #region Variables
     [Header("# Variables")]
@@ -64,7 +68,7 @@ public class PlayerManager : MonoBehaviour
     private float moveSpeed;
     [SerializeField]
     private float jumpForce;
-    private bool isMove;
+    public bool isMove;
     private Vector3 jumpDirectionR;
     private Vector3 jumpDirectionL;
     #endregion
@@ -83,41 +87,41 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float atkSpeed;
     [SerializeField]
-    private float atkTime;
+    public float atkTime;
     [SerializeField]
-    private float currentAtkTime;
+    public float currentAtkTime;
     [SerializeField]
-    private float comboTime;
+    public float comboTime;
     [SerializeField]
-    private float currentComboTime;
-    private bool isCombo;
+    public float currentComboTime;
+    public bool isCombo;
     public bool canAttack = true;
     #endregion
     #region Guard
     public bool isGuard;
     [SerializeField]
-    private float guardTime;
+    public float guardTime;
     [SerializeField]
-    private float currentGuardTime;
+    public float currentGuardTime;
     [SerializeField]
     public bool isParry;
     [SerializeField]
     public float currentParryTime;
     [SerializeField]
-    private float parryTime;
+    public float parryTime;
     #endregion
     [Space(5)]
     #region Roll
     [Header("Roll")]
     [SerializeField]
-    private float currentRollTime;
+    public float currentRollTime;
     [SerializeField]
-    private float rollTime;
+    public float rollTime;
     public bool isRoll;
     #endregion
     #region etc
-    private WaitForSeconds waitTime = new WaitForSeconds(0.1f);
-    private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
+    public WaitForSeconds waitTime = new WaitForSeconds(0.1f);
+    public WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
     #endregion
     #endregion
     void Start()
@@ -130,7 +134,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!isDead)
         {
@@ -138,10 +142,6 @@ public class PlayerManager : MonoBehaviour
             CheckAirSpeed();
             TryJump();
             PlayerMove();
-            TryAttack();
-            ComboCheck();
-            TryGuard();
-            TryRoll();
             Dead();
         }
     }
@@ -167,9 +167,10 @@ public class PlayerManager : MonoBehaviour
                 }
                 isMove = true;
                 playerAnim.SetInteger("AnimState", 1);
-                Vector3 _moveHorizontal = transform.right * Input.GetAxisRaw("Horizontal");
+
+                Vector3 _moveHorizontal = playerTransform.right * Input.GetAxisRaw("Horizontal");
                 Vector3 _vel = moveSpeed * _moveHorizontal;
-                playerRigidbody.MovePosition(transform.position + _vel * Time.deltaTime);
+                playerRigidbody.MovePosition(playerTransform.position + _vel * Time.smoothDeltaTime);
             }
         }
         else
@@ -214,157 +215,56 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region Player Action
-    private void TryAttack()
-    {
-        if (currentAtkTime >= atkTime)
-        {
-            if (Input.GetKeyDown(KeyCode.X) && !isMove && !isGuard && parameter.currentSp > 0 && canAttack)
-            {
-                isAttack = true;
-                StartCoroutine(Attack());
-                currentAtkTime = 0f;
-                parameter.currentSp -= 20;
-                
-            }
-            
-        }
-        else
-            currentAtkTime += Time.deltaTime;
-    }
+   
 
-    private IEnumerator Attack()
-    {
+   
 
+    //private void TryRoll()
+    //{
+    //    if (currentRollTime >= rollTime)
+    //    {
+    //        if (Input.GetKeyDown(KeyCode.Space))
+    //        {
+    //            if (parameter.currentSp > 0)
+    //            {
+    //                if (parameter.currentSp - 30 >= 0)
+    //                    parameter.currentSp -= 30;
+    //                else
+    //                    parameter.currentSp = 0;
+    //                isAttack = true;
+    //                StartCoroutine(Roll());
+    //                currentRollTime = 0f;   
+    //            }
+    //        }
+    //    }
+    //    else
+    //        currentRollTime += Time.deltaTime;
+    //}
+
+    //private IEnumerator Roll()
+    //{
+    //    playerAnim.SetTrigger("Roll");
         
-        if (currentComboTime == 0f)
-        { 
-            playerAnim.SetTrigger("Attack1");
-            yield return waitTime;
-            attackPoint.gameObject.SetActive(true);
-            isCombo = true;
-            yield return waitTime;
-            attackPoint.gameObject.SetActive(false);
-        }
-        else if(currentComboTime <= comboTime && 0 < currentComboTime)
-        {
-            playerAnim.SetTrigger("Attack2");
-            attackPoint2.gameObject.SetActive(true);
-            yield return waitTime;
-            currentComboTime = 0f;
-            isCombo = false;
-            attackPoint2.gameObject.SetActive(false);
-        }
-        isAttack = false;
-
-    }
-
-    private void ComboCheck()
-    {
-        if(isCombo)
-        {
-            currentComboTime += Time.deltaTime;
-        }
-        if(currentComboTime >= comboTime)
-        {
-            isCombo = false;
-            currentComboTime = 0f;
-        }
-    }
-
-    private void TryGuard()
-    {
-        if (currentGuardTime >= guardTime)
-        {
-            if (Input.GetKeyDown(KeyCode.C) && !isMove && canAttack)
-            {
-                currentParryTime = 0f;
-                Guard();
-                currentGuardTime = 0f;
-            }
-            
-        }
-
-
-        else
-            currentGuardTime += Time.deltaTime;
-        if(currentParryTime >= parryTime)
-            isParry = false;
-        else
-        {
-            currentParryTime += Time.deltaTime;
-            isParry = true;
-        }
-        if (Input.GetKeyUp(KeyCode.C))
-        {
-
-            GuardCancel();
-        }
-    }
-
-    private void Guard()
-    {
-        if (currentGuardTime <= guardTime)
-            isParry = true;
-        else
-            isParry = false;
-        isGuard = true;
-        playerAnim.SetTrigger("Block");
-        playerAnim.SetBool("IdleBlock", true);
-    }
-
-    private void GuardCancel()
-    {
-        isGuard = false;
-
-        playerAnim.SetBool("IdleBlock", false);
-    }
-
-    private void TryRoll()
-    {
-        if (currentRollTime >= rollTime)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (parameter.currentSp > 0)
-                {
-                    if (parameter.currentSp - 30 >= 0)
-                        parameter.currentSp -= 30;
-                    else
-                        parameter.currentSp = 0;
-                    isAttack = true;
-                    StartCoroutine(Roll());
-                    currentRollTime = 0f;   
-                }
-            }
-        }
-        else
-            currentRollTime += Time.deltaTime;
-    }
-
-    private IEnumerator Roll()
-    {
-        playerAnim.SetTrigger("Roll");
-        
-        int _direction;
-        if (playerSpriteRenderer.flipX)
-            _direction = -1;
-        else
-        {
-            _direction = 1;
-        }
-        Vector3 _moveHorizontal = transform.right * _direction;
-        Vector3 _vel = 3f * _moveHorizontal;
-        isRoll = true;
-        yield return frameTime;
-        for (int i = 0; i < 30; i++)
-        {
-            yield return frameTime;
-            playerRigidbody.MovePosition(transform.position + _vel * Time.deltaTime);
-            yield return frameTime;
-        }
-        isRoll = false;
-        isAttack = false;
-    }
+    //    int _direction;
+    //    if (playerSpriteRenderer.flipX)
+    //        _direction = -1;
+    //    else
+    //    {
+    //        _direction = 1;
+    //    }
+    //    Vector3 _moveHorizontal = transform.right * _direction;
+    //    Vector3 _vel = 3f * _moveHorizontal;
+    //    isRoll = true;
+    //    yield return frameTime;
+    //    for (int i = 0; i < 30; i++)
+    //    {
+    //        yield return frameTime;
+    //        playerRigidbody.MovePosition(transform.position + _vel * Time.smoothDeltaTime);
+    //        yield return frameTime;
+    //    }
+    //    isRoll = false;
+    //    isAttack = false;
+    //}
     #endregion
 
     #region Player State

@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Attack : MonoBehaviour
 {
@@ -9,6 +12,9 @@ public class Attack : MonoBehaviour
     private float damage;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.3f);
+
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

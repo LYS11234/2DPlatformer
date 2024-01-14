@@ -11,7 +11,7 @@ public class Monster : HostileNPC
     [SerializeField]
     protected float attackTime;
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
         currentAttackTime += Time.deltaTime;
     }

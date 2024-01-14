@@ -23,8 +23,8 @@ public class Title : MonoBehaviour
     public void NewGame()
     {
         Database.Instance.nowPlayer.destination = "01_Villiage";
-        PlayerManager.instance.gameObject.transform.SetParent(null);
-        Parameter.instance.gameObject.transform.SetParent(null) ;
+        //PlayerManager.instance.gameObject.transform.SetParent(null);
+        //Parameter.instance.gameObject.transform.SetParent(null) ;
         SceneManager.LoadSceneAsync("99_LoadingScene");
     }
 
@@ -37,5 +37,11 @@ public class Title : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void SetActiveAll()
+    {
+        PlayerManager.instance.gameObject.SetActive(true);
+        Parameter.instance.gameObject.SetActive(true);
     }
 }

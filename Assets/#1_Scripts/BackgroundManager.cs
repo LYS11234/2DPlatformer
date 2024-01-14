@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-    private Camera theCamera;
     [SerializeField]
     private Canvas canvas;
     [SerializeField]
-    private GameObject genPos;
+    private Transform genPos;
     [SerializeField]
     private BoxCollider2D bound;
     void Start()
     {
-        theCamera = FindObjectOfType<Camera>();
-        canvas.worldCamera = theCamera;
+        canvas.worldCamera = PlayerManager.instance.camera;
         PlayerManager.instance.gameObject.SetActive(true);
         PlayerManager.instance.canMove = true;
         PlayerManager.instance.canAttack = true;
         Parameter.instance.gameObject.SetActive(true);
-        PlayerManager.instance.gameObject.transform.position = genPos.transform.position;
+        PlayerManager.instance.playerTransform.position = genPos.position;
         CameraManager.instance.SetBound(bound);
     }
 }

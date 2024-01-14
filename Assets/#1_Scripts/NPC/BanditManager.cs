@@ -50,7 +50,7 @@ public class BanditManager: HostileNPC
     #endregion
     #endregion
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(!isDead)
             FindPlayer();
