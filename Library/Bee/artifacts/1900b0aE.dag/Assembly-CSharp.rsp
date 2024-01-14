@@ -380,6 +380,7 @@
 "Assets/#1_Scripts/Action/Attack.cs"
 "Assets/#1_Scripts/Action/AttackAction.cs"
 "Assets/#1_Scripts/Action/Attacked.cs"
+"Assets/#1_Scripts/Action/JumpAction.cs"
 "Assets/#1_Scripts/Action/Roll.cs"
 "Assets/#1_Scripts/BackgroundManager.cs"
 "Assets/#1_Scripts/CameraManager.cs"

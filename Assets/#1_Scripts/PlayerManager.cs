@@ -67,10 +67,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
     [SerializeField]
-    private float jumpForce;
+    public float jumpForce;
     public bool isMove;
-    private Vector3 jumpDirectionR;
-    private Vector3 jumpDirectionL;
+    public Vector3 jumpDirectionR;
+    public Vector3 jumpDirectionL;
     #endregion
     [Space(5)]
     #region Player State
@@ -140,7 +140,6 @@ public class PlayerManager : MonoBehaviour
         {
             //CheckGround();
             CheckAirSpeed();
-            TryJump();
             PlayerMove();
             Dead();
         }
@@ -180,35 +179,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void TryJump()
-    {
-        if(Input.GetKeyDown(KeyCode.Z)&& isGround && !isGuard && canMove && Parameter.instance.currentSp > 0)
-        {
-            isGround = false;
-            Jump();
-        }
-    }
     
-    private void Jump()
-    {
-        if(Input.GetAxisRaw("Horizontal") == 0)
-            playerRigidbody.velocity = playerTransform.up * jumpForce;
-        
-        else if(Input.GetAxisRaw("Horizontal") < 0)
-        {
-            playerRigidbody.velocity = jumpDirectionL * jumpForce;
-        }
-
-        else if(Input.GetAxisRaw("Horizontal") > 0)
-            playerRigidbody.velocity = jumpDirectionR * jumpForce;
-        if(parameter.currentSp >= 100)
-            parameter.currentSp -= 100;
-        else
-            parameter.currentSp = 0;
-        
-        playerAnim.SetTrigger("Jump");
-        playerAnim.SetBool("Grounded", isGround);
-    }
 
 
 
