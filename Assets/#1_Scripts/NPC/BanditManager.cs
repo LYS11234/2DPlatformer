@@ -12,7 +12,7 @@ public class BanditManager: HostileNPC
     private Transform banditTransform;
 
     [SerializeField]
-    private BoxCollider2D attackPoint;
+    protected BoxCollider2D attackPoint;
 
 
     #endregion
@@ -37,9 +37,9 @@ public class BanditManager: HostileNPC
     [Header("Attack")]
     public bool isAttack;
     [SerializeField]
-    private float atkTime;
+    protected float atkTime;
     [SerializeField]
-    private float currentAtkTime;
+    protected float currentAtkTime;
     public bool canAttack = true;
     #endregion
     #region Find Player

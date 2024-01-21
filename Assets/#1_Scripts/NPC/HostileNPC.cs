@@ -55,8 +55,8 @@ public class HostileNPC : NPC
     protected float currentMoveTime;
     protected WaitForSeconds waitTime = new WaitForSeconds(0.1f);
 
-    Vector2 pos = new Vector2();
-    Vector2 dir = new Vector2();
+    protected Vector2 pos = new Vector2();
+    protected Vector2 dir = new Vector2();
     private WaitForSeconds waitTime2 = new WaitForSeconds(5f);
     private WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
     #endregion

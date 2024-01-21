@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BackgroundManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BackgroundManager : MonoBehaviour
     private Transform genPos;
     [SerializeField]
     private BoxCollider2D bound;
+    
     void Start()
     {
         canvas.worldCamera = PlayerManager.instance.camera;

@@ -10,6 +10,7 @@ public class AttackAction : MonoBehaviour
         {
             TryAttack();
             ComboCheck();
+            TryGuard();
         }
     }
     private void TryAttack()

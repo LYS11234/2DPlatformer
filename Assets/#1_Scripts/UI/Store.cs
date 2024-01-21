@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Store : MonoBehaviour
 {
+    public static Store Instance;
+
     public bool storeActivated = false;
     public bool sellActivated = false;
     [SerializeField]

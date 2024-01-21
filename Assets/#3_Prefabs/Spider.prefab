@@ -164,18 +164,19 @@ MonoBehaviour:
   mobHp: {fileID: 5240910390099874545}
   item_pouch: {fileID: 3876229217138929161, guid: 67faf959a18c2334fb682e6806a48536, type: 3}
   items:
-  - {fileID: 11400000, guid: 16c50ac9fbaf65e4083023529a96d77a, type: 2}
   - {fileID: 11400000, guid: 2a32c6dffabd0f84c8ea42d20998662c, type: 2}
+  - {fileID: 11400000, guid: 16c50ac9fbaf65e4083023529a96d77a, type: 2}
   hp: 30
   isDead: 0
+  findPlayer: 0
   exp: 110
   minGold: 5
   maxGold: 10
   direction: 1
-  moveCount: 4
+  moveCount: 14
   currentMoveCount: 0
   speed: 0.7
-  moveTime: 2
+  moveTime: 1
   currentDir: 0
   currentMoveTime: 0
   value: 0

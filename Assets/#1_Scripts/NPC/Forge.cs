@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,13 @@ public class Forge : AllienceNPC
     protected Image upgradeDeny;
     [SerializeField]
     private bool canTalk;
+    [SerializeField]
+    private Slot[] slots;
+
+    [SerializeField]
+    private int slotNum;
+    [SerializeField]
+    private bool hasMat;
 
 
     protected override void Start()
@@ -20,6 +28,7 @@ public class Forge : AllienceNPC
         upgradeAllow = dialogueManager.upgradeAllow;
         upgradeDeny = dialogueManager.upgradeDeny;
         pointer = dialogueManager.pointer;
+        slots = Parameter.instance.GetComponent<Inventory>().inven_Slots;
     }
 
     // Update is called once per frame
@@ -79,10 +88,80 @@ public class Forge : AllienceNPC
             {
                 if (Database.Instance.nowPlayer.gold >= Database.Instance.nowPlayer.upgradeCost)
                 {
-                    Database.Instance.nowPlayer.gold -= Database.Instance.nowPlayer.upgradeCost;
-                    Database.Instance.nowPlayer.additionalAtk += 1;
-                    Database.Instance.nowPlayer.upgradeCost  = (int)(Database.Instance.nowPlayer.upgradeCost * 1.8f);
-                    CloseDialogue();
+                    for (int i = 0; i < slots.Length; i++)
+                    {
+                        if (slots[i].item != null)
+                        {
+                            if (slots[i].item.itemName == "거미 다리")
+                            {
+                                slotNum = i;
+                                hasMat = true;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            hasMat = false;
+                            break;
+                        }
+                    }
+                    
+                        if (dialogueManager.dialogueText.text != "강화재료가 부족합니다.")
+                        {
+                            if (!hasMat)
+                            {  
+                                dialogueManager.dialogueText.text = "강화재료가 부족합니다.";
+                                ChoiceCheck();
+                            }
+                        }
+
+                    if (slots[slotNum].itemCount >= 2)
+                    {
+                        slots[slotNum].itemCount -= 2;
+
+                        if (slots[slotNum].itemCount <= 0)
+                        {
+                            while (true)
+                            {
+                                if (slots[slotNum + 1].item != null)
+                                {
+                                    Database.Instance.nowPlayer.items_name[slotNum] = Database.Instance.nowPlayer.items_name[slotNum + 1];
+                                    Database.Instance.nowPlayer.itemCount[slotNum] = Database.Instance.nowPlayer.itemCount[slotNum + 1];
+                                    slots[slotNum].item = slots[slotNum + 1].item;
+                                    slots[slotNum].itemCount = slots[slotNum + 1].itemCount;
+                                    slots[slotNum].itemImage.sprite = slots[slotNum + 1].itemImage.sprite;
+                                    slotNum++;
+                                }
+                                if (slots[slotNum + 1].item == null)
+                                {
+                                    Database.Instance.nowPlayer.items_name[slotNum] = "";
+                                    Database.Instance.nowPlayer.itemCount[slotNum] = 0;
+                                    slots[slotNum].itemImage.color =  new Color(255, 255, 255, 0);
+                                    slots[slotNum].item = null;
+                                    slots[slotNum].itemCount = 0;
+                                    slots[slotNum].text_Count.text = "";
+                                    break;
+                                }
+                            }
+                        }
+                        Database.Instance.nowPlayer.gold -= Database.Instance.nowPlayer.upgradeCost;
+                        Database.Instance.nowPlayer.additionalAtk += 1;
+                        Database.Instance.nowPlayer.upgradeCost = (int)(Database.Instance.nowPlayer.upgradeCost * 1.8f);
+                    }
+
+                    else
+                    {
+                        if (dialogueManager.dialogueText.text != "강화재료가 부족합니다.")
+                        {
+                            dialogueManager.dialogueText.text = "강화재료가 부족합니다.";
+                            ChoiceCheck();
+                        }
+                        else
+                            CloseDialogue();
+
+                    }
+                    if(hasMat)
+                        CloseDialogue();
                 }
                 else
                 {

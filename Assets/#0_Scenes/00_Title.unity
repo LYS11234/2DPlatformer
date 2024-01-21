@@ -5274,7 +5274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &669227891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14571,7 +14571,7 @@ MonoBehaviour:
   currentGuardTime: 0.23
   isParry: 0
   currentParryTime: 0
-  parryTime: 0.3
+  parryTime: 0.18
   currentRollTime: 0.7
   rollTime: 0.7
   isRoll: 0
@@ -16148,7 +16148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1578413445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17264,6 +17264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bfd1f344e552244a86e08f4b5173ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  store: {fileID: 0}
 --- !u!4 &1664378665
 Transform:
   m_ObjectHideFlags: 0

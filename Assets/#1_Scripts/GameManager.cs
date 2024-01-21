@@ -16,14 +16,9 @@ public class GameManager : MonoBehaviour
         else
             Destroy(this.gameObject);
     }
-    void Start()
-    {
-        
-    }
+    #region # Components
+    [Header("Components")]
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Store store;
+    #endregion
 }
