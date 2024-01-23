@@ -189,9 +189,6 @@ public class HostileNPC : NPC
             currentMoveCount++;
             mobRd.MovePosition(transform.position + _vel * Time.deltaTime);
             yield return waitTime;
-            
-
-            
         }
     }
 

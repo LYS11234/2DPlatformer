@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - BackgroundManager
     - BanditManager
     - BossMonsterManager
+    - BossParameterManager
     - ButtonGUI
     - CameraManager
     - CoinManager
@@ -19,6 +20,7 @@ ScriptsOnlyBuild:
     - Item
     - ItemPickUp
     - ItemPouch
+    - JumpAction
     - LoadingBar
     - Menu
     - MonsterHP
@@ -65,8 +67,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -146,23 +150,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17616}
     - Class: 114
+      Script: {instanceID: 17914}
+    - Class: 114
       Script: {instanceID: 17922}
     - Class: 114
-      Script: {instanceID: 18068}
+      Script: {instanceID: 18070}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 18190}
     - Class: 114
-      Script: {instanceID: 18546}
+      Script: {instanceID: 18548}
     - Class: 114
-      Script: {instanceID: 19288}
+      Script: {instanceID: 19290}
     - Class: 114
-      Script: {instanceID: 19494}
+      Script: {instanceID: 19496}
     - Class: 114
-      Script: {instanceID: 19748}
+      Script: {instanceID: 19750}
     - Class: 114
-      Script: {instanceID: 19958}
+      Script: {instanceID: 19960}
     - Class: 114
-      Script: {instanceID: 20208}
+      Script: {instanceID: 20210}
     - Class: 114
       Script: {instanceID: 20354}
     - Class: 114
@@ -192,9 +198,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 23042}
     - Class: 114
-      Script: {instanceID: 23532}
+      Script: {instanceID: 23534}
     - Class: 114
-      Script: {instanceID: 106234}
+      Script: {instanceID: 24026}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -241,11 +247,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17922}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 18190}
     - Class: 114
-      Script: {instanceID: 18620}
+      Script: {instanceID: 18622}
     - Class: 114
-      Script: {instanceID: 19288}
+      Script: {instanceID: 19290}
     - Class: 114
       Script: {instanceID: 21862}
     - Class: 114
@@ -257,7 +263,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22982}
     - Class: 114
-      Script: {instanceID: 24280}
+      Script: {instanceID: 24284}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -306,9 +312,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17922}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 18190}
     - Class: 114
-      Script: {instanceID: 19768}
+      Script: {instanceID: 19770}
     - Class: 114
       Script: {instanceID: 20560}
     - Class: 114
@@ -320,11 +326,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22810}
     - Class: 114
-      Script: {instanceID: 23960}
+      Script: {instanceID: 23962}
     - Class: 114
-      Script: {instanceID: 24280}
+      Script: {instanceID: 24284}
     - Class: 114
-      Script: {instanceID: 24768}
+      Script: {instanceID: 24772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -377,11 +383,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17922}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 18190}
     - Class: 114
-      Script: {instanceID: 18552}
+      Script: {instanceID: 18554}
     - Class: 114
-      Script: {instanceID: 19768}
+      Script: {instanceID: 19770}
     - Class: 114
       Script: {instanceID: 21862}
     - Class: 114
@@ -393,9 +399,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22810}
     - Class: 114
-      Script: {instanceID: 23960}
+      Script: {instanceID: 23962}
     - Class: 114
-      Script: {instanceID: 24280}
+      Script: {instanceID: 24284}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -450,22 +456,32 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17922}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 18190}
     - Class: 114
-      Script: {instanceID: 19768}
+      Script: {instanceID: 19770}
     - Class: 114
       Script: {instanceID: 20334}
     - Class: 114
+      Script: {instanceID: 21472}
+    - Class: 114
       Script: {instanceID: 21862}
+    - Class: 114
+      Script: {instanceID: 22252}
     - Class: 114
       Script: {instanceID: 22496}
     - Class: 114
       Script: {instanceID: 22638}
     - Class: 114
-      Script: {instanceID: 23960}
+      Script: {instanceID: 22810}
     - Class: 114
-      Script: {instanceID: 24280}
+      Script: {instanceID: 23246}
+    - Class: 114
+      Script: {instanceID: 23962}
+    - Class: 114
+      Script: {instanceID: 24284}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -509,7 +525,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17922}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 18190}
     - Class: 114
       Script: {instanceID: 21472}
     - Class: 114
@@ -685,6 +701,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: JumpAction
   - hash:
       serializedVersion: 2
       Hash: bcdedb1b3a567eb05111be4716618ce1
@@ -1101,7 +1123,7 @@ ScriptsOnlyBuild:
     className: AnimatedTile
   - hash:
       serializedVersion: 2
-      Hash: 54104f0e14b7d82bbd8168f1e8b310f6
+      Hash: 3d9fd372a5c8225e3e6f9499b9247391
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: BossMonsterManager
@@ -1341,7 +1363,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 1ff7750c6900471387e853846ccaa485
+      Hash: 960e19843c4e1255869694d03b2aea00
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Forge
@@ -1467,7 +1489,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
+      Hash: cbb7187aba75ad88a3f22c9779ab11dc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1503,7 +1525,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 0ef3e07c692e5b5c8c4bfa064145d5f0
+      Hash: e93fd7a5352fe8d576dda4d669cc6cfe
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Hatman
@@ -1521,7 +1543,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 218f616660b9261e91ddc01ad12eb74b
+      Hash: 5188085ef0674aaea5b5ad058f2f199d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1573,6 +1595,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: c7a41c79186486112f6008a72c2cc048
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BossParameterManager
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1687,6 +1715,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ItemPouch
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AttackAction
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1807,12 +1841,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AttackAction
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/00_Title.unity

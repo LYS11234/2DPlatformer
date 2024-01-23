@@ -2411,9 +2411,6 @@ MonoBehaviour:
   canvas: {fileID: 1300887832}
   genPos: {fileID: 1801799822}
   bound: {fileID: 1082216090}
-  bossHpBase: {fileID: 388329089}
-  bossHp: {fileID: 764557994}
-  bossName: {fileID: 276101522}
 --- !u!1 &1503550136
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,9 +3454,9 @@ MonoBehaviour:
   hp: 500
   isDead: 0
   findPlayer: 0
-  exp: 0
-  minGold: 0
-  maxGold: 0
+  exp: 100000
+  minGold: 10000
+  maxGold: 10000
   direction: 0
   moveCount: 10
   currentMoveCount: 0
@@ -3486,6 +3483,13 @@ MonoBehaviour:
   maxHP: 500
   comboAttackTime: 10
   currentComboAttackTime: 10
+  backstepTime: 30
+  currentBackstepTime: 30
+  isBackStep: 0
+  restTime: 5
+  currentRestTime: 0
+  backstepForce: {x: 200, y: 50}
+  knockBackForce: {x: -60, y: 0}
 --- !u!4 &2141060049
 Transform:
   m_ObjectHideFlags: 0
