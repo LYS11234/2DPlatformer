@@ -452,6 +452,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &185655629
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2788775
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52773726
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963039002847522359, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_Name
+      value: Spider (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
 --- !u!1 &222040662
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +761,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &330451311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.350122
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.47492945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963039002847522359, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_Name
+      value: Spider (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
 --- !u!1 &367000234
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +986,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &379620156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4571882
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.53037786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963039002847522359, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_Name
+      value: Spider (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
 --- !u!1 &381397635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,7 +4240,8 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2909908974523743343, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
@@ -5089,6 +5261,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2110153477
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.45549396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6270945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729273326179076190, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963039002847522359, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
+      propertyPath: m_Name
+      value: Spider (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 503c57fe36854f741b7e21e07951cb6e, type: 3}
 --- !u!1 &2139030838
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,3 +5731,7 @@ SceneRoots:
   - {fileID: 419963277}
   - {fileID: 679114093}
   - {fileID: 8313611131127233455}
+  - {fileID: 2110153477}
+  - {fileID: 379620156}
+  - {fileID: 185655629}
+  - {fileID: 330451311}

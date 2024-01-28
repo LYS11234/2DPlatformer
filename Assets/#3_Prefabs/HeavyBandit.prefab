@@ -184,7 +184,7 @@ MonoBehaviour:
   mobHp: {fileID: 0}
   item_pouch: {fileID: 3876229217138929161, guid: 67faf959a18c2334fb682e6806a48536, type: 3}
   items: []
-  hp: 30
+  hp: 100
   isDead: 0
   findPlayer: 0
   exp: 100
