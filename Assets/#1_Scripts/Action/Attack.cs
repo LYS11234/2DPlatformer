@@ -11,6 +11,9 @@ public class Attack : MonoBehaviour
     [SerializeField]
     private float damage;
 
+    [SerializeField]
+    private float groggyAttack;
+
     private WaitForSeconds waitTime = new WaitForSeconds(0.3f);
 
 
@@ -28,16 +31,21 @@ public class Attack : MonoBehaviour
                 }
                 else if (collision.GetComponent<NPC>().npcType == "Hostile NPC")
                 {
-                    
-                    collision.GetComponent<BanditManager>().Damage(damage + Database.Instance.nowPlayer.additionalAtk);
+                    if(collision.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
+                    {
+                        if(bossManager.isGroggy == true)
+                            bossManager.Damage(damage + Database.Instance.nowPlayer.additionalAtk + groggyAttack);
+                        else
+                        {
+                            bossManager.Damage(damage + Database.Instance.nowPlayer.additionalAtk);
+                            bossManager.currentGroggyGage += groggyAttack;
+                        }
+                    }
+                    else
+                        collision.GetComponent<BanditManager>().Damage(damage + Database.Instance.nowPlayer.additionalAtk);
                 }
             }
-
-            //this.transform.localPosition = new Vector3(this.transform.localPosition.x + 0.001f, 0.028f, 0);
-            //this.transform.localPosition = new Vector3(this.transform.localPosition.x - 0.001f, 0.028f, 0);
         }
-        //else
-        //    return;
     }
 
 }

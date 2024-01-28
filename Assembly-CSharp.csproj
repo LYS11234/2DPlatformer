@@ -106,6 +106,7 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\DisableInPlayModeAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\AssetsOnlyAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\UI\Menu.cs" />
+    <Compile Include="Assets\#1_Scripts\NPC\MoveSceneNpc2.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\HelpBoxIfAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\WorldMapManager.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BlockquoteAttribute.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\RequiredAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\LabelWidthAttribute.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\HostileNPC.cs" />
+    <Compile Include="Assets\#1_Scripts\NPC\MoveNextScene.cs" />
     <Compile Include="Assets\#1_Scripts\NPC\BossMonsterManager.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Platformer - Village Props\Script\MovingPlatform.cs" />
     <Compile Include="Assets\#1_Scripts\UI\Inventory.cs" />

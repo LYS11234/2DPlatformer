@@ -19,8 +19,8 @@ public class BossMonsterManager : BanditManager
     private string[] deadMessage;
 
     [SerializeField]
-    private int groggyGage;
-    public int currentGroggyGage;
+    private float groggyGage;
+    public float currentGroggyGage;
     [SerializeField]
     private float distance;
     [SerializeField]
@@ -39,11 +39,15 @@ public class BossMonsterManager : BanditManager
     private float restTime;
     [SerializeField]
     private float currentRestTime;
+    [SerializeField]
+    private float knockBackTime;
+    [SerializeField]
+    private float currentKnockBackTime;
+    public bool isGroggy;
 
     [SerializeField]
     Vector2 backstepForce;
-    [SerializeField]
-    Vector2 knockBackForce;
+
     #endregion
     void Start()
     {
@@ -73,8 +77,9 @@ public class BossMonsterManager : BanditManager
             else
                 anim.SetBool("isMove", false);
             TryBackStep();
-            TryAttack();
-            TryKnockBack();
+            if(canAttack)
+                TryAttack();
+            //TryKnockBack();
             StartCoroutine(CheckHP());
             if (hp <= 0)
                 Dead();
@@ -101,29 +106,72 @@ public class BossMonsterManager : BanditManager
     private IEnumerator CheckDistance()
     {
         distance = Mathf.Abs(PlayerManager.instance.gameObject.transform.position.x - this.gameObject.transform.position.x);
-        Debug.LogError($"Distance = {distance}");
         yield return waitTime;
     }
 
     private void TryAttack()
     {
+       
         if (currentComboAttackTime >= comboAttackTime)
         {
             if (distance <= 0.5f && !isAttack && canAttack)
             {
                 canMove = false;
                 anim.SetBool("isMove", false);
-
                 currentComboAttackTime = 0;
                 StartCoroutine(ComboAttack());
                 currentComboAttackTime = 0;
-                canMove = true;
+
+                
+                
                 isAttack = false;
             }
         }
+        else if (currentAtkTime >= atkTime)
+        {
+            if (distance <= 0.5f && !isAttack && canAttack)
+            {
+                canMove = false;
+                anim.SetBool("isMove", false);
+                currentAtkTime = 0;
+                StartCoroutine(AttackCoroutine());
+                currentAtkTime = 0;
+
+
+                canMove = true;
+                isAttack = false;
+            }
+            
+        }
         else
+        {
             currentComboAttackTime += Time.deltaTime;
+            currentAtkTime += Time.deltaTime;
+        }
+
     }
+
+    IEnumerator AttackCoroutine()
+    {
+        isAttack = true;
+        anim.SetTrigger("Attack");
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+
+
+        attackPoint.gameObject.SetActive(true);
+        yield return waitTime;
+        attackPoint.gameObject.SetActive(false);
+        canMove = true;
+    }
+
 
     private IEnumerator ComboAttack()
     {
@@ -146,7 +194,7 @@ public class BossMonsterManager : BanditManager
         attackPoint.gameObject.SetActive(true);
         yield return waitTime;
         attackPoint.gameObject.SetActive(false);
-        
+        canMove = true;
     }
 
     private IEnumerator CheckHP()
@@ -205,20 +253,39 @@ public class BossMonsterManager : BanditManager
 
     private void TryKnockBack()
     {
-        if (distance <= 0.5f)
-            StartCoroutine(KnockBackCoroutine());
+        if (currentKnockBackTime >= knockBackTime)
+        {
+            if (!PlayerManager.instance.isKnockBack && !PlayerManager.instance.isRoll)
+            {
+                if (distance <= 0.5f && hp <= maxHP / 2)
+                {
+                    StartCoroutine(KnockBackCoroutine());
+                    currentKnockBackTime = 0;
+                }
+            }
+        }
+        else
+            currentKnockBackTime += Time.deltaTime;
+
     }
 
     private IEnumerator KnockBackCoroutine()
     {
         anim.SetTrigger("KnockBack");
-        yield return waitTime;
-        yield return waitTime;
-        yield return waitTime;
-        yield return waitTime;
-        PlayerManager.instance.playerRigidbody.AddForce(knockBackForce);
         
         yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        yield return waitTime;
+        if (!PlayerManager.instance.isRoll)
+        {
+            if (distance <= 0.5f)
+            {
+                PlayerManager.instance.isKnockBack = true;
+            }
+        }
+        yield return waitTime;
+        
     }
 
 

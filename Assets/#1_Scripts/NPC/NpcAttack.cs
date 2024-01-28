@@ -14,7 +14,8 @@ public class NpcAttack : MonoBehaviour
         }
         else if(collision.gameObject.name == "Player" && PlayerManager.instance.isGuard && !PlayerManager.instance.isRoll && !PlayerManager.instance.isDead && !PlayerManager.instance.isParry)
         {
-            Parameter.instance.currentHp -= (int)(atk / 3); 
+            Parameter.instance.currentHp -= (int)(atk / 3);
+            Parameter.instance.currentSp -= (int)(atk * 2 / 3);
         }
     }
 }

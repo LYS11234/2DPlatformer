@@ -84,5 +84,14 @@ public class Database : MonoBehaviour
         Parameter.instance.currentLevel = nowPlayer.level;
         Parameter.instance.currentExp = nowPlayer.currentExp;
         Parameter.instance.levelText.text = Parameter.instance.currentLevel.ToString();
+
+        switch(nowPlayer.clearedLevel)
+        {
+            case 1: Parameter.instance.GetComponent<WorldMapManager>().forest2.gameObject.SetActive(true); break;
+            case 2: Parameter.instance.GetComponent<WorldMapManager>().forest2.gameObject.SetActive(true);
+                Parameter.instance.GetComponent<WorldMapManager>().forest3.gameObject.SetActive(true);
+                break;
+            default: break;
+        }
     }
 }

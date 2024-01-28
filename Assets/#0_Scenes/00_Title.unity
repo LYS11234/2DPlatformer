@@ -5274,7 +5274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &669227891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6180,8 +6180,8 @@ MonoBehaviour:
   expImage: {fileID: 1661461090}
   expText: {fileID: 1494721317}
   levelText: {fileID: 675120939}
-  hp: 99999999
-  currentHp: 100
+  hp: 150
+  currentHp: 150
   sp: 1000
   currentSp: 1000
   mp: 100
@@ -14558,6 +14558,9 @@ MonoBehaviour:
   isGround: 0
   canMove: 1
   isDead: 0
+  isKnockBack: 0
+  knockBackTime: 4
+  currentKnockBackTime: 0
   isAttack: 0
   atkSpeed: 0
   atkTime: 0.2
@@ -14575,6 +14578,7 @@ MonoBehaviour:
   currentRollTime: 0.7
   rollTime: 0.7
   isRoll: 0
+  knockBackForce: {x: -50, y: 0}
 --- !u!50 &1393797988
 Rigidbody2D:
   serializedVersion: 4
@@ -14587,7 +14591,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -15150,7 +15154,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 3839
+    m_Bits: 7935
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -15193,6 +15197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
+  groggyAttack: 15
 --- !u!114 &1444671325 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6621948385403310497, guid: 9424dae7350a787458438bbec40a6bbd, type: 3}
@@ -16148,7 +16153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1578413445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16591,7 +16596,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 3839
+    m_Bits: 7935
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -16649,6 +16654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  groggyAttack: 15
 --- !u!1001 &1628505519
 PrefabInstance:
   m_ObjectHideFlags: 0

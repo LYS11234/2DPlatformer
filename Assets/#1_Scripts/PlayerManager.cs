@@ -78,6 +78,11 @@ public class PlayerManager : MonoBehaviour
     public bool isGround;
     public bool canMove = true;
     public bool isDead;
+    public bool isKnockBack;
+    [SerializeField]
+    private float knockBackTime;
+    [SerializeField]
+    private float currentKnockBackTime;
     #endregion
     [Space(5)]
     #region Attack
@@ -122,6 +127,8 @@ public class PlayerManager : MonoBehaviour
     #region etc
     public WaitForSeconds waitTime = new WaitForSeconds(0.1f);
     public WaitForEndOfFrame frameTime = new WaitForEndOfFrame();
+    [SerializeField]
+    Vector2 knockBackForce;
     #endregion
     #endregion
     void Start()
@@ -141,6 +148,7 @@ public class PlayerManager : MonoBehaviour
             //CheckGround();
             CheckAirSpeed();
             PlayerMove();
+            KnockBack();
             Dead();
         }
     }
@@ -150,6 +158,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetButton("Horizontal"))
         {
+            Debug.Log($"Player Can Move: {canMove}");
             if (isGround && !isGuard && !isAttack && canMove)
             {
                 if (Input.GetAxisRaw("Horizontal") < 0)
@@ -263,6 +272,30 @@ public class PlayerManager : MonoBehaviour
             playerAnim.SetTrigger("Death");
             isDead = true;
             dieMessage.gameObject.SetActive(true);
+        }
+    }
+
+    public void KnockBack()
+    {
+        if(isKnockBack)
+        {
+            if (currentKnockBackTime <= knockBackTime)
+            {
+                playerRigidbody.AddForce(knockBackForce);
+                if(isParry)
+                    currentKnockBackTime = knockBackTime;
+                else
+                    currentKnockBackTime += Time.deltaTime;
+                canMove = false;
+                canAttack = false;
+            }
+            else
+            {
+                currentKnockBackTime = 0;
+                isKnockBack = false;
+                canAttack = true;
+                canMove = true;
+            }
         }
     }
     #endregion

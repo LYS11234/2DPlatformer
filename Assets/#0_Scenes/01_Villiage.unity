@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175183585}
   - component: {fileID: 175183584}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2954,9 +2954,9 @@ MonoBehaviour:
   chooseOne: 0
   buyBase: {fileID: 0}
   inven: {fileID: 0}
-  store: {fileID: 0}
   inventory: {fileID: 0}
   chooseTalk: 0
+  talking: 0
 --- !u!1 &1676144277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,6 +3840,9 @@ MonoBehaviour:
   upgradeAllow: {fileID: 0}
   upgradeDeny: {fileID: 0}
   canTalk: 0
+  slots: []
+  slotNum: 0
+  hasMat: 0
 --- !u!1 &2126702592
 GameObject:
   m_ObjectHideFlags: 0

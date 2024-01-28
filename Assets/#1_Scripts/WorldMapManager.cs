@@ -12,9 +12,9 @@ public class WorldMapManager : MonoBehaviour
     [SerializeField]
     private Image forest1;
     [SerializeField]
-    private Image forest2;
+    public Image forest2;
     [SerializeField] 
-    private Image forest3;
+    public Image forest3;
     [SerializeField]
     private Rigidbody2D mapPoint;
     [SerializeField]

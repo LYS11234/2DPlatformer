@@ -24,7 +24,9 @@ ScriptsOnlyBuild:
     - LoadingBar
     - Menu
     - MonsterHP
+    - MoveNextScene
     - MoveSceneNPC
+    - MoveSceneNpc2
     - NpcAttack
     - OldMan
     - Parameter
@@ -331,6 +333,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 24284}
     - Class: 114
       Script: {instanceID: 24772}
+    - Class: 114
+      Script: {instanceID: 96598}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -402,6 +406,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23962}
     - Class: 114
       Script: {instanceID: 24284}
+    - Class: 114
+      Script: {instanceID: 152628}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1123,7 +1129,7 @@ ScriptsOnlyBuild:
     className: AnimatedTile
   - hash:
       serializedVersion: 2
-      Hash: 3d9fd372a5c8225e3e6f9499b9247391
+      Hash: 766c7f34ee322b01e921955b60c53d06
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: BossMonsterManager
@@ -1327,7 +1333,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 66209e74aa8eefecb38b66d3f1c5a730
+      Hash: c7770778dbf698cb5922210421d731cd
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Attack
@@ -1543,7 +1549,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 5188085ef0674aaea5b5ad058f2f199d
+      Hash: 92d20aae0a162d899e00e56cfbac40e7
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerManager
@@ -1841,6 +1847,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 2f0e547f7278fd94e162b29641b2db6d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MoveNextScene
+  - hash:
+      serializedVersion: 2
+      Hash: 2f0e547f7278fd94e162b29641b2db6d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MoveSceneNpc2
   platform: 19
   scenePathNames:
   - Assets/#0_Scenes/00_Title.unity
