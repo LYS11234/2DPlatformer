@@ -72,7 +72,7 @@ public class Database : MonoBehaviour
         for (int i = 0; i < nowPlayer.items_name.Length; i++)
         {
             Debug.Log(nowPlayer.items_name[i]);
-            Database.Instance.theInven.LoadToInven(i, nowPlayer.items_name[i], nowPlayer.itemCount[i]);
+            theInven.LoadToInven(i, nowPlayer.items_name[i], nowPlayer.itemCount[i]);
         }
         Parameter.instance.hp = nowPlayer.hp;
         Parameter.instance.currentHp = Parameter.instance.hp;

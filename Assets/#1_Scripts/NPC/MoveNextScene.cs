@@ -22,8 +22,20 @@ public class MoveNextScene : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.X))
         {
             Database.Instance.nowPlayer.destination = nextMap;
-            Parameter.instance.GetComponent<WorldMapManager>().forest2.gameObject.SetActive(true);
-            Database.Instance.nowPlayer.clearedLevel = 1;
+            if (nextMap == "03_Forest")
+            {
+                Parameter.instance.GetComponent<WorldMapManager>().forest2.gameObject.SetActive(true);
+                Database.Instance.nowPlayer.clearedLevel = 1;
+            }
+            else if(nextMap == "04_BanditCave")
+            {
+                Parameter.instance.GetComponent<WorldMapManager>().forest3.gameObject.SetActive(true);
+                Database.Instance.nowPlayer.clearedLevel = 2;
+            }
+            else
+            {
+                return;
+            }
             SceneManager.LoadSceneAsync("99_LoadingScene");
         }
     }

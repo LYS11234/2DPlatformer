@@ -2342,7 +2342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7471922055633110493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b282d94bc277ca4ab361dda2f2c7fb6, type: 3}
+  m_Script: {fileID: 11500000, guid: d39fbc36e7a9a604baeb1cef5f1c35d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nextMap: 04_BanditCave
