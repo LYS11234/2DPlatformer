@@ -3633,6 +3633,12 @@ MonoBehaviour:
   - "\uD558\uC544..."
   - "\uBAA9\uCC45\uC744 \uACE0\uCE58\uB294 \uB3D9\uC548 \uBAAC\uC2A4\uD130\uAC00
     \uB2EC\uB824\uB4DC\uBA74 \uC5B4\uCA4C\uB098..."
+  oldManDialogue2:
+  - "\uBB50?!"
+  - "\uC0B0\uC801\uC744 \uD1A0\uBC8C\uD588\uB2E4\uACE0 \uB9D0\uD558\uB294 \uAC8C\uB0D0?!"
+  - "\uC704\uD5D8\uD55C \uC77C\uC740 \uD558\uC9C0 \uB9D0\uB77C\uACE0 \uD588..."
+  - ...
+  - "\uC218\uACE0\uD588\uB124.."
 --- !u!4 &1976468125
 Transform:
   m_ObjectHideFlags: 0

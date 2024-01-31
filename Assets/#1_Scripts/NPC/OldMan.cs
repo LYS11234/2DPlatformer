@@ -9,6 +9,9 @@ public class OldMan : AllienceNPC
 
     [SerializeField]
     private string[] oldManDialogue1;
+
+    [SerializeField]
+    private string[] oldManDialogue2;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X) && canTalk)
@@ -29,6 +32,18 @@ public class OldMan : AllienceNPC
             {
                 if(i < oldManDialogue1.Length)
                     StartCoroutine(DialogueCoroutine(oldManDialogue1));
+                else if (i >= oldManDialogue1.Length)
+                {
+                    dialogueManager.CloseDialogue();
+                    i = 0;
+                    if(Database.Instance.nowPlayer.clearedLevel == 3)
+                        Database.Instance.nowPlayer.oldmanStep++;
+                }
+            }
+            else if(Database.Instance.nowPlayer.oldmanStep == 2)
+            {
+                if (i < oldManDialogue2.Length)
+                    StartCoroutine(DialogueCoroutine(oldManDialogue2));
                 else if (i >= oldManDialogue1.Length)
                 {
                     dialogueManager.CloseDialogue();

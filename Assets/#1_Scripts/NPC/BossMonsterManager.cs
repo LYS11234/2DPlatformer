@@ -51,7 +51,7 @@ public class BossMonsterManager : BanditManager
     #endregion
     void Start()
     {
-        if(Database.Instance.nowPlayer.bossClear)
+        if(Database.Instance.nowPlayer.clearedLevel == 3)
         {
             campfire.gameObject.SetActive(true);
             bossParameter.bossHpBase.gameObject.SetActive(false);
@@ -91,7 +91,7 @@ public class BossMonsterManager : BanditManager
     protected override void Dead()
     {
         base.Dead();
-        Database.Instance.nowPlayer.bossClear = true;
+        Database.Instance.nowPlayer.clearedLevel = 3;
         campfire.gameObject.SetActive(true);
         bossParameter.bossHpBase.gameObject.SetActive(false);
         bossParameter.bossName.gameObject.SetActive(false);

@@ -91,6 +91,10 @@ public class Database : MonoBehaviour
             case 2: Parameter.instance.GetComponent<WorldMapManager>().forest2.gameObject.SetActive(true);
                 Parameter.instance.GetComponent<WorldMapManager>().forest3.gameObject.SetActive(true);
                 break;
+            case 3:
+                Parameter.instance.GetComponent<WorldMapManager>().forest2.gameObject.SetActive(true);
+                Parameter.instance.GetComponent<WorldMapManager>().forest3.gameObject.SetActive(true);
+                break;
             default: break;
         }
     }
