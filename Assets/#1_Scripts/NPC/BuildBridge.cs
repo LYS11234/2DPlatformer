@@ -58,6 +58,7 @@ public class BuildBridge : MonoBehaviour
                                     break;
                                 }
                             }
+                            Database.Instance.nowPlayer.bridgeFixed = true;
                             backGround.bridge.SetActive(true);
                             backGround.blockBridge.SetActive(false);
                         }

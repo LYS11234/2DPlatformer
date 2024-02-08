@@ -2489,6 +2489,8 @@ MonoBehaviour:
   canvas: {fileID: 1300887832}
   genPos: {fileID: 1801799822}
   bound: {fileID: 1082216090}
+  blockBridge: {fileID: 0}
+  bridge: {fileID: 0}
 --- !u!1 &1485323591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,7 +3613,7 @@ MonoBehaviour:
   findPlayer: 0
   exp: 100000
   minGold: 10000
-  maxGold: 10000
+  maxGold: 10001
   direction: 0
   moveCount: 10
   currentMoveCount: 0
@@ -3632,8 +3634,10 @@ MonoBehaviour:
   campfire: {fileID: 1857889832}
   bossParameter: {fileID: 325484467}
   deadMessage: []
-  groggyGage: 150
+  groggyGage: 400
   currentGroggyGage: 0
+  currentGroggyTime: 0
+  groggyTime: 10
   distance: 0
   maxHP: 500
   comboAttackTime: 10

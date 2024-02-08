@@ -23,6 +23,7 @@ public class BossMonsterManager : BanditManager
     public float currentGroggyGage;
     [SerializeField]
     private float currentGroggyTime;
+    [SerializeField]
     private float groggyTime;
     [SerializeField]
     private float distance;
