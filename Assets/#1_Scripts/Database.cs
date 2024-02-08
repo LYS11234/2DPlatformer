@@ -23,6 +23,7 @@ public class PlayerData
     public int[] store_ItemCount = new int[48];
     public int oldmanStep;
     public bool bossClear;
+    public bool bridgeFixed;
 }
 public class Database : MonoBehaviour
 {

@@ -22,6 +22,9 @@ public class BossMonsterManager : BanditManager
     private float groggyGage;
     public float currentGroggyGage;
     [SerializeField]
+    private float currentGroggyTime;
+    private float groggyTime;
+    [SerializeField]
     private float distance;
     [SerializeField]
     private int maxHP;
@@ -70,6 +73,7 @@ public class BossMonsterManager : BanditManager
     {
         if (!isDead)
         {
+
             SetDirection();
             StartCoroutine(CheckDistance());
             if (distance > 0.5f && canMove)
@@ -85,6 +89,18 @@ public class BossMonsterManager : BanditManager
                 Dead();
             if(isBackStep)
                 Rest();
+            if(currentGroggyGage <= 0)
+            {
+                Rest();
+                isGroggy = true;
+                if (groggyTime <= currentGroggyTime)
+                {
+                    isGroggy = false;
+                    currentGroggyGage = groggyGage;
+                }
+                else
+                    currentGroggyTime += Time.deltaTime;
+            }
         }
     }
 

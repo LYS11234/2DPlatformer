@@ -11,9 +11,20 @@ public class BackgroundManager : MonoBehaviour
     private Transform genPos;
     [SerializeField]
     private BoxCollider2D bound;
-    
+    public GameObject blockBridge;
+    public GameObject bridge;
+
     void Start()
     {
+        if (blockBridge != null)
+        {
+            bridge.SetActive(false);
+            if (Database.Instance.nowPlayer.bridgeFixed)
+            {
+                blockBridge.SetActive(false);
+                bridge.SetActive(true);
+            }            
+        }
         canvas.worldCamera = PlayerManager.instance.camera;
         PlayerManager.instance.gameObject.SetActive(true);
         PlayerManager.instance.canMove = true;
