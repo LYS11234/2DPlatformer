@@ -54,16 +54,19 @@ public class PlayerManager : MonoBehaviour
     public ButtonGUI gui;
 
     public Camera camera;
+
+    public Attack attack;
     #endregion
     [Space(10)]
 
-    
+
 
     #region Variables
     [Header("# Variables")]
 
     #region Player Movement
     [Header("Player Movement")]
+    public Vector2 playerDir;
     [SerializeField]
     private float moveSpeed;
     [SerializeField]
@@ -133,6 +136,7 @@ public class PlayerManager : MonoBehaviour
     #endregion
     void Start()
     {
+        playerDir.Set(1, 0);
         playerAnim.SetBool("Grounded", true);
         jumpDirectionL.Set(-1,4,0);
         jumpDirectionR.Set(1,4,0);
@@ -164,14 +168,16 @@ public class PlayerManager : MonoBehaviour
                 if (Input.GetAxisRaw("Horizontal") < 0)
                 {
                     playerSpriteRenderer.flipX = true;
-                    attackPoint.transform.localPosition = new Vector3(-0.249f, 0.028f, 0);
-                    attackPoint2.transform.localPosition = new Vector3(-0.249f, 0.028f, 0);
+                    playerDir.Set(-1 , 0);
+                    //attackPoint.transform.localPosition = new Vector3(-0.249f, 0.028f, 0);
+                    //attackPoint2.transform.localPosition = new Vector3(-0.249f, 0.028f, 0);
                 }
                 else
                 {
                     playerSpriteRenderer.flipX = false;
-                    attackPoint.transform.localPosition = new Vector3(0.248f, 0.028f, 0);
-                    attackPoint2.transform.localPosition = new Vector3(0.248f, 0.028f, 0);
+                    playerDir.Set(1, 0);
+                    //attackPoint.transform.localPosition = new Vector3(0.248f, 0.028f, 0);
+                    //attackPoint2.transform.localPosition = new Vector3(0.248f, 0.028f, 0);
                 }
                 isMove = true;
                 playerAnim.SetInteger("AnimState", 1);

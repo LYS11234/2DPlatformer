@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System;
+using UnityEditor;
 
 public class Title : MonoBehaviour
 {
@@ -36,7 +37,12 @@ public class Title : MonoBehaviour
 
     public void QuitGame()
     {
+#if !UNITY_EDITOR
         Application.Quit();
+#else
+        EditorApplication.isPlaying = false;
+#endif
+
     }
 
     private void SetActiveAll()

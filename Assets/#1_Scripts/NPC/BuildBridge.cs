@@ -60,7 +60,8 @@ public class BuildBridge : MonoBehaviour
                             }
                             Database.Instance.nowPlayer.bridgeFixed = true;
                             backGround.bridge.SetActive(true);
-                            backGround.blockBridge.SetActive(false);
+                            Destroy(backGround.blockBridge);
+                            Destroy(this.gameObject);
                         }
                     }
                 }

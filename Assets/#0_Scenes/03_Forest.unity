@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161165821}
   - component: {fileID: 161165822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tileset_1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,6 +641,7 @@ MonoBehaviour:
   bound: {fileID: 1123183648}
   blockBridge: {fileID: 1482610366}
   bridge: {fileID: 1354489680715969093}
+  builder: {fileID: 852405894}
 --- !u!224 &632411865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -838,7 +839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 922196873}
   - component: {fileID: 922196874}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tileset_1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,7 +998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1100114687}
   - component: {fileID: 1100114686}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tileset_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,7 +1330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1415482490}
   - component: {fileID: 1415482489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tileset_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1417432232}
   - component: {fileID: 1417432234}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tileset_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1497,7 +1498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427566111}
   - component: {fileID: 1427566113}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tileset_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,7 +1736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1531676130}
   - component: {fileID: 1531676131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1850,7 +1851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1719551926}
   - component: {fileID: 1719551927}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tileset_1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2066,7 +2067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4726505435986386751}
   - component: {fileID: 4940507834516833052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2104,7 @@ GameObject:
   - component: {fileID: 1354489680715969091}
   - component: {fileID: 4306399451275313697}
   - component: {fileID: 1957716831570043083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2121,7 +2122,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -2191,7 +2192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7647759705033677728}
   - component: {fileID: 7446870910062683786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2350,7 +2351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3879622805818681240}
   - component: {fileID: 9150271256564222278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2428,7 +2429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4830154910611940065}
   - component: {fileID: 2397926479503781698}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

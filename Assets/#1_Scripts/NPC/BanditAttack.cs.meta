@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 360c5e66f502a0a4b89c75277fd997c6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_parent: {instanceID: 0}
+  - m_graph: {instanceID: 0}
+  - banitManager: {fileID: 5196406796600480140, guid: 8675ef234f0ff314b91184169ecdc41e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

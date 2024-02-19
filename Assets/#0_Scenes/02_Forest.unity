@@ -4616,6 +4616,9 @@ MonoBehaviour:
   canvas: {fileID: 1803511732}
   genPos: {fileID: 506015739}
   bound: {fileID: 167604485}
+  blockBridge: {fileID: 0}
+  bridge: {fileID: 0}
+  builder: {fileID: 0}
 --- !u!1 &1824654628
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +4838,10 @@ PrefabInstance:
     - target: {fileID: 1703479746107548109, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
       propertyPath: m_Name
       value: Campfire (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213937425664512211, guid: ed00ac9a5ee333d488a67aa2c1e1abe6, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

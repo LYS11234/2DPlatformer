@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class HostileNPC : NPC
@@ -71,6 +72,9 @@ public class HostileNPC : NPC
 
     private void Start()
     {
+        // 이미지 Contents Size Fillter, Horizontal Layout Group으로 자동 넓이 조정 시 버그 수정용
+        // LayoutRebuilder.ForceRebuildLayoutImmediate([이미지 RectTransform]);
+
         layerMask = 1 << LayerMask.NameToLayer("Player");
         RandomValue();
         pos.Set(this.transform.position.x, this.transform.position.y + 100);
@@ -131,6 +135,10 @@ public class HostileNPC : NPC
     {
         //Debug.DrawRay(pos, new Vector3 (-pos.x, 0f,0f), new Color(0, 3, 0), 10);
         //Debug.Log($"Pos = {pos}");
+
+        // 박스캐스트 공부할 것
+        // 행동트리, a star 알고리즘 공부할 것
+
         if(Physics2D.Raycast(this.transform.position, dir, 0.3f, layerMask))
         {
             findPlayer = true;

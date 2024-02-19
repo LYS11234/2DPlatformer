@@ -1,3 +1,5 @@
+using Schema;
+using Schema.Builtin.Nodes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +15,9 @@ public class BanditManager: HostileNPC
 
     [SerializeField]
     protected BoxCollider2D attackPoint;
+
+    [SerializeField]
+    private SchemaAgent schemaAgent;
 
 
     #endregion
@@ -46,14 +51,20 @@ public class BanditManager: HostileNPC
 
     #endregion
     #region etc
-    
+
     #endregion
     #endregion
 
+    private void Start()
+    {
+        //schemaAgent.target.blackboard.en
+        
+    }
+
+
     private void FixedUpdate()
     {
-        if(!isDead)
-            FindPlayer();
+        
     }
 
     protected override void FindPlayer()
@@ -76,6 +87,13 @@ public class BanditManager: HostileNPC
             currentAtkTime += Time.deltaTime;
         }
     }
+
+
+    public void Attack()
+    {
+        StartCoroutine(AttackCoroutine());
+    }
+
 
     private IEnumerator AttackCoroutine()
     {

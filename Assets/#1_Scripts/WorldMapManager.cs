@@ -29,7 +29,7 @@ public class WorldMapManager : MonoBehaviour
 
     private void Update()
     {
-        if(m_WorldMap.active)
+        if(m_WorldMap.activeSelf)
             ChangeMap();
     }
 

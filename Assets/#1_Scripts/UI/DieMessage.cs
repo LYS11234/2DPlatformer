@@ -18,9 +18,10 @@ public class DieMessage : MonoBehaviour
     public Color color = new Color(171, 0, 0, 0);
     private void Update()
     {
-        if (PlayerManager.instance.isDead && dieMessage.color.a < 1)
-            StartCoroutine(ShowDeadMessage());
-        else if (PlayerManager.instance.isDead && dieMessage.color.a >= 1)
+        //if (PlayerManager.instance.isDead && dieMessage.color.a < 1)
+        //    StartCoroutine(ShowDeadMessage());
+        //else if (PlayerManager.instance.isDead && dieMessage.color.a >= 1)
+        if(dieMessage.color.a >= 1)
             Revive();
 
     }
@@ -48,7 +49,7 @@ public class DieMessage : MonoBehaviour
             PotionManager.Instance.potion_Full_Img.gameObject.SetActive(true);
             PotionManager.Instance.potion_None_Img.gameObject.SetActive(false);
             PotionManager.Instance.potions.text = Database.Instance.nowPlayer.potions.ToString();
-            PlayerManager.instance.gameObject.transform.position = new Vector2(-1.338f, -0.419f);
+            PlayerManager.instance.gameObject.transform.position = new Vector2(Constants.initPositionX, Constants.initPositionY);
             dieMessageBase.gameObject.SetActive(false);
             PlayerManager.instance.isDead = false;
             PlayerManager.instance.gameObject.SetActive(false);

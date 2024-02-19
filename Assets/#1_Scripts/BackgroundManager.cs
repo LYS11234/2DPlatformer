@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class BackgroundManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BackgroundManager : MonoBehaviour
     private BoxCollider2D bound;
     public GameObject blockBridge;
     public GameObject bridge;
+    public GameObject builder;
 
     void Start()
     {
@@ -21,8 +23,9 @@ public class BackgroundManager : MonoBehaviour
             bridge.SetActive(false);
             if (Database.Instance.nowPlayer.bridgeFixed)
             {
-                blockBridge.SetActive(false);
                 bridge.SetActive(true);
+                Destroy(blockBridge);
+                Destroy(builder);
             }            
         }
         canvas.worldCamera = PlayerManager.instance.camera;
@@ -32,5 +35,6 @@ public class BackgroundManager : MonoBehaviour
         Parameter.instance.gameObject.SetActive(true);
         PlayerManager.instance.playerTransform.position = genPos.position;
         CameraManager.instance.SetBound(bound);
+
     }
 }

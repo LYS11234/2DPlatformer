@@ -15,35 +15,40 @@ public class Attack : MonoBehaviour
     private float groggyAttack;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.3f);
-
+    [SerializeField]
+    private GameObject effect;
 
     
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<NPC>().npcType == "Monster" || collision.GetComponent<NPC>().npcType == "Hostile NPC")
+        NPC npc = collision.GetComponent<NPC>();
+        if(npc == null) return;
+        if (npc.npcType == "Monster" || npc.npcType == "Hostile NPC")
         {
-            if (collision != null)
-            { 
-                if(collision.GetComponent<NPC>().npcType == "Monster")
+            if(npc.npcType == "Monster")
+            {
+                Monster mob = collision.GetComponent<Monster>();
+                
+                mob.Damage(damage + Database.Instance.nowPlayer.additionalAtk);
+                Quaternion rotate  = Quaternion.Euler(0, 0, 0);
+                Instantiate(effect, mob.effectTransform, rotate);
+                //if(effect.)
+            }
+            else if (npc.npcType == "Hostile NPC")
+            {
+                if(collision.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
                 {
-                    collision.GetComponent<Monster>().Damage(damage + Database.Instance.nowPlayer.additionalAtk);
-                }
-                else if (collision.GetComponent<NPC>().npcType == "Hostile NPC")
-                {
-                    if(collision.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
-                    {
-                        if(bossManager.isGroggy == true)
-                            bossManager.Damage(damage + Database.Instance.nowPlayer.additionalAtk + groggyAttack);
-                        else
-                        {
-                            bossManager.Damage(damage + Database.Instance.nowPlayer.additionalAtk);
-                            bossManager.currentGroggyGage += groggyAttack;
-                        }
-                    }
+                    if(bossManager.isGroggy == true)
+                        bossManager.Damage(damage + Database.Instance.nowPlayer.additionalAtk + groggyAttack);
                     else
-                        collision.GetComponent<BanditManager>().Damage(damage + Database.Instance.nowPlayer.additionalAtk);
+                    {
+                        bossManager.Damage(damage + Database.Instance.nowPlayer.additionalAtk);
+                        bossManager.currentGroggyGage += groggyAttack;
+                    }
                 }
+                else
+                    collision.GetComponent<BanditManager>().Damage(damage + Database.Instance.nowPlayer.additionalAtk);
             }
         }
     }

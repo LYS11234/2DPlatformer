@@ -10,6 +10,12 @@ public class Monster : HostileNPC
     protected float currentAttackTime;
     [SerializeField]
     protected float attackTime;
+    public Vector2 effectTransform;
+
+    private void Start()
+    {
+        effectTransform.Set(this.transform.localPosition.x, this.transform.localPosition.y + 0.01f);
+    }
 
     protected virtual void FixedUpdate()
     {
@@ -41,4 +47,5 @@ public class Monster : HostileNPC
             }
         }
     }
+
 }

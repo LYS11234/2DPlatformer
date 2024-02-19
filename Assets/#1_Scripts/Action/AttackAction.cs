@@ -1,9 +1,19 @@
+using Schema.Builtin.Nodes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackAction : MonoBehaviour
 {
+
+    private int layerMask; 
+    private Vector2 attackSize = new Vector2(0.365417f, 0.5159765f);
+
+    private void Start()
+    {
+        layerMask = (1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Default"));
+        layerMask = ~layerMask;
+    }
     private void Update()
     {
         if (!PlayerManager.instance.isDead)
@@ -37,21 +47,74 @@ public class AttackAction : MonoBehaviour
 
         if (PlayerManager.instance.currentComboTime == 0f)
         {
+            float attack = 20 + Database.Instance.nowPlayer.additionalAtk;
             PlayerManager.instance.playerAnim.SetTrigger("Attack1");
             yield return PlayerManager.instance.waitTime;
-            PlayerManager.instance.attackPoint.gameObject.SetActive(true);
+            //PlayerManager.instance.attackPoint.gameObject.SetActive(true);
+            RaycastHit2D hit = Physics2D.BoxCast(PlayerManager.instance.transform.position, attackSize, 0, PlayerManager.instance.playerDir, 0.365417f / 2, layerMask);
+            Debug.LogError($"BoxCast Hit: {hit.transform.name}");
+            if (hit.transform == null)
+                yield break;
+            if(hit.transform.tag == "Monster")
+            {
+                NPC npc = hit.transform.GetComponent<NPC>();
+                if(npc.npcType == "Monster")
+                {
+                    Monster mob = npc.gameObject.GetComponent<Monster>();
+                    mob.Damage(attack);
+                }
+                else if(npc.npcType == "hostile NPC")
+                {
+                    if (npc.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
+                    {
+                        bossManager.Damage(attack);
+                        bossManager.currentGroggyGage += attack * 2 / 3;
+                    }
+                    else
+                    {
+                        BanditManager bandit = npc.gameObject.GetComponent<BanditManager>();
+                        bandit.Damage(attack);
+                    }
+                }
+            }
             PlayerManager.instance.isCombo = true;
             yield return PlayerManager.instance.waitTime;
-            PlayerManager.instance.attackPoint.gameObject.SetActive(false);
         }
         else if (PlayerManager.instance.currentComboTime <= PlayerManager.instance.comboTime && 0 < PlayerManager.instance.currentComboTime)
         {
+            float attack = 15 + Database.Instance.nowPlayer.additionalAtk;
             PlayerManager.instance.playerAnim.SetTrigger("Attack2");
-            PlayerManager.instance.attackPoint2.gameObject.SetActive(true);
+            yield return PlayerManager.instance.waitTime;
+            RaycastHit2D hit = Physics2D.BoxCast(PlayerManager.instance.transform.position, attackSize, 0, PlayerManager.instance.playerDir, 0.365417f / 2, layerMask);
+            Debug.LogError($"BoxCast Hit: {hit.transform.name}");
+            if (hit.transform == null)
+                yield break;
+            if (hit.transform.tag == "Monster")
+            {
+                NPC npc = hit.transform.GetComponent<NPC>();
+                if (npc.npcType == "Monster")
+                {
+                    Monster mob = npc.gameObject.GetComponent<Monster>();
+                    mob.Damage(attack);
+                }
+                else if (npc.npcType == "hostile NPC")
+                {
+                    if (npc.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
+                    {
+                        bossManager.Damage(attack);
+                        bossManager.currentGroggyGage += attack * 2 / 3;
+                    }
+                    else
+                    {
+                        BanditManager bandit = npc.gameObject.GetComponent<BanditManager>();
+                        bandit.Damage(attack);
+                    }
+                }
+            }
+            PlayerManager.instance.isCombo = true;
             yield return PlayerManager.instance.waitTime;
             PlayerManager.instance.currentComboTime = 0f;
             PlayerManager.instance.isCombo = false;
-            PlayerManager.instance.attackPoint2.gameObject.SetActive(false);
         }
         PlayerManager.instance.isAttack = false;
 

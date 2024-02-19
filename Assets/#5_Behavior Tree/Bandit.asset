@@ -1,0 +1,766 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7877716363408315925
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d536feb5b1d49094f82f5d1af00e82be, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  m_uID: e4d10196af2e4c3e8f92591102b7dba7
+  m_parent: {fileID: 7512957209290929011}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 1041.3201, y: 1283.9121}
+  m_priority: 14
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  seconds:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 1
+--- !u!114 &-7864190392270474479
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08555052ef0668e229d0083640550998, type: 3}
+  m_Name: Add
+  m_EditorClassIdentifier: 
+  m_uID: db875e3b6e7844818abd92d7302c77d1
+  m_parent: {fileID: -4688170705152548898}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 61.34996, y: 729.11206}
+  m_priority: 5
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  valueOne:
+    m_entry: {fileID: 4226450421537738660}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  valueTwo:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  result:
+    m_entry: {fileID: 4232598732521036082}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+--- !u!114 &-7328979723198216756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9042a5d800cc5cc4f9c3d1dcbff35439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_entries:
+  - {fileID: 4226450421537738660}
+  - {fileID: 4232598732521036082}
+--- !u!114 &-4730449973976037314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b8a6ce76183871f9bd193c88eee8d9, type: 3}
+  m_Name: Attack
+  m_EditorClassIdentifier: 
+  m_uID: 600bef2ed9604a2ab25ddf2e14ccf6e8
+  m_parent: {fileID: -4688170705152548898}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 577.14996, y: 729.11206}
+  m_priority: 8
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  animator:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 0}
+    m_useSelf: 1
+    m_fieldValueType: UnityEngine.Animator, UnityEngine.AnimationModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  trigger: Attack
+--- !u!114 &-4688170705152548898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972b97b1854464e439aae113342e6a4f, type: 3}
+  m_Name: Attacked
+  m_EditorClassIdentifier: 
+  m_uID: 840f60b4a3484cb7b61435f929e921dd
+  m_parent: {fileID: 7764611322735072227}
+  m_children:
+  - {fileID: -7864190392270474479}
+  - {fileID: 7204866245341961620}
+  - {fileID: -1994060365693904550}
+  - {fileID: -4730449973976037314}
+  m_conditionals:
+  - {fileID: 2325834163089159412}
+  m_modifiers: []
+  m_graphPosition: {x: 319.24997, y: 476.71204}
+  m_priority: 4
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &-4489858534973716076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016fbbd584620f64ab35ac6745c7564a, type: 3}
+  m_Name: Root
+  m_EditorClassIdentifier: 
+  m_uID: 81b9bb7fad7941a89783f032cb4d4cdf
+  m_parent: {fileID: 0}
+  m_children:
+  - {fileID: 7764611322735072227}
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 651.61194, y: 0}
+  m_priority: 1
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &-2778196654251004569
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc512b4fe413268584a17de37363ac7, type: 3}
+  m_Name: Cone Check
+  m_EditorClassIdentifier: 
+  m_uID: 5cdc364253564cbe82af1bd7dc32211a
+  m_node: {fileID: 5343033024211393394}
+  m_abortsType: 0
+  m_abortsWhen: 0
+  m_invert: 0
+  rayRange: 10
+  halfAngle: 15
+  coneDirection: 0
+  resolution: 10
+  precisionMode: 0
+  offset: {x: 0, y: 0, z: 0}
+  gameObjectKey:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 0}
+  tagFilter:
+    tags:
+    - Untagged
+    - Respawn
+    - Finish
+    - EditorOnly
+    - MainCamera
+    - GameController
+    - Gate
+    - Tool
+    - Campfire
+    - ItemPouch
+    - VillianAttack
+  visualize: 0
+--- !u!114 &-1994060365693904550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43876ca27079a11e0a1e32cf17f2fdec, type: 3}
+  m_Name: Move To Direct
+  m_EditorClassIdentifier: 
+  m_uID: c9461580189a41209b865a550aae8243
+  m_parent: {fileID: -4688170705152548898}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 375.34998, y: 729.11206}
+  m_priority: 7
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  speed: 1
+  rotateTowardsTarget: 0
+  point:
+    m_entry: {fileID: -8601602605015949744, guid: 874558ce332ea8949a51eb40404bb1ab, type: 2}
+    m_valuePath: /transform/position
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {x: 0, y: 0, z: 0}
+--- !u!114 &-1982504868511946314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91fc2427674742aba52d216fceec075, type: 3}
+  m_Name: Wander
+  m_EditorClassIdentifier: 
+  m_uID: 12a70b47681b4e8d8301b2b60eeed61b
+  m_parent: {fileID: 3372276297805764172}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 1117.75, y: 729.11206}
+  m_priority: 16
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  navMeshAgent:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 8981549019598342662, guid: 8675ef234f0ff314b91184169ecdc41e, type: 3}
+    m_useSelf: 0
+    m_fieldValueType: UnityEngine.AI.NavMeshAgent, UnityEngine.AIModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  distance: 10
+  navmeshAreaMask:
+    areas: []
+    mask: -1
+  visualize: 0
+--- !u!114 &-1942937498872650347
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3438a8a6e472eae4f90557a72e37b9c2, type: 3}
+  m_Name: Selcetor for Object
+  m_EditorClassIdentifier: 
+  m_uID: 80ce877fc0f641f39b29e960102656f2
+  m_parent: {fileID: 5343033024211393394}
+  m_children:
+  - {fileID: 878775666665863772}
+  - {fileID: 7512957209290929011}
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 891.14996, y: 729.11206}
+  m_priority: 11
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &-1864455101160571540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7764d68ec30cafd1983ad1e775f84868, type: 3}
+  m_Name: Play Animation
+  m_EditorClassIdentifier: 
+  m_uID: 2490e90c00614b84a046ad9c2b056b15
+  m_parent: {fileID: 7764611322735072227}
+  m_children: []
+  m_conditionals:
+  - {fileID: -1397704905074724650}
+  m_modifiers: []
+  m_graphPosition: {x: 55.049988, y: 476.71204}
+  m_priority: 3
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  animator:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 0}
+    m_useSelf: 1
+    m_fieldValueType: UnityEngine.Animator, UnityEngine.AnimationModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  animationName: Death
+  layer: 0
+--- !u!114 &-1397704905074724650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b222a8d2de2d6b6b88389f22b5e9f9d, type: 3}
+  m_Name: Compare To
+  m_EditorClassIdentifier: 
+  m_uID: dff178cd72e840a9ae155175cd816890
+  m_node: {fileID: -1864455101160571540}
+  m_abortsType: 0
+  m_abortsWhen: 0
+  m_invert: 0
+  valueOne:
+    m_entry: {fileID: 4226450421537738660}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  valueTwo:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  comparisonType: 4
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c607c09a2416a2429d2729cde80bcab, type: 3}
+  m_Name: Bandit
+  m_EditorClassIdentifier: 
+  m_root: {fileID: -4489858534973716076}
+  m_blackboard: {fileID: -7328979723198216756}
+  m_nodes:
+  - {fileID: -4489858534973716076}
+  - {fileID: 7764611322735072227}
+  - {fileID: 3372276297805764172}
+  - {fileID: 5343033024211393394}
+  - {fileID: 1103085995704092765}
+  - {fileID: -1942937498872650347}
+  - {fileID: 878775666665863772}
+  - {fileID: 7512957209290929011}
+  - {fileID: -1982504868511946314}
+  - {fileID: 8231872561443619992}
+  - {fileID: -7877716363408315925}
+  - {fileID: -4688170705152548898}
+  - {fileID: 7204866245341961620}
+  - {fileID: -7864190392270474479}
+  - {fileID: -1994060365693904550}
+  - {fileID: -4730449973976037314}
+  - {fileID: -1864455101160571540}
+  m_zoom: 2.5
+  m_pan: {x: 146.8349, y: -474.91995}
+--- !u!114 &878775666665863772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972b97b1854464e439aae113342e6a4f, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  m_uID: 68ed585d05984e00a13e6829d8d330a0
+  m_parent: {fileID: -1942937498872650347}
+  m_children: []
+  m_conditionals:
+  - {fileID: 5763264917167959673}
+  m_modifiers: []
+  m_graphPosition: {x: 803.92, y: 1031.5121}
+  m_priority: 12
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &1103085995704092765
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525e5c5b69d4b711a8e16ddaacf40b0b, type: 3}
+  m_Name: Move To
+  m_EditorClassIdentifier: 
+  m_uID: 763d9571eb704591bdc37b4340a937ab
+  m_parent: {fileID: 5343033024211393394}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 734.14996, y: 729.11206}
+  m_priority: 10
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  navMeshAgent:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 8981549019598342662, guid: 8675ef234f0ff314b91184169ecdc41e, type: 3}
+    m_useSelf: 0
+    m_fieldValueType: UnityEngine.AI.NavMeshAgent, UnityEngine.AIModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  selector:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {x: 0, y: 0, z: 0}
+--- !u!114 &2325834163089159412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b222a8d2de2d6b6b88389f22b5e9f9d, type: 3}
+  m_Name: Compare To
+  m_EditorClassIdentifier: 
+  m_uID: 64f99e7bef244e2d885b94f40f916238
+  m_node: {fileID: -4688170705152548898}
+  m_abortsType: 0
+  m_abortsWhen: 0
+  m_invert: 0
+  valueOne:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: nowHp
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  valueTwo:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: beforeHp
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  comparisonType: 3
+--- !u!114 &3372276297805764172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972b97b1854464e439aae113342e6a4f, type: 3}
+  m_Name: Patrol
+  m_EditorClassIdentifier: 
+  m_uID: 293feae964d7453a9da7842b10290d36
+  m_parent: {fileID: 7764611322735072227}
+  m_children:
+  - {fileID: -1982504868511946314}
+  - {fileID: 8231872561443619992}
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 1196.25, y: 426.71204}
+  m_priority: 15
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &4226450421537738660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69338f26bc080584993f1e9fa0b4a4fe, type: 3}
+  m_Name: nowHp
+  m_EditorClassIdentifier: 
+  m_description: 
+  m_typeString: Schema.Internal.Types.Int, Schema, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  m_blackboard: {fileID: -7328979723198216756}
+--- !u!114 &4232598732521036082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69338f26bc080584993f1e9fa0b4a4fe, type: 3}
+  m_Name: beforeHp
+  m_EditorClassIdentifier: 
+  m_description: 
+  m_typeString: Schema.Internal.Types.Int, Schema, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  m_blackboard: {fileID: -7328979723198216756}
+--- !u!114 &5343033024211393394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972b97b1854464e439aae113342e6a4f, type: 3}
+  m_Name: Find Object
+  m_EditorClassIdentifier: 
+  m_uID: d19dd0931d0b4596b1a46bd8ee394e1d
+  m_parent: {fileID: 7764611322735072227}
+  m_children:
+  - {fileID: 1103085995704092765}
+  - {fileID: -1942937498872650347}
+  m_conditionals:
+  - {fileID: -2778196654251004569}
+  m_modifiers: []
+  m_graphPosition: {x: 822.0499, y: 476.71204}
+  m_priority: 9
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &5763264917167959673
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc512b4fe413268584a17de37363ac7, type: 3}
+  m_Name: Cone Check
+  m_EditorClassIdentifier: 
+  m_uID: 6b342f2313b444b49e3741be4ae18794
+  m_node: {fileID: 878775666665863772}
+  m_abortsType: 0
+  m_abortsWhen: 0
+  m_invert: 0
+  rayRange: 10
+  halfAngle: 15
+  coneDirection: 0
+  resolution: 10
+  precisionMode: 0
+  offset: {x: 0, y: 0, z: 0}
+  gameObjectKey:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: Player
+    m_isDynamic: 1
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 0}
+  tagFilter:
+    tags: []
+  visualize: 0
+--- !u!114 &7204866245341961620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf33cc9c62f64952b97079b711857dc8, type: 3}
+  m_Name: Subtract
+  m_EditorClassIdentifier: 
+  m_uID: aa460ae71a9543d993fd825cb9dc7d99
+  m_parent: {fileID: -4688170705152548898}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 218.34996, y: 729.11206}
+  m_priority: 6
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  valueOne:
+    m_entry: {fileID: 4226450421537738660}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  valueTwo:
+    m_entry: {fileID: 6163816599261747154, guid: 874558ce332ea8949a51eb40404bb1ab, type: 2}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  result:
+    m_entry: {fileID: 4226450421537738660}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+--- !u!114 &7512957209290929011
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972b97b1854464e439aae113342e6a4f, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  m_uID: 22a8eb9236a8416d9c43a510039ad603
+  m_parent: {fileID: -1942937498872650347}
+  m_children:
+  - {fileID: -7877716363408315925}
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 1041.3201, y: 981.5121}
+  m_priority: 13
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &7764611322735072227
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3438a8a6e472eae4f90557a72e37b9c2, type: 3}
+  m_Name: Selector
+  m_EditorClassIdentifier: 
+  m_uID: 84e39603620c4d8aadff0af2d0f1456d
+  m_parent: {fileID: -4489858534973716076}
+  m_children:
+  - {fileID: -1864455101160571540}
+  - {fileID: -4688170705152548898}
+  - {fileID: 5343033024211393394}
+  - {fileID: 3372276297805764172}
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 635.85, y: 174.356}
+  m_priority: 2
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+--- !u!114 &8231872561443619992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d536feb5b1d49094f82f5d1af00e82be, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  m_uID: 137e79d200354e1db3cbd3b979597157
+  m_parent: {fileID: 3372276297805764172}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 1274.75, y: 729.11206}
+  m_priority: 17
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  seconds:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 1
