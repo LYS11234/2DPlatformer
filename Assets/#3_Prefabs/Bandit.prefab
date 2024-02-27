@@ -137,11 +137,10 @@ GameObject:
   - component: {fileID: 1882096078382022359}
   - component: {fileID: 8467956577400545015}
   - component: {fileID: 4032951982945212249}
-  - component: {fileID: 4778761458702180576}
   - component: {fileID: 4094199019891318863}
   m_Layer: 8
   m_Name: Bandit
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,7 +168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8981549019598342662}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef23c242ebe4b0245b32b7905aca1e4f, type: 3}
   m_Name: 
@@ -186,6 +185,7 @@ MonoBehaviour:
   mobHp: {fileID: 0}
   item_pouch: {fileID: 3876229217138929161, guid: 67faf959a18c2334fb682e6806a48536, type: 3}
   items: []
+  moveSceneNPC: {fileID: 0}
   hp: 70
   isDead: 0
   findPlayer: 0
@@ -201,6 +201,7 @@ MonoBehaviour:
   currentMoveTime: 0
   value: 0
   canMove: 1
+  distance: 0
   layerMask: 0
   banditTransform: {fileID: 2015495893093589032}
   attackPoint: {fileID: 3423102397671548418}
@@ -354,24 +355,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4778761458702180576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8981549019598342662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7aa2beebd2c4441bc902105f15d212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_target: {fileID: 11400000, guid: 031efe82dbfa2a74b82f74732060eb82, type: 2}
-  m_agentDescription: 
-  m_maxStepsPerTick: 1000
-  m_restartWhenComplete: 1
-  m_resetBlackboardOnRestart: 0
-  m_treePauseTime: 0
 --- !u!195 &4094199019891318863
 NavMeshAgent:
   m_ObjectHideFlags: 0

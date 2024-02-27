@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -24,6 +25,9 @@ public class HostileNPC : NPC
     protected GameObject item_pouch;
     [SerializeField]
     protected Item[] items;
+    [SerializeField]
+    public MoveSceneNPC moveSceneNPC; 
+
     [SerializeField]
     protected RaycastHit2D hit;
     #endregion
@@ -66,7 +70,8 @@ public class HostileNPC : NPC
     private int value;
     [SerializeField]
     protected bool canMove;
-
+    [SerializeField]
+    private float distance;
     [SerializeField]
     protected int layerMask;
 
@@ -79,7 +84,7 @@ public class HostileNPC : NPC
         RandomValue();
         pos.Set(this.transform.position.x, this.transform.position.y + 100);
     }
-    public void Damage(float _damage)
+    public virtual void Damage(float _damage)
     {
         if (!isDead)
         {
@@ -95,15 +100,21 @@ public class HostileNPC : NPC
     protected virtual void Dead()
     {
         isDead = true;
+        distance = Mathf.Abs(this.transform.position.x - moveSceneNPC.transform.position.x);
         Parameter.instance.currentExp += exp;
         Database.Instance.nowPlayer.currentExp = Parameter.instance.currentExp;
         StartCoroutine(DeadCoroutine());
+        col.enabled = false;
+        mobRd.gravityScale = 0;
+        if (distance <= 0.5)
+        {
+            moveSceneNPC.numberOfObject--;
+        }
     }
 
     private IEnumerator DeadCoroutine()
     {   
         canMove = false;
-        mobRd.gravityScale = 0;
         col.isTrigger = true;
         DropItem(this.transform);
         yield return waitTime2;

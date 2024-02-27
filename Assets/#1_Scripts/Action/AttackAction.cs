@@ -52,30 +52,35 @@ public class AttackAction : MonoBehaviour
             yield return PlayerManager.instance.waitTime;
             //PlayerManager.instance.attackPoint.gameObject.SetActive(true);
             RaycastHit2D hit = Physics2D.BoxCast(PlayerManager.instance.transform.position, attackSize, 0, PlayerManager.instance.playerDir, 0.365417f / 2, layerMask);
-            Debug.LogError($"BoxCast Hit: {hit.transform.name}");
+
             if (hit.transform == null)
-                yield break;
-            if(hit.transform.tag == "Monster")
+                Debug.LogError("Null");
+            
+            else
             {
-                NPC npc = hit.transform.GetComponent<NPC>();
-                if(npc.npcType == "Monster")
+                Debug.LogError($"BoxCast Hit: {hit.transform.name}");
+                if (hit.transform.tag == "Monster")
                 {
-                    Monster mob = npc.gameObject.GetComponent<Monster>();
-                    mob.Damage(attack);
-                }
-                else if(npc.npcType == "hostile NPC")
-                {
-                    if (npc.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
+                    NPC npc = hit.transform.GetComponent<NPC>();
+                    if (npc.npcType == "Monster")
                     {
-                        bossManager.Damage(attack);
-                        bossManager.currentGroggyGage += attack * 2 / 3;
+                        Monster mob = npc.gameObject.GetComponent<Monster>();
+                        mob.Damage(attack);
                     }
-                    else
+                    else if (npc.npcType == "Hostile NPC")
                     {
                         BanditManager bandit = npc.gameObject.GetComponent<BanditManager>();
                         bandit.Damage(attack);
+
+                    }
+                    else if (npc.npcType == "BossMonster")
+                    {
+                        BossMonsterManager bossManager = npc.gameObject.GetComponent<BossMonsterManager>();
+                        bossManager.Damage(attack);
+                        bossManager.currentGroggyGage += attack * 2 / 3;
                     }
                 }
+                
             }
             PlayerManager.instance.isCombo = true;
             yield return PlayerManager.instance.waitTime;
@@ -86,33 +91,37 @@ public class AttackAction : MonoBehaviour
             PlayerManager.instance.playerAnim.SetTrigger("Attack2");
             yield return PlayerManager.instance.waitTime;
             RaycastHit2D hit = Physics2D.BoxCast(PlayerManager.instance.transform.position, attackSize, 0, PlayerManager.instance.playerDir, 0.365417f / 2, layerMask);
-            Debug.LogError($"BoxCast Hit: {hit.transform.name}");
+
             if (hit.transform == null)
-                yield break;
-            if (hit.transform.tag == "Monster")
+                Debug.LogError("Null");
+            else
             {
-                NPC npc = hit.transform.GetComponent<NPC>();
-                if (npc.npcType == "Monster")
+                if (hit.transform.tag == "Monster")
                 {
-                    Monster mob = npc.gameObject.GetComponent<Monster>();
-                    mob.Damage(attack);
-                }
-                else if (npc.npcType == "hostile NPC")
-                {
-                    if (npc.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
+                    NPC npc = hit.transform.GetComponent<NPC>();
+                    if (npc.npcType == "Monster")
                     {
-                        bossManager.Damage(attack);
-                        bossManager.currentGroggyGage += attack * 2 / 3;
+                        Monster mob = npc.gameObject.GetComponent<Monster>();
+                        mob.Damage(attack);
                     }
-                    else
+                    else if (npc.npcType == "Hostile NPC")
                     {
-                        BanditManager bandit = npc.gameObject.GetComponent<BanditManager>();
-                        bandit.Damage(attack);
+                        if (npc.TryGetComponent<BossMonsterManager>(out BossMonsterManager bossManager))
+                        {
+                            bossManager.Damage(attack);
+                            bossManager.currentGroggyGage += attack * 2 / 3;
+                        }
+                        else if(npc.TryGetComponent<BanditManager>(out BanditManager bandit))
+                        {
+                            
+                            bandit.Damage(attack);
+                        }
                     }
+                    Debug.LogError($"{hit.transform.gameObject.name}_2");
                 }
+                PlayerManager.instance.isCombo = true;
+                yield return PlayerManager.instance.waitTime;
             }
-            PlayerManager.instance.isCombo = true;
-            yield return PlayerManager.instance.waitTime;
             PlayerManager.instance.currentComboTime = 0f;
             PlayerManager.instance.isCombo = false;
         }

@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MoveNextScene : MonoBehaviour
 {
-    [SerializeField]
-    private string nextMap;
+    public string nextMap;
 
     [SerializeField]
     private bool canTalk;
@@ -24,18 +23,19 @@ public class MoveNextScene : MonoBehaviour
             Database.Instance.nowPlayer.destination = nextMap;
             if (nextMap == "03_Forest")
             {
-                Parameter.instance.GetComponent<WorldMapManager>().forest2.gameObject.SetActive(true);
+                WorldMapManager worldMap = Parameter.instance.GetComponent<WorldMapManager>();
+                worldMap.forest2.gameObject.SetActive(true);
+                worldMap.mapPoint.transform.position = worldMap.forest2.gameObject.transform.position;
                 Database.Instance.nowPlayer.clearedLevel = 1;
             }
             else if(nextMap == "04_BanditCave")
             {
-                Parameter.instance.GetComponent<WorldMapManager>().forest3.gameObject.SetActive(true);
+                WorldMapManager worldMap = Parameter.instance.GetComponent<WorldMapManager>();
+                worldMap.forest3.gameObject.SetActive(true);
+                worldMap.mapPoint.transform.position = worldMap.forest3.transform.position;
                 Database.Instance.nowPlayer.clearedLevel = 2;
             }
-            else
-            {
-                return;
-            }
+            Database.Instance.Save();
             SceneManager.LoadSceneAsync("99_LoadingScene");
         }
     }

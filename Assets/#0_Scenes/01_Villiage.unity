@@ -1455,6 +1455,18 @@ MonoBehaviour:
   canvas: {fileID: 893515905}
   genPos: {fileID: 1303421959}
   bound: {fileID: 759054001}
+  blockBridge: {fileID: 0}
+  bridge: {fileID: 0}
+  builder: {fileID: 0}
+  monsters: []
+  monsterSpawnPos: []
+  moveSceneNpc: {fileID: 1876035243}
+  monster:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &901711768
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,6 +3410,7 @@ MonoBehaviour:
   mapName: 99_LoadingScene
   mapImage: {fileID: 0}
   canTalk: 0
+  numberOfObject: 0
 --- !u!1 &1941108187
 GameObject:
   m_ObjectHideFlags: 0

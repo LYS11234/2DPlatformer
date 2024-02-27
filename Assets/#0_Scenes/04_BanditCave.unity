@@ -2491,6 +2491,11 @@ MonoBehaviour:
   bound: {fileID: 1082216090}
   blockBridge: {fileID: 0}
   bridge: {fileID: 0}
+  builder: {fileID: 0}
+  monsters: []
+  monsterSpawnPos: []
+  moveSceneNpc: {fileID: 0}
+  monster: []
 --- !u!1 &1485323591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,7 +3466,7 @@ GameObject:
   - component: {fileID: 2141060050}
   m_Layer: 8
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3599,7 +3604,7 @@ MonoBehaviour:
   anim: {fileID: 2141060045}
   potraits: []
   npcName: 
-  npcType: Hostile NPC
+  npcType: BossMonster
   npcDialogue: []
   sprite: {fileID: 2141060047}
   col: {fileID: 2141060046}
@@ -3608,6 +3613,7 @@ MonoBehaviour:
   mobHp: {fileID: 0}
   item_pouch: {fileID: 3876229217138929161, guid: 67faf959a18c2334fb682e6806a48536, type: 3}
   items: []
+  moveSceneNPC: {fileID: 0}
   hp: 500
   isDead: 0
   findPlayer: 0
@@ -3623,6 +3629,7 @@ MonoBehaviour:
   currentMoveTime: 0
   value: 0
   canMove: 1
+  distance: 0
   layerMask: 0
   banditTransform: {fileID: 2141060049}
   attackPoint: {fileID: 946666510}

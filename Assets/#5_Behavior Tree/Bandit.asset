@@ -17,8 +17,8 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 1041.3201, y: 1283.9121}
-  m_priority: 14
+  m_graphPosition: {x: 1348.5999, y: 1284.0001}
+  m_priority: 16
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 61.34996, y: 729.11206}
+  m_graphPosition: {x: -125.900024, y: 729.2}
   m_priority: 5
   m_graph: {fileID: 11400000}
   m_comment: 
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 577.14996, y: 729.11206}
-  m_priority: 8
+  m_graphPosition: {x: 884.69995, y: 729.2}
+  m_priority: 10
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
@@ -143,12 +143,14 @@ MonoBehaviour:
   m_children:
   - {fileID: -7864190392270474479}
   - {fileID: 7204866245341961620}
+  - {fileID: 5958206181178694353}
   - {fileID: -1994060365693904550}
+  - {fileID: 913616959762190424}
   - {fileID: -4730449973976037314}
   m_conditionals:
   - {fileID: 2325834163089159412}
   m_modifiers: []
-  m_graphPosition: {x: 319.24997, y: 476.71204}
+  m_graphPosition: {x: 379.4, y: 476.8}
   m_priority: 4
   m_graph: {fileID: 11400000}
   m_comment: 
@@ -171,7 +173,7 @@ MonoBehaviour:
   - {fileID: 7764611322735072227}
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 651.61194, y: 0}
+  m_graphPosition: {x: 805.5, y: 0}
   m_priority: 1
   m_graph: {fileID: 11400000}
   m_comment: 
@@ -239,15 +241,15 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 375.34998, y: 729.11206}
-  m_priority: 7
+  m_graphPosition: {x: 435.5, y: 729.2}
+  m_priority: 8
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
   speed: 1
   rotateTowardsTarget: 0
   point:
-    m_entry: {fileID: -8601602605015949744, guid: 874558ce332ea8949a51eb40404bb1ab, type: 2}
+    m_entry: {fileID: 0}
     m_valuePath: /transform/position
     m_dynamicName: 
     m_isDynamic: 0
@@ -272,8 +274,8 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 1117.75, y: 729.11206}
-  m_priority: 16
+  m_graphPosition: {x: 1425.2999, y: 729.19995}
+  m_priority: 18
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
@@ -313,82 +315,11 @@ MonoBehaviour:
   - {fileID: 7512957209290929011}
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 891.14996, y: 729.11206}
-  m_priority: 11
+  m_graphPosition: {x: 1198.7, y: 729.2}
+  m_priority: 13
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
---- !u!114 &-1864455101160571540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7764d68ec30cafd1983ad1e775f84868, type: 3}
-  m_Name: Play Animation
-  m_EditorClassIdentifier: 
-  m_uID: 2490e90c00614b84a046ad9c2b056b15
-  m_parent: {fileID: 7764611322735072227}
-  m_children: []
-  m_conditionals:
-  - {fileID: -1397704905074724650}
-  m_modifiers: []
-  m_graphPosition: {x: 55.049988, y: 476.71204}
-  m_priority: 3
-  m_graph: {fileID: 11400000}
-  m_comment: 
-  m_enableStatusIndicator: 1
-  animator:
-    m_entry: {fileID: 0}
-    m_valuePath: 
-    m_dynamicName: 
-    m_isDynamic: 0
-    m_filters:
-    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    m_inspectorValue: {fileID: 0}
-    m_useSelf: 1
-    m_fieldValueType: UnityEngine.Animator, UnityEngine.AnimationModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  animationName: Death
-  layer: 0
---- !u!114 &-1397704905074724650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b222a8d2de2d6b6b88389f22b5e9f9d, type: 3}
-  m_Name: Compare To
-  m_EditorClassIdentifier: 
-  m_uID: dff178cd72e840a9ae155175cd816890
-  m_node: {fileID: -1864455101160571540}
-  m_abortsType: 0
-  m_abortsWhen: 0
-  m_invert: 0
-  valueOne:
-    m_entry: {fileID: 4226450421537738660}
-    m_valuePath: 
-    m_dynamicName: 
-    m_isDynamic: 0
-    m_filters:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    m_inspectorValue: 0
-  valueTwo:
-    m_entry: {fileID: 0}
-    m_valuePath: 
-    m_dynamicName: 
-    m_isDynamic: 0
-    m_filters:
-    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    m_inspectorValue: 0
-  comparisonType: 4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,9 +351,79 @@ MonoBehaviour:
   - {fileID: -7864190392270474479}
   - {fileID: -1994060365693904550}
   - {fileID: -4730449973976037314}
-  - {fileID: -1864455101160571540}
-  m_zoom: 2.5
-  m_pan: {x: 146.8349, y: -474.91995}
+  - {fileID: 5958206181178694353}
+  - {fileID: 913616959762190424}
+  - {fileID: 621545706296720467}
+  m_zoom: 1.4499998
+  m_pan: {x: -441.74252, y: -604.24744}
+--- !u!114 &621545706296720467
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9388add0b718bed18934c18b2d05d2c4, type: 3}
+  m_Name: Death
+  m_EditorClassIdentifier: 
+  m_uID: 989c5ff7d08e4ee8a8cb84abe0e1680f
+  m_parent: {fileID: 7764611322735072227}
+  m_children: []
+  m_conditionals:
+  - {fileID: 2341762597891264539}
+  m_modifiers: []
+  m_graphPosition: {x: 76, y: 476.8}
+  m_priority: 3
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  animator:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 0}
+    m_useSelf: 1
+    m_fieldValueType: UnityEngine.Animator, UnityEngine.AnimationModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  type: 9
+  parameterName:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: Death
+  floatValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  intValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  boolValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
 --- !u!114 &878775666665863772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,11 +442,78 @@ MonoBehaviour:
   m_conditionals:
   - {fileID: 5763264917167959673}
   m_modifiers: []
-  m_graphPosition: {x: 803.92, y: 1031.5121}
-  m_priority: 12
+  m_graphPosition: {x: 1111.2, y: 1031.6001}
+  m_priority: 14
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
+--- !u!114 &913616959762190424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9388add0b718bed18934c18b2d05d2c4, type: 3}
+  m_Name: Set Animator Variable
+  m_EditorClassIdentifier: 
+  m_uID: 20385a427cd347e5b04bfa59be414511
+  m_parent: {fileID: -4688170705152548898}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 637.3, y: 729.2}
+  m_priority: 9
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  animator:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 0}
+    m_useSelf: 1
+    m_fieldValueType: UnityEngine.Animator, UnityEngine.AnimationModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  type: 4
+  parameterName:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: isMove
+  floatValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  intValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  boolValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
 --- !u!114 &1103085995704092765
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -463,8 +531,8 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 734.14996, y: 729.11206}
-  m_priority: 10
+  m_graphPosition: {x: 1041.7, y: 729.2}
+  m_priority: 12
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
@@ -507,7 +575,7 @@ MonoBehaviour:
   m_abortsWhen: 0
   m_invert: 0
   valueOne:
-    m_entry: {fileID: 0}
+    m_entry: {fileID: 4226450421537738660}
     m_valuePath: 
     m_dynamicName: nowHp
     m_isDynamic: 0
@@ -515,7 +583,7 @@ MonoBehaviour:
     - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     m_inspectorValue: 0
   valueTwo:
-    m_entry: {fileID: 0}
+    m_entry: {fileID: 4232598732521036082}
     m_valuePath: 
     m_dynamicName: beforeHp
     m_isDynamic: 0
@@ -523,6 +591,40 @@ MonoBehaviour:
     - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     m_inspectorValue: 0
   comparisonType: 3
+--- !u!114 &2341762597891264539
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b222a8d2de2d6b6b88389f22b5e9f9d, type: 3}
+  m_Name: Compare To
+  m_EditorClassIdentifier: 
+  m_uID: 8d1be4f77ab74febaadcb2cb25eb6983
+  m_node: {fileID: 621545706296720467}
+  m_abortsType: 0
+  m_abortsWhen: 0
+  m_invert: 0
+  valueOne:
+    m_entry: {fileID: 4226450421537738660}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  valueTwo:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  comparisonType: 4
 --- !u!114 &3372276297805764172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -542,8 +644,8 @@ MonoBehaviour:
   - {fileID: 8231872561443619992}
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 1196.25, y: 426.71204}
-  m_priority: 15
+  m_graphPosition: {x: 1503.7999, y: 426.8}
+  m_priority: 17
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
@@ -599,8 +701,8 @@ MonoBehaviour:
   m_conditionals:
   - {fileID: -2778196654251004569}
   m_modifiers: []
-  m_graphPosition: {x: 822.0499, y: 476.71204}
-  m_priority: 9
+  m_graphPosition: {x: 1129.6, y: 476.8}
+  m_priority: 11
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
@@ -639,6 +741,73 @@ MonoBehaviour:
   tagFilter:
     tags: []
   visualize: 0
+--- !u!114 &5958206181178694353
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9388add0b718bed18934c18b2d05d2c4, type: 3}
+  m_Name: Set Animator Variable
+  m_EditorClassIdentifier: 
+  m_uID: 3ea5f7885f4a44c2a366777edeb3d6cd
+  m_parent: {fileID: -4688170705152548898}
+  m_children: []
+  m_conditionals: []
+  m_modifiers: []
+  m_graphPosition: {x: 188.09998, y: 729.2}
+  m_priority: 7
+  m_graph: {fileID: 11400000}
+  m_comment: 
+  m_enableStatusIndicator: 1
+  animator:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_inspectorValue: {fileID: 0}
+    m_useSelf: 1
+    m_fieldValueType: UnityEngine.Animator, UnityEngine.AnimationModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  type: 4
+  parameterName:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: isMove
+  floatValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  intValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 0
+  boolValue:
+    m_entry: {fileID: 0}
+    m_valuePath: 
+    m_dynamicName: 
+    m_isDynamic: 0
+    m_filters:
+    - System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    m_inspectorValue: 1
 --- !u!114 &7204866245341961620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -656,7 +825,7 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 218.34996, y: 729.11206}
+  m_graphPosition: {x: 31.099976, y: 729.2}
   m_priority: 6
   m_graph: {fileID: 11400000}
   m_comment: 
@@ -670,7 +839,7 @@ MonoBehaviour:
     - System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
     m_inspectorValue: 0
   valueTwo:
-    m_entry: {fileID: 6163816599261747154, guid: 874558ce332ea8949a51eb40404bb1ab, type: 2}
+    m_entry: {fileID: 0}
     m_valuePath: 
     m_dynamicName: 
     m_isDynamic: 0
@@ -703,8 +872,8 @@ MonoBehaviour:
   - {fileID: -7877716363408315925}
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 1041.3201, y: 981.5121}
-  m_priority: 13
+  m_graphPosition: {x: 1348.5999, y: 981.60004}
+  m_priority: 15
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1
@@ -723,13 +892,13 @@ MonoBehaviour:
   m_uID: 84e39603620c4d8aadff0af2d0f1456d
   m_parent: {fileID: -4489858534973716076}
   m_children:
-  - {fileID: -1864455101160571540}
+  - {fileID: 621545706296720467}
   - {fileID: -4688170705152548898}
   - {fileID: 5343033024211393394}
   - {fileID: 3372276297805764172}
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 635.85, y: 174.356}
+  m_graphPosition: {x: 789.89996, y: 174.4}
   m_priority: 2
   m_graph: {fileID: 11400000}
   m_comment: 
@@ -751,8 +920,8 @@ MonoBehaviour:
   m_children: []
   m_conditionals: []
   m_modifiers: []
-  m_graphPosition: {x: 1274.75, y: 729.11206}
-  m_priority: 17
+  m_graphPosition: {x: 1582.2999, y: 729.19995}
+  m_priority: 19
   m_graph: {fileID: 11400000}
   m_comment: 
   m_enableStatusIndicator: 1

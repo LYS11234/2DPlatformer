@@ -23,7 +23,7 @@ public class Title : MonoBehaviour
     }
     public void NewGame()
     {
-        Database.Instance.nowPlayer.destination = "01_Villiage";
+        Database.Instance.nowPlayer.destination = "05_TutorialScene";
         //PlayerManager.instance.gameObject.transform.SetParent(null);
         //Parameter.instance.gameObject.transform.SetParent(null) ;
         SceneManager.LoadSceneAsync("99_LoadingScene");

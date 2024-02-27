@@ -1,3 +1,4 @@
+using Schema.Builtin.Nodes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,15 +13,35 @@ public class MoveSceneNPC : AllienceNPC
     private GameObject mapImage;
     [SerializeField]
     private bool canTalk;
+    public int numberOfObject;
+    private float distance;
 
     private new void Start()
     {
-        
         mapImage = Parameter.instance.gameObject.GetComponent<WorldMapManager>().m_WorldMap;
     }
 
     private void Update()
     {
+        distance = Mathf.Abs(PlayerManager.instance.transform.position.x - this.transform.position.x);
+        if (numberOfObject == 1)
+        {
+            if (distance <= 0.3)
+            {
+                PlayerManager.instance.canAttack = false;
+                canTalk = true;
+            }
+            else
+            {
+                PlayerManager.instance.canAttack = true;
+                canTalk = false;
+            }
+        }
+        else
+        {
+            PlayerManager.instance.canAttack = true;
+            canTalk = false;
+        }
         if (Input.GetKeyDown(KeyCode.X) && canTalk)
         {
             Rest();
@@ -38,6 +59,7 @@ public class MoveSceneNPC : AllienceNPC
 
     private void Rest()
     {
+        Parameter.instance.gameObject.GetComponent<WorldMapManager>().monsterSpawnCount = 0;
         PotionManager.Instance.currentPotions = Database.Instance.nowPlayer.potions;
         Parameter.instance.currentHp = Parameter.instance.hp;
         Parameter.instance.currentMp = Parameter.instance.mp;
@@ -51,30 +73,26 @@ public class MoveSceneNPC : AllienceNPC
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.name == "Player")
-        {
-            PlayerManager.instance.canAttack = false;
-            canTalk = true;
-        }
-
+        numberOfObject++;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.transform.tag == "Monster" && !other.GetComponent<HostileNPC>().isDead)
-        {
-            PlayerManager.instance.canAttack = true;
-            canTalk = false;
-        }
-        else if(other.transform.tag == "Monster" && other.GetComponent<HostileNPC>().isDead)
-        {
-            PlayerManager.instance.canAttack = false;
-            canTalk = true;
-        }
-    }
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+    //    if (other.transform.tag == "Monster" && !other.GetComponent<HostileNPC>().isDead)
+    //    {
+    //        PlayerManager.instance.canAttack = true;
+    //        canTalk = false;
+    //    }
+    //    else if(other.transform.tag == "Monster" && other.GetComponent<HostileNPC>().isDead)
+    //    {
+    //        PlayerManager.instance.canAttack = false;
+    //        canTalk = true;
+    //    }
+    //}
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        numberOfObject--;
         if (other.transform.name == "Player")
         {
             PlayerManager.instance.canAttack = true;

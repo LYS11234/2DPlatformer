@@ -11,6 +11,8 @@ TagManager:
   - ItemPouch
   - Monster
   - VillianAttack
+  - MoveNext
+  - Builder
   layers:
   - Default
   - TransparentFX

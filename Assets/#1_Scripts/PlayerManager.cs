@@ -55,7 +55,6 @@ public class PlayerManager : MonoBehaviour
 
     public Camera camera;
 
-    public Attack attack;
     #endregion
     [Space(10)]
 
@@ -330,12 +329,33 @@ public class PlayerManager : MonoBehaviour
             gui.image.gameObject.SetActive(true);
             gui.text.text = "Press X to Rest.";
         }
+        else if(collision.tag == "MoveNext")
+        {
+            MoveNextScene nextScene = collision.GetComponent<MoveNextScene>();
+            string[] nextMap = nextScene.nextMap.Split("_");
+            gui.image.gameObject.SetActive(true);
+            
+            gui.text.text = ($"Press X to Move to {nextMap[1]}");
+            Rect rect = gui.text.rectTransform.rect;
+            gui.image.rectTransform.rect.Set(gui.image.transform.position.x, gui.image.transform.position.y, rect.width + 60, gui.image.rectTransform.rect.height);
+            Debug.LogError($"image Size{rect.width}");
+        }
+        else if(collision.tag == "Builder")
+        {
+            gui.image.gameObject.SetActive(true);
+            gui.text.text = ("Press X to Build.");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        gui.text.text = "";
-        gui.image.gameObject.SetActive(false);
+        if (gui.image == null)
+            return;
+        else
+        {
+            gui.text.text = "";
+            gui.image.gameObject.SetActive(false);
+        }
     }
 
     #endregion

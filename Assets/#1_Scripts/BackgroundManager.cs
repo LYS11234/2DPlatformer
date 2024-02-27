@@ -15,6 +15,16 @@ public class BackgroundManager : MonoBehaviour
     public GameObject blockBridge;
     public GameObject bridge;
     public GameObject builder;
+    [SerializeField]
+    private GameObject[] monsters;
+    [SerializeField]
+    private Transform[] monsterSpawnPos;
+    [SerializeField]
+    private MoveSceneNPC moveSceneNpc;
+    [SerializeField]
+    private HostileNPC[] monster;
+
+
 
     void Start()
     {
@@ -35,6 +45,35 @@ public class BackgroundManager : MonoBehaviour
         Parameter.instance.gameObject.SetActive(true);
         PlayerManager.instance.playerTransform.position = genPos.position;
         CameraManager.instance.SetBound(bound);
+        SpawnMonster();
+        Parameter.instance.GetComponent<WorldMapManager>().monsterSpawnCount++;
 
+    }
+
+    private void Update()
+    {
+        if (monsters != null)
+        {
+            if (!Parameter.instance.GetComponent<WorldMapManager>().m_WorldMap.activeSelf && Parameter.instance.GetComponent<WorldMapManager>().monsterSpawnCount == 0)
+            {
+                for (int i = 0; i < monster.Length; i++)
+                {
+                    if (monster[i] != null)
+                        Destroy(monster[i].gameObject);
+                }
+                SpawnMonster();
+                
+            }
+        }
+    }
+
+    private void SpawnMonster()
+    {
+        for (int i = 0; i < monsterSpawnPos.Length; i++)
+        {
+            monster[i] = Instantiate(monsters[i], monsterSpawnPos[i].position, Quaternion.identity).GetComponent<HostileNPC>();
+            Parameter.instance.GetComponent<WorldMapManager>().monsterSpawnCount++;
+            monster[i].moveSceneNPC = moveSceneNpc;
+        }
     }
 }

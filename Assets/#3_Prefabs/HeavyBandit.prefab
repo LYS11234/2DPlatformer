@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 5639996388618828517}
   m_Layer: 8
   m_Name: HeavyBandit
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   mobHp: {fileID: 0}
   item_pouch: {fileID: 3876229217138929161, guid: 67faf959a18c2334fb682e6806a48536, type: 3}
   items: []
+  moveSceneNPC: {fileID: 0}
   hp: 100
   isDead: 0
   findPlayer: 0
@@ -199,6 +200,7 @@ MonoBehaviour:
   currentMoveTime: 0
   value: 0
   canMove: 1
+  distance: 0
   layerMask: 0
   banditTransform: {fileID: 1323172116836092389}
   attackPoint: {fileID: 838338928696499883}

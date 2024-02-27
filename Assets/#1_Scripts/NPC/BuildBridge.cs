@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildBridge : MonoBehaviour
 {
     [SerializeField]
     private BackgroundManager backGround;
+    private ButtonGUI ui = Parameter.instance.gameObject.GetComponent<ButtonGUI>();
 
+    private bool canBuild;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -18,8 +21,13 @@ public class BuildBridge : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
+        {
             PlayerManager.instance.canAttack = true;
+            
+            ui.image.gameObject.SetActive(false);
+            ui.text.text = "";
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -58,12 +66,24 @@ public class BuildBridge : MonoBehaviour
                                     break;
                                 }
                             }
+
+                            canBuild = true;
                             Database.Instance.nowPlayer.bridgeFixed = true;
                             backGround.bridge.SetActive(true);
                             Destroy(backGround.blockBridge);
                             Destroy(this.gameObject);
                         }
+                        
                     }
+                    else
+                    {
+                        canBuild = false;
+                    }
+                }
+                if(!canBuild)
+                {
+                    ui.image.gameObject.SetActive(true);
+                    ui.text.text = "You have not Enough Item.";
                 }
             }
         }

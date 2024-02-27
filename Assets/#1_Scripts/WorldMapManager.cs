@@ -15,17 +15,19 @@ public class WorldMapManager : MonoBehaviour
     public Image forest2;
     [SerializeField] 
     public Image forest3;
-    [SerializeField]
-    private Rigidbody2D mapPoint;
+    public Rigidbody2D mapPoint;
+    
+
     [SerializeField]
     private Vector2 originPos;
-
+    
     [SerializeField]
     private int mapNum = 0;
     [SerializeField]
     private string sceneName;
     [SerializeField]
     private int originMapNum = 0;
+    public int monsterSpawnCount;
 
     private void Update()
     {
@@ -55,6 +57,7 @@ public class WorldMapManager : MonoBehaviour
             originMapNum = mapNum;
             originPos = mapPoint.position;
             m_WorldMap.SetActive(false);
+            
             SceneManager.LoadSceneAsync("99_LoadingScene");
         }
         else if(Input.GetKeyDown(KeyCode.Z))
@@ -66,9 +69,6 @@ public class WorldMapManager : MonoBehaviour
 
             m_WorldMap.SetActive(false);
             PlayerManager.instance.canMove = true;
-            PlayerManager.instance.gameObject.SetActive(false);
-            Parameter.instance.gameObject.SetActive(false);
-            SceneManager.LoadSceneAsync("99_LoadingScene");
         }
     }
 
@@ -86,7 +86,7 @@ public class WorldMapManager : MonoBehaviour
                 sceneName = forest1.gameObject.name;
                 break;
             case 2:
-                if (forest2.gameObject.active)
+                if (forest2.gameObject.activeSelf)
                 {
                     _vec.Set(forest2.transform.position.x, forest2.transform.position.y);
                     sceneName = forest2.gameObject.name;
@@ -99,7 +99,7 @@ public class WorldMapManager : MonoBehaviour
                 }
                 break;
             default:
-                if (forest3.gameObject.active)
+                if (forest3.gameObject.activeSelf)
                 {
                     _vec.Set(forest3.transform.position.x, forest3.transform.position.y);
                     sceneName = forest3.gameObject.name;
