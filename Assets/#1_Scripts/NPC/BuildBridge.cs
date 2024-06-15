@@ -8,9 +8,16 @@ public class BuildBridge : MonoBehaviour
 {
     [SerializeField]
     private BackgroundManager backGround;
-    private ButtonGUI ui = Parameter.instance.gameObject.GetComponent<ButtonGUI>();
+    private ButtonGUI ui;
 
     private bool canBuild;
+
+    private void Start()
+    {
+        ui = Parameter.instance.gameObject.GetComponent<ButtonGUI>();
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")

@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     public void PrintDialogue(string _name, string _dialogue)
     {
-        if (!panel.gameObject.active)
+        if (!panel.gameObject.activeSelf)
         {
             panel.gameObject.SetActive(true);
         }

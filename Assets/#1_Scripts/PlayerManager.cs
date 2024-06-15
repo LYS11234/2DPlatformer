@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     public ButtonGUI gui;
 
-    public Camera camera;
+    public Camera mainCamera;
 
     #endregion
     [Space(10)]
@@ -148,6 +149,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (!isDead)
         {
+            
             //CheckGround();
             CheckAirSpeed();
             PlayerMove();
@@ -336,15 +338,13 @@ public class PlayerManager : MonoBehaviour
             gui.image.gameObject.SetActive(true);
             
             gui.text.text = ($"Press X to Move to {nextMap[1]}");
-            Rect rect = gui.text.rectTransform.rect;
-            gui.image.rectTransform.rect.Set(gui.image.transform.position.x, gui.image.transform.position.y, rect.width + 60, gui.image.rectTransform.rect.height);
-            Debug.LogError($"image Size{rect.width}");
         }
         else if(collision.tag == "Builder")
         {
             gui.image.gameObject.SetActive(true);
             gui.text.text = ("Press X to Build.");
         }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(gui.image.rectTransform);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

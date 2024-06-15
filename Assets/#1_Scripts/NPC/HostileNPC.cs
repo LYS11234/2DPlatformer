@@ -71,7 +71,7 @@ public class HostileNPC : NPC
     [SerializeField]
     protected bool canMove;
     [SerializeField]
-    private float distance;
+    protected float distance;
     [SerializeField]
     protected int layerMask;
 
@@ -100,22 +100,19 @@ public class HostileNPC : NPC
     protected virtual void Dead()
     {
         isDead = true;
-        distance = Mathf.Abs(this.transform.position.x - moveSceneNPC.transform.position.x);
+        
         Parameter.instance.currentExp += exp;
         Database.Instance.nowPlayer.currentExp = Parameter.instance.currentExp;
         StartCoroutine(DeadCoroutine());
         col.enabled = false;
         mobRd.gravityScale = 0;
-        if (distance <= 0.5)
-        {
-            moveSceneNPC.numberOfObject--;
-        }
+        if(moveSceneNPC != null)
+            distance = Mathf.Abs(this.transform.position.x - moveSceneNPC.transform.position.x);
     }
 
     private IEnumerator DeadCoroutine()
     {   
         canMove = false;
-        col.isTrigger = true;
         DropItem(this.transform);
         yield return waitTime2;
         yield return waitTime2;
@@ -144,13 +141,8 @@ public class HostileNPC : NPC
 
     protected virtual void FindPlayer()
     {
-        //Debug.DrawRay(pos, new Vector3 (-pos.x, 0f,0f), new Color(0, 3, 0), 10);
-        //Debug.Log($"Pos = {pos}");
-
-        // 박스캐스트 공부할 것
         // 행동트리, a star 알고리즘 공부할 것
-
-        if(Physics2D.Raycast(this.transform.position, dir, 0.3f, layerMask))
+        if (direction <= (this.transform.position.x - PlayerManager.instance.transform.position.x) / Mathf.Abs(this.transform.position.x - PlayerManager.instance.transform.position.x))
         {
             findPlayer = true;
             direction = (int)(PlayerManager.instance.gameObject.transform.position.x / Math.Abs(PlayerManager.instance.gameObject.transform.position.x));

@@ -12,6 +12,6 @@ public class BossParameterManager : MonoBehaviour
     public Text bossName;
     private void Start()
     {
-        canvas.worldCamera = PlayerManager.instance.camera;
+        canvas.worldCamera = PlayerManager.instance.mainCamera;
     }
 }

@@ -38,7 +38,7 @@ public class BackgroundManager : MonoBehaviour
                 Destroy(builder);
             }            
         }
-        canvas.worldCamera = PlayerManager.instance.camera;
+        canvas.worldCamera = PlayerManager.instance.mainCamera;
         PlayerManager.instance.gameObject.SetActive(true);
         PlayerManager.instance.canMove = true;
         PlayerManager.instance.canAttack = true;

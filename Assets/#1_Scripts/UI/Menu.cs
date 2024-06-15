@@ -21,12 +21,12 @@ public class Menu : MonoBehaviour
 
     private void VisibleMenu()
     {
-        if (!menu.gameObject.active)
+        if (!menu.gameObject.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 PlayerManager.instance.canMove = false;
-                if (!inventory.gameObject.active)
+                if (!inventory.gameObject.activeSelf)
                     menu.gameObject.SetActive(true);
                 else
                 {

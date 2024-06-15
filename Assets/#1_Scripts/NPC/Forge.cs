@@ -39,7 +39,7 @@ public class Forge : AllienceNPC
             PlayerManager.instance.canMove = false;
             StartCoroutine(DialogueCoroutine());
         }
-        if(i >= npcDialogue.Length -1 && upgradeAllow.gameObject.active)
+        if(i >= npcDialogue.Length -1 && upgradeAllow.gameObject.activeSelf)
         {
             StartCoroutine(UpgradeCoroutine());
         }

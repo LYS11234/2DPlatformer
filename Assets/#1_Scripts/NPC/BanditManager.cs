@@ -59,10 +59,11 @@ public class BanditManager: HostileNPC
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(!isDead)
         {
+            distance = Mathf.Abs(PlayerManager.instance.gameObject.transform.position.x - this.gameObject.transform.position.x);
             FindPlayer();
             if(hp <= 0)
                 Dead();
@@ -81,15 +82,16 @@ public class BanditManager: HostileNPC
         base.FindPlayer();
         if(findPlayer)
         {
-            if(Mathf.Abs(PlayerManager.instance.gameObject.transform.position.x - this.gameObject.transform.position.x)<= 0.5f)
+            
+            if (distance <= 0.5f)
             {
-                if(PlayerManager.instance.gameObject.transform.position.x - this.gameObject.transform.position.x < 0 && direction < 0)
-                {
                     canMove = false;
                     anim.SetBool("isMove", false);
                     StartCoroutine(AttackCoroutine());
-                }
+                
             }
+            else
+                canMove = true;
         }
         if(currentAtkTime < atkTime)
         {
@@ -119,6 +121,7 @@ public class BanditManager: HostileNPC
             attackPoint.gameObject.SetActive(true);
             yield return waitTime;
             attackPoint.gameObject.SetActive(false);
+            canMove = true;
         }
     }
 

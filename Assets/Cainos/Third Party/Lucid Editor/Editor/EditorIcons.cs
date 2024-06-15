@@ -558,7 +558,7 @@ namespace Cainos.LucidEditor
 		public static GUIContent AudioMixerViewIcon { get { return EditorGUIUtility.IconContent("audiomixerview icon"); } }
 		public static GUIContent AudioSourceGizmo { get { return EditorGUIUtility.IconContent("audiosource gizmo"); } }
 		public static GUIContent BooScriptIcon { get { return EditorGUIUtility.IconContent("boo script icon"); } }
-		public static GUIContent CameraGizmo { get { return EditorGUIUtility.IconContent("camera gizmo"); } }
+		public static GUIContent CameraGizmo { get { return EditorGUIUtility.IconContent("mainCamera gizmo"); } }
 		public static GUIContent ChorusFilterIcon { get { return EditorGUIUtility.IconContent("chorusfilter icon"); } }
 		public static GUIContent CollabChangesIcon { get { return EditorGUIUtility.IconContent("collabchanges icon"); } }
 		public static GUIContent CollabChangesConflictIcon { get { return EditorGUIUtility.IconContent("collabchangesconflict icon"); } }

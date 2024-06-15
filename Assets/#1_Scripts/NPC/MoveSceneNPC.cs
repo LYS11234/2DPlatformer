@@ -48,7 +48,7 @@ public class MoveSceneNPC : AllienceNPC
             PlayerManager.instance.canMove = false;
             mapImage.gameObject.SetActive(true);
         }
-        //if(mapImage.gameObject.active && Input.GetKeyDown(KeyCode.Z))
+        //if(mapImage.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Z))
         //{
         //    mapImage.gameObject.SetActive(false);
         //    PlayerManager.instance.gameObject.SetActive(false);

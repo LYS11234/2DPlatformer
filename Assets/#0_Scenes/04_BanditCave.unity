@@ -3613,7 +3613,7 @@ MonoBehaviour:
   mobHp: {fileID: 0}
   item_pouch: {fileID: 3876229217138929161, guid: 67faf959a18c2334fb682e6806a48536, type: 3}
   items: []
-  moveSceneNPC: {fileID: 0}
+  moveSceneNPC: {fileID: 1857889832}
   hp: 500
   isDead: 0
   findPlayer: 0

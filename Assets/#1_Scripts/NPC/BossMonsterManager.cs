@@ -86,8 +86,7 @@ public class BossMonsterManager : BanditManager
                 TryAttack();
             //TryKnockBack();
             StartCoroutine(CheckHP());
-            if (hp <= 0)
-                Dead();
+
             if(isBackStep)
                 Rest();
             if(currentGroggyGage <= 0)
@@ -102,6 +101,8 @@ public class BossMonsterManager : BanditManager
                 else
                     currentGroggyTime += Time.deltaTime;
             }
+            if (hp <= 0)
+                Dead();
         }
     }
 
